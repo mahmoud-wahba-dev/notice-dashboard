@@ -48,22 +48,5 @@
   },
   "engines": {
     "node": ">=18.0.0"
-  },
-  "gulp-environment": {
-    "environments": [
-      {
-        "name": "development",
-        "aliases": [
-          "dev"
-        ]
-      },
-      {
-        "name": "production",
-        "aliases": [
-          "prod"
-        ]
-      }
-    ],
-    "default": "development"
   }
 }
