@@ -4,15 +4,11 @@
   "description": "Default dashboard layout with vertical sidebar navigation",
   "main": "index.html",
   "scripts": {
-    "build": "gulp buildAssets",
-    "build:css": "gulp buildCss",
-    "build:js": "gulp copyJS",
-    "build:libs": "gulp copyLibs",
-    "build:assets": "gulp buildAssets",
-    "build:prod": "gulp buildProd",
-    "watch": "gulp watchCSS",
-    "serve": "npx http-server . -p 8080 -o",
-    "dev": "pnpm run watch & pnpm run serve"
+    "build": "npx @tailwindcss/cli -i ./assets/css/main.css -o ./assets/dist/css/output.css --minify",
+    "build:css": "npx @tailwindcss/cli -i ./assets/css/main.css -o ./assets/dist/css/output.css",
+    "watch": "npx @tailwindcss/cli -i ./assets/css/main.css -o ./assets/dist/css/output.css --watch",
+    "serve": "http-server . -p 8080 -o html/index.html",
+    "dev": "npm run watch & npm run serve"
   },
   "keywords": [
     "tailwindcss",
@@ -45,14 +41,10 @@
     "@iconify/json": "2.2.379",
     "@iconify/tailwind4": "1.0.6",
     "@tailwindcss/cli": "4.1.12",
-    "clean-css-cli": "5.6.3",
-    "fs-extra": "11.3.1",
-    "gulp": "4.0.2",
     "http-server": "14.1.1",
     "prettier": "3.5.3",
     "prettier-plugin-tailwindcss": "0.6.14",
-    "tailwindcss": "4.1.12",
-    "terser": "5.43.1"
+    "tailwindcss": "4.1.12"
   },
   "engines": {
     "node": ">=18.0.0"
