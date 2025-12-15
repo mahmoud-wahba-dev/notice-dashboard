@@ -1,0 +1,1638 @@
+<!doctype html>
+
+<html lang="en" data-theme="light" data-assets-path="../assets/" data-layout-path="dashboard-default/" dir="ltr" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Users List - Pages | FlyonUI - Dashboard PRO</title>
+
+    <meta name="description" content=" FlyonUIPro is the best FlyonUI dashboard for responsive web apps. Streamline your app development process with ease." />
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&ampdisplay=swap" rel="stylesheet" />
+
+    <!-- Core CSS -->
+    <!-- endbuild -->
+
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" href="../assets/dist/libs/flyonui/src/vendor/datatables.css" />
+
+    <!-- build:css -->
+    <link rel="stylesheet" href="../assets/dist/css/output.css" />
+
+    <!-- Page CSS -->
+
+    <!-- Theme JS -->
+    <script type="text/javascript">
+      (function () {
+        try {
+          const root = document.documentElement;
+          const layoutPath = root.getAttribute('data-layout-path')?.replace('/', '') || 'dashboard-default';
+          const localStorageKey = `${layoutPath}-theme`;
+
+          // Theme configuration loaded from page-config.json at build time
+          window.THEME_CONFIG = { 'dashboard-default': { default: 'light', light: 'light', dark: 'dark', system: { light: 'light', dark: 'dark' } } };
+
+          // Get current system theme preference
+          const getSystemPreference = () => window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+          // Resolve theme based on user selection and layout configuration
+          const resolveTheme = (selectedTheme, layoutPath) => {
+            const layoutConfig = window.THEME_CONFIG[layoutPath];
+            if (!layoutConfig) return selectedTheme === 'system' ? (getSystemPreference() ? 'dark' : 'light') : selectedTheme;
+
+            if (selectedTheme === 'system') {
+              const systemConfig = layoutConfig.system;
+              const prefersDark = getSystemPreference();
+              return prefersDark ? systemConfig.dark : systemConfig.light;
+            }
+
+            return layoutConfig[selectedTheme] || selectedTheme || layoutConfig.default || 'light';
+          };
+
+          const savedTheme = localStorage.getItem(localStorageKey) || 'system';
+          const resolvedTheme = resolveTheme(savedTheme, layoutPath);
+
+          root.setAttribute('data-theme', resolvedTheme);
+        } catch (e) {
+          console.warn('Early theme script error:', e);
+        }
+      })();
+    </script>
+  </head>
+
+  <body>
+    <!-- Layout wrapper -->
+    <!-- Layout wrapper -->
+    <div class="bg-base-200 flex min-h-screen flex-col">
+      <!-- Layout Navbar -->
+
+      <!-- ---------- HEADER ---------- -->
+      <div class="supports-[backdrop-filter]:bg-base-200/60 h-20.5 mask-[linear-gradient(var(--color-base-200),var(--color-base-200)_18%,transparent_100%)] fixed top-0 z-40 w-full backdrop-blur-md backdrop-saturate-200"></div>
+      <div class="xl:ps-65 sticky top-0 z-50 flex">
+        <div class="mx-auto mt-6 w-full max-w-[1388px] px-6">
+          <nav class="navbar rounded-field shadow-base-300/10 py-2.5 shadow-sm">
+            <div class="navbar-start gap-2">
+              <button type="button" class="btn btn-soft btn-square btn-sm xl:hidden" aria-haspopup="dialog" aria-expanded="false" aria-controls="layout-sidebar" data-overlay="#layout-sidebar">
+                <span class="icon-[tabler--menu-2] size-4.5"></span>
+              </button>
+
+              <!-- Search  -->
+              <button type="button" class="max-sm:btn max-sm:btn-text max-sm:btn-sm max-sm:btn-square flex items-center gap-2 text-sm" aria-haspopup="dialog" aria-expanded="false" aria-controls="search-modal" data-overlay="#search-modal">
+                <span class="icon-[tabler--search] text-base-content size-5"></span>
+                <span class="text-base-content/50 max-sm:hidden">Search [CTRL + K]</span>
+              </button>
+            </div>
+
+            <div class="navbar-end gap-4">
+              <div class="flex items-center">
+                <!-- Theme Dropdown -->
+                <div class="dropdown relative inline-flex">
+                  <button id="dropdown-toggle-theme" type="button" class="dropdown-toggle btn btn-square btn-sm btn-text" aria-haspopup="menu" aria-expanded="false" aria-label="Dropdown">
+                    <span class="icon-[tabler--sun] size-4.5 theme-icon hidden"></span>
+                    <span class="icon-[tabler--moon] size-4.5 theme-icon hidden"></span>
+                    <span class="icon-[tabler--sun-moon] size-4.5 theme-icon"></span>
+                  </button>
+                  <ul class="dropdown-menu dropdown-open:opacity-100 hidden min-w-60" role="menu" aria-orientation="vertical" aria-labelledby="dropdown-toggle-theme">
+                    <li>
+                      <button type="button" data-theme-value="light" data-icon="sun" class="dropdown-item" aria-pressed="false">Light</button>
+                    </li>
+                    <li>
+                      <button type="button" data-theme-value="dark" data-icon="moon" class="dropdown-item" aria-pressed="false">Dark</button>
+                    </li>
+                    <li>
+                      <button type="button" data-theme-value="system" data-icon="sun-moon" class="dropdown-item dropdown-active" aria-pressed="true">System</button>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Language Dropdown -->
+                <div class="dropdown relative inline-flex [--offset:24]">
+                  <button id="language-dropdown" type="button" class="dropdown-toggle btn btn-sm btn-square btn-text" aria-haspopup="menu" aria-expanded="false" aria-label="Dropdown">
+                    <span class="icon-[tabler--language] size-4.5"></span>
+                  </button>
+                  <ul class="dropdown-menu dropdown-open:opacity-100 hidden w-full max-w-60 space-y-0.5" role="menu" aria-orientation="vertical" aria-labelledby="language-dropdown">
+                    <li><a class="dropdown-item dropdown-active px-3" href="#">English</a></li>
+                    <li><a class="dropdown-item px-3" href="#">Deutsch</a></li>
+                    <li><a class="dropdown-item px-3" href="#">한국인</a></li>
+                    <li><a class="dropdown-item px-3" href="#">Española</a></li>
+                    <li><a class="dropdown-item px-3" href="#">Português</a></li>
+                  </ul>
+                </div>
+
+                <!-- Activity Dropdown -->
+                <button type="button" class="btn btn-sm btn-text btn-square" aria-haspopup="dialog" aria-expanded="false" aria-controls="activity-drawer" data-overlay="#activity-drawer">
+                  <span class="icon-[tabler--activity] size-4.5"></span>
+                </button>
+
+                <!-- Notification Dropdown -->
+                <div class="dropdown relative inline-flex [--auto-close:inside] [--offset:24]">
+                  <button id="notification-dropdown" type="button" class="dropdown-toggle btn btn-text btn-square btn-sm" aria-haspopup="menu" aria-expanded="false" aria-label="Dropdown">
+                    <span class="indicator">
+                      <span class="indicator-item bg-error size-2 rounded-full"></span>
+                      <span class="icon-[tabler--bell] size-4.5"></span>
+                    </span>
+                  </button>
+                  <div class="dropdown-menu dropdown-open:opacity-100 max-w-122 hidden w-full space-y-0.5 px-3" role="menu" aria-orientation="vertical" aria-labelledby="notification-dropdown">
+                    <div class="mb-0 flex w-full items-center justify-between gap-4 py-2.5">
+                      <h6 class="text-base-content/50 text-sm uppercase">Notification</h6>
+                      <span class="badge badge-soft badge-sm badge-primary rounded-full">8 New</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                      <nav class="tabs tabs-bordered" aria-label="Tabs" role="tablist" aria-orientation="horizontal">
+                        <button type="button" class="tab active-tab:tab-active active font-medium" id="tabs-basic-item-1" data-tab="#tabs-basic-1" aria-controls="tabs-basic-1" role="tab" aria-selected="true">4 Inbox</button>
+                        <button type="button" class="tab active-tab:tab-active font-medium" id="tabs-basic-item-2" data-tab="#tabs-basic-2" aria-controls="tabs-basic-2" role="tab" aria-selected="false">General</button>
+                      </nav>
+                      <div class="dropdown relative inline-flex [--auto-close:inside]">
+                        <button id="notification-settings" type="button" class="dropdown-toggle btn btn-text btn-sm btn-square" aria-haspopup="menu" aria-expanded="false" aria-label="Dropdown">
+                          <span class="icon-[tabler--settings] size-5"></span>
+                        </button>
+                        <div class="dropdown-menu dropdown-open:opacity-100 min-w-30 hidden" role="menu" aria-orientation="vertical" aria-labelledby="notification-settings">
+                          <div class="dropdown-item items-center justify-between gap-2 px-2 py-1">
+                            <label class="label-text text-base" for="settings1">Notification</label>
+                            <input type="checkbox" class="switch switch-primary switch-sm" id="settings1" checked />
+                          </div>
+                          <div class="dropdown-item items-center justify-between gap-2 px-2 py-1">
+                            <label class="label-text text-base" for="settings2">Location</label>
+                            <input type="checkbox" class="switch switch-primary switch-sm" id="settings2" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <hr class="border-base-content/20 border-1 -mx-3 -mt-1" />
+                    <div>
+                      <div id="tabs-basic-1" role="tabpanel" aria-labelledby="tabs-basic-item-1">
+                        <ul>
+                          <li>
+                            <div class="flex w-full items-center gap-3 py-3">
+                              <div class="avatar">
+                                <div class="size-10 rounded-full">
+                                  <img src="../assets/img/avatars/1.png" alt="avatar" />
+                                </div>
+                              </div>
+                              <div class="flex-1">
+                                <h6 class="text-base-content mb-0.5 font-medium">Cristofer Torff</h6>
+                                <div class="flex items-center gap-x-2.5">
+                                  <p class="text-base-content/50 text-sm">12 Minutes ago</p>
+                                  <span class="bg-neutral/20 size-1.5 rounded-full"></span>
+                                  <p class="text-base-content/50 text-sm">New post</p>
+                                </div>
+                              </div>
+                              <div class="flex flex-col items-center gap-3">
+                                <button class="btn btn-xs btn-circle btn-text">
+                                  <span class="icon-[tabler--x] text-base-content/80 size-4"></span>
+                                </button>
+                                <div class="bg-primary size-1.5 rounded-full"></div>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <hr class="border-base-content/20 -mx-3 my-1.5" />
+                          </li>
+                          <li>
+                            <div class="flex w-full items-center gap-3 py-3">
+                              <div class="avatar">
+                                <div class="size-10 rounded-full">
+                                  <img src="../assets/img/avatars/2.png" alt="avatar" />
+                                </div>
+                              </div>
+                              <div class="flex-1">
+                                <h6 class="text-base-content mb-0.5 font-medium">Deni Arison</h6>
+                                <div class="flex items-center gap-x-2.5">
+                                  <p class="text-base-content/50 text-sm">27 Minutes ago</p>
+                                  <span class="bg-neutral/20 size-1.5 rounded-full"></span>
+                                  <p class="text-base-content/50 text-sm">New comment</p>
+                                </div>
+                              </div>
+                              <div class="flex flex-col items-center gap-3">
+                                <button class="btn btn-xs btn-circle btn-text">
+                                  <span class="icon-[tabler--x] text-base-content/80 size-4"></span>
+                                </button>
+                                <div class="bg-primary size-1.5 rounded-full"></div>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <hr class="border-base-content/20 -mx-3 my-1.5" />
+                          </li>
+                          <li>
+                            <div class="flex w-full gap-3 py-3">
+                              <div class="avatar">
+                                <div class="size-10 rounded-full">
+                                  <img src="../assets/img/avatars/3.png" alt="avatar" />
+                                </div>
+                              </div>
+                              <div class="flex-1">
+                                <h6 class="text-base-content mb-0.5 text-wrap font-medium">Anna has applied to create an ad for your campaign</h6>
+                                <div class="mb-3 flex items-center gap-2.5">
+                                  <p class="text-base-content/50 text-sm">2 hours ago</p>
+                                  <span class="bg-neutral/20 size-1.5 rounded-full"></span>
+                                  <p class="text-base-content/50 text-sm">New request for campaign</p>
+                                </div>
+                                <div class="flex gap-4">
+                                  <button class="btn btn-sm">Decline</button>
+                                  <button class="btn btn-sm btn-primary">Accept</button>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <hr class="border-base-content/20 -mx-3 my-1.5" />
+                          </li>
+                          <li>
+                            <div class="flex w-full gap-3 py-3">
+                              <div class="avatar">
+                                <div class="size-10 rounded-full">
+                                  <img src="../assets/img/avatars/4.png" alt="avatar" />
+                                </div>
+                              </div>
+                              <div class="flex-1">
+                                <h6 class="text-base-content mb-0.5 line-clamp-1 font-medium">Jason attached the file</h6>
+                                <div class="mb-3 flex items-center gap-2.5">
+                                  <p class="text-base-content/50 text-sm">6 hours ago</p>
+                                  <span class="bg-neutral/20 size-1.5 rounded-full"></span>
+                                  <p class="text-base-content/50 text-sm">Attached files</p>
+                                </div>
+                                <div class="flex items-center gap-2 py-1">
+                                  <span class="icon-[tabler--link] size-4"></span>
+                                  <p class="link link-hover">Work examples.com</p>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                      <div id="tabs-basic-2" class="hidden" role="tabpanel" aria-labelledby="tabs-basic-item-2">
+                        <ul class="space-y-0.5">
+                          <li>
+                            <div class="flex w-full items-center gap-3 py-3">
+                              <div class="avatar">
+                                <div class="w-10 rounded-full">
+                                  <img src="../assets/img/avatars/5.png" alt="avatar" />
+                                </div>
+                              </div>
+                              <div class="flex-1">
+                                <h6 class="text-base-content mb-0.5 font-medium">New Update Available</h6>
+                                <div class="flex items-center gap-2.5">
+                                  <p class="text-base-content/50 text-sm">1 hour ago</p>
+                                  <span class="bg-neutral/20 size-1.5 rounded-full"></span>
+                                  <p class="text-base-content/50 text-sm">Click to update</p>
+                                </div>
+                              </div>
+                              <div class="flex flex-col items-center gap-3">
+                                <button class="btn btn-xs btn-circle btn-text">
+                                  <span class="icon-[tabler--x] text-base-content/80 size-4"></span>
+                                </button>
+                                <div class="bg-primary size-1.5 rounded-full"></div>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <hr class="border-base-content/20 -mx-3 my-1.5" />
+                          </li>
+                          <li>
+                            <div class="flex w-full items-center gap-3 py-3">
+                              <div class="avatar">
+                                <div class="w-10 rounded-full">
+                                  <img src="../assets/img/avatars/6.png" alt="avatar" />
+                                </div>
+                              </div>
+                              <div class="flex-1">
+                                <h6 class="text-base-content mb-0.5 font-medium">Privacy Policy Update</h6>
+                                <div class="flex items-center gap-2.5">
+                                  <p class="text-base-content/50 text-sm">3 hours ago</p>
+                                  <span class="bg-neutral/20 size-1.5 rounded-full"></span>
+                                  <p class="text-base-content/50 text-sm">Review terms</p>
+                                </div>
+                              </div>
+                              <div class="flex flex-col items-center gap-3">
+                                <button class="btn btn-xs btn-circle btn-text">
+                                  <span class="icon-[tabler--x] text-base-content/80 size-4"></span>
+                                </button>
+                                <div class="bg-primary size-1.5 rounded-full"></div>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <hr class="border-base-content/20 -mx-3 my-1.5" />
+                          </li>
+                          <li>
+                            <div class="flex w-full items-center gap-3 py-3">
+                              <div class="avatar">
+                                <div class="w-10 rounded-full">
+                                  <img src="../assets/img/avatars/7.png" alt="avatar" />
+                                </div>
+                              </div>
+                              <div class="flex-1">
+                                <h6 class="text-base-content mb-0.5 font-medium">Account Security Alert</h6>
+                                <div class="flex items-center gap-2.5">
+                                  <p class="text-base-content/50 text-sm">5 hours ago</p>
+                                  <span class="bg-neutral/20 size-1.5 rounded-full"></span>
+                                  <p class="text-base-content/50 text-sm">Check activity</p>
+                                </div>
+                              </div>
+                              <div class="flex flex-col items-center gap-3">
+                                <button class="btn btn-xs btn-circle btn-text">
+                                  <span class="icon-[tabler--x] text-base-content/80 size-4"></span>
+                                </button>
+                                <div class="bg-primary size-1.5 rounded-full"></div>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Profile Dropdown -->
+              <div class="dropdown relative inline-flex [--offset:21]">
+                <button id="profile-dropdown" type="button" class="dropdown-toggle w-9.5" aria-haspopup="menu" aria-expanded="false" aria-label="Dropdown">
+                  <img src="../assets/img/avatars/1.png" alt="User Avatar" class="rounded-box" />
+                </button>
+                <ul class="dropdown-menu dropdown-open:opacity-100 max-w-75 hidden w-full space-y-0.5" role="menu" aria-orientation="vertical" aria-labelledby="profile-dropdown">
+                  <li class="dropdown-header pt-4.5 mb-1 gap-4 px-5 pb-3.5">
+                    <div class="avatar avatar-online-top">
+                      <div class="w-10 rounded-full">
+                        <img src="../assets/img/avatars/1.png" alt="avatar" />
+                      </div>
+                    </div>
+                    <div>
+                      <h6 class="text-base-content mb-0.5 font-semibold">Cristofer Torff</h6>
+                      <p class="text-base-content/80 font-medium">info@example.com</p>
+                    </div>
+                  </li>
+                  <li>
+                    <a class="dropdown-item px-3" href="#">
+                      <span class="icon-[tabler--user] size-5"></span>
+                      My account
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item px-3" href="#">
+                      <span class="icon-[tabler--settings] size-5"></span>
+                      Setting
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item px-3" href="#">
+                      <span class="icon-[tabler--credit-card] size-5"></span>
+                      Billing
+                    </a>
+                  </li>
+                  <li>
+                    <hr class="border-base-content/20 -mx-2 my-1" />
+                  </li>
+                  <li>
+                    <a class="dropdown-item px-3" href="#">
+                      <span class="icon-[tabler--users] size-5"></span>
+                      Manage team
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item px-3" href="#">
+                      <span class="icon-[tabler--edit] size-5"></span>
+                      Customisation
+                    </a>
+                  </li>
+                  <li class="mb-1">
+                    <a class="dropdown-item px-3" href="#">
+                      <span class="icon-[tabler--circle-plus] size-5"></span>
+                      Add team account
+                    </a>
+                  </li>
+                  <li class="dropdown-footer p-2 pt-1">
+                    <a class="btn btn-text btn-error btn-block h-11 justify-start px-3 font-normal" href="#">
+                      <span class="icon-[tabler--logout] size-5"></span>
+                      Logout
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+
+      <!-- SearchBox Modal -->
+      <div id="search-modal" class="overlay modal overlay-open:opacity-100 overlay-open:duration-300 hidden" role="dialog" tabindex="-1">
+        <div class="modal-dialog overlay-open:opacity-100 overlay-open:duration-300">
+          <div class="modal-content">
+            <div
+              class="relative"
+              data-combo-box='{
+          "preventVisibility": true,
+          "groupingType": "default",
+          "apiUrl": "../assets/json/search.json",
+          "apiGroupField": "section",
+          "outputItemTemplate": "<li class=\"rounded-field focus-within:outline-0 focus-within:bg-base-200\" data-combo-box-output-item> <a class=\"dropdown-item combo-box-selected:dropdown-active\" data-combo-box-output-item-attr=&apos;[{\"valueFrom\": \"url\", \"attr\": \"href\"}]&apos;> <div class=\"flex items-center justify-between w-full\"> <div class=\"flex items-center gap-3\"> <span class=\"size-5\" data-combo-box-output-item-attr=&apos;[{\"valueFrom\": \"icon\", \"attr\": \"class\"}]&apos;></span> <div data-combo-box-output-item-field=\"name\" data-combo-box-search-text data-combo-box-value></div> </div> <span class=\"icon-[tabler--check] text-primary combo-box-selected:block hidden size-4 shrink-0\"></span> </div> </a></li>",
+          "groupingTitleTemplate": "<li class=\"block text-xs text-base-content/50 m-3 mb-1\"></li>"
+       }'>
+              <!-- SearchBox -->
+              <div class="modal-header block">
+                <div class="relative">
+                  <input class="input ps-8" type="text" placeholder="Search or type a command" role="combobox" aria-expanded="false" value="" autofocus="" data-combo-box-input="" />
+                  <span class="icon-[tabler--search] text-base-content absolute start-3 top-1/2 size-4 shrink-0 -translate-y-1/2"></span>
+                  <div class="absolute inset-y-0 end-0 flex items-center justify-center pe-3">
+                    <button id="searchbox-clear" type="button" class="focus:outline-hidden inline-flex size-6 shrink-0 items-center justify-center rounded-full text-gray-500 hover:text-blue-600 focus:text-blue-600 dark:text-neutral-500 dark:hover:text-blue-500 dark:focus:text-blue-500" aria-label="Close" data-combo-box-close>
+                      <span class="sr-only">Close</span>
+                      <span class="icon-[tabler--circle-x] size-5 shrink-0"></span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- SearchBox Modal Body -->
+              <div class="modal-body" data-combo-box-output="">
+                <ul class="max-h-92 menu-sm space-y-0.5 overflow-y-auto" data-combo-box-output-items-wrapper=""></ul>
+              </div>
+              <div class="modal-footer border-base-content/20 text-base-content/50 border-t-1 gap-4 py-4 max-sm:hidden">
+                <div class="flex grow items-center gap-2 text-sm">
+                  <kbd class="kbd kbd-sm">esc</kbd>
+                  <span>To close</span>
+                </div>
+                <div class="flex items-center gap-2 text-sm">
+                  <kbd class="kbd kbd-sm p-0"><span class="icon-[tabler--arrow-back] size-4"></span></kbd>
+                  <span>To Select</span>
+                </div>
+                <div class="flex items-center gap-2 text-sm">
+                  <kbd class="kbd kbd-sm p-0"><span class="icon-[tabler--arrow-up] size-4"></span></kbd>
+                  <kbd class="kbd kbd-sm p-0"><span class="icon-[tabler--arrow-down] size-4"></span></kbd>
+                  <span>To Navigate</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity Drawer Content  -->
+      <div id="activity-drawer" class="overlay overlay-open:translate-x-0 drawer drawer-end sm:max-w-104 hidden" role="dialog" tabindex="-1">
+        <div class="drawer-header border-base-content/20 border-b p-4">
+          <h3 class="drawer-title text-base font-semibold">Activity</h3>
+          <button type="button" class="btn btn-text btn-circle btn-xs" aria-label="Close" data-overlay="#activity-drawer">
+            <span class="icon-[tabler--x] size-4"></span>
+          </button>
+        </div>
+        <div class="drawer-body p-0">
+          <ul class="space-y-0">
+            <!-- Joe Lincoln Activity -->
+            <li class="flex items-start gap-4 p-4">
+              <div class="avatar">
+                <div class="size-8 rounded-full">
+                  <img src="../assets/img/avatars/1.png" alt="avatar" />
+                </div>
+              </div>
+              <div class="flex-1">
+                <div class="mb-1">
+                  <span class="text-base-content font-semibold">joe Lincoln</span>
+                  <span class="text-base-content text-sm">mentioned you in last trends topic</span>
+                </div>
+                <p class="text-base-content/50 mb-3 text-sm">18 Mins ago</p>
+
+                <div class="bg-base-200 rounded-box border-base-content/20 border px-4 py-2.5">
+                  <p class="text-base-content mb-4 text-sm font-medium">@Flyonui For an expert opinion, check out what Mike has to say on this topic!</p>
+                  <div class="input input-sm">
+                    <input type="text" class="grow" placeholder="Reply" id="flyonuiReply" />
+                    <span class="icon-[tabler--photo] text-base-content/80 my-auto ms-2 size-4 shrink-0"></span>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li><div class="divider"></div></li>
+
+            <!-- Sofia -->
+            <li class="flex items-start gap-4 p-4">
+              <div class="avatar">
+                <div class="size-8 rounded-full">
+                  <img src="../assets/img/avatars/2.png" alt="Sofia" />
+                </div>
+              </div>
+              <div class="flex-1">
+                <div class="mb-1">
+                  <span class="text-base-content font-semibold">Sofia</span>
+                  <span class="text-base-content text-sm">requested feedback on her design.</span>
+                </div>
+                <p class="text-base-content/50 text-sm">1 Hour ago</p>
+              </div>
+            </li>
+
+            <li><div class="divider"></div></li>
+
+            <!-- Jane Perez File Review -->
+            <li class="flex items-start gap-4 p-4">
+              <div class="avatar">
+                <div class="size-8 rounded-full">
+                  <img src="../assets/img/avatars/3.png" alt="Jane Perez" />
+                </div>
+              </div>
+              <div class="flex-1">
+                <div class="mb-1">
+                  <span class="text-base-content font-semibold">Jane Perez</span>
+                  <span class="text-base-content text-sm">invites you to review a file.</span>
+                </div>
+                <p class="text-base-content/50 mb-2.5 text-sm">3 Hours ago</p>
+                <span class="badge badge-soft badge-lg">
+                  <span class="icon-[tabler--file-type-pdf] text-error"></span>
+                  invoices.pdf
+                </span>
+              </div>
+            </li>
+
+            <li><div class="divider"></div></li>
+
+            <!-- Liam -->
+            <li class="flex items-start gap-4 p-4">
+              <div class="avatar">
+                <div class="size-8 rounded-full">
+                  <img src="../assets/img/avatars/6.png" alt="Liam" />
+                </div>
+              </div>
+              <div class="flex-1">
+                <div class="mb-1">
+                  <span class="text-base-content font-semibold">Liam</span>
+                  <span class="text-base-content text-sm">has shared a project update.</span>
+                </div>
+                <p class="text-base-content/50 text-sm">5 Hours ago</p>
+              </div>
+            </li>
+
+            <li><div class="divider"></div></li>
+
+            <!-- Tyler Hero Design Project -->
+            <li class="flex items-start gap-4 p-4">
+              <div class="avatar">
+                <div class="size-8 rounded-full">
+                  <img src="../assets/img/avatars/9.png" alt="Tyler Hero" />
+                </div>
+              </div>
+              <div class="flex-1">
+                <div class="mb-1">
+                  <span class="text-base-content font-semibold">Tyler Hero</span>
+                  <span class="text-base-content text-sm">wants to view your design project</span>
+                </div>
+                <p class="text-base-content/50 mb-3 text-sm">18 Mins ago</p>
+
+                <div class="bg-base-200 rounded-box border-base-content/20 flex items-center gap-4 border px-4 py-2.5">
+                  <div class="avatar avatar-placeholder">
+                    <div class="bg-base-100 text-primary rounded-box size-8 p-2">
+                      <img src="../assets/img/icons/brands/figma-icon.png" alt="avatar" />
+                    </div>
+                  </div>
+                  <span class="text-sm font-medium">Launcher-UIkit.fig</span>
+                </div>
+              </div>
+            </li>
+
+            <li><div class="divider"></div></li>
+
+            <!-- Denial Invite -->
+            <li class="flex items-start gap-4 p-4">
+              <div class="avatar">
+                <div class="size-8 rounded-full">
+                  <img src="../assets/img/avatars/4.png" alt="Denial" />
+                </div>
+              </div>
+              <div class="flex-1">
+                <div class="mb-1">
+                  <span class="text-base-content font-semibold">Denial</span>
+                  <span class="text-base-content text-sm">Invite from invite link</span>
+                </div>
+                <p class="text-base-content/50 text-sm">3 Hours ago</p>
+              </div>
+            </li>
+
+            <li><div class="divider"></div></li>
+
+            <!-- Leslie Alexander Tags -->
+            <li class="flex items-start gap-4 p-4">
+              <div class="avatar">
+                <div class="size-8 rounded-full">
+                  <img src="../assets/img/avatars/5.png" alt="Leslie Alexander" />
+                </div>
+              </div>
+              <div class="flex-1">
+                <div class="mb-1">
+                  <span class="text-base-content font-semibold">Leslie Alexander</span>
+                  <span class="text-base-content text-sm">new tags to Web Redesign</span>
+                </div>
+                <p class="text-base-content/50 mb-3 text-sm">18 Mins ago</p>
+
+                <div class="flex gap-2.5">
+                  <span class="badge badge-soft badge-primary badge-sm">Client - Request</span>
+                  <span class="badge badge-soft badge-warning badge-sm">Figma</span>
+                  <span class="badge badge-soft badge-info badge-sm">Redesign</span>
+                </div>
+              </div>
+            </li>
+
+            <li><div class="divider"></div></li>
+
+            <!-- Miya File Review -->
+            <li class="flex items-start gap-4 p-4">
+              <div class="avatar">
+                <div class="size-8 rounded-full">
+                  <img src="../assets/img/avatars/6.png" alt="Miya" />
+                </div>
+              </div>
+              <div class="flex-1">
+                <div class="mb-1">
+                  <span class="text-base-content font-semibold">Miya</span>
+                  <span class="text-base-content text-sm">invites you to review a file.</span>
+                </div>
+                <p class="text-base-content/50 text-sm">10 Hours ago</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ---------- END HEADER ---------- -->
+
+      <!-- Layout Menu -->
+
+      <!-- Menu -->
+      <aside id="layout-sidebar" class="overlay overlay-open:translate-x-0 drawer drawer-start sm:w-65 inset-y-0 start-0 hidden h-full [--auto-close:xl] xl:z-50 xl:block xl:translate-x-0 xl:transition-none" aria-label="Sidebar" tabindex="-1">
+        <div class="drawer-body h-full p-0">
+          <div class="flex h-full max-h-full flex-col">
+            <button type="button" class="btn btn-text btn-circle btn-sm absolute end-3 top-3 xl:hidden" aria-label="Close" data-overlay="#layout-sidebar">
+              <span class="icon-[tabler--x] size-4.5"></span>
+            </button>
+            <div class="flex items-center gap-3 px-4 py-2">
+              <a href="index.html" class="inline-flex items-center gap-3">
+                <span class="text-primary">
+                  <svg width="32" height="32" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_18078_104881)">
+                      <mask id="mask0_18078_104881" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="34" height="34">
+                        <path d="M25.5 0H8.5C3.80558 0 0 3.80558 0 8.5V25.5C0 30.1944 3.80558 34 8.5 34H25.5C30.1944 34 34 30.1944 34 25.5V8.5C34 3.80558 30.1944 0 25.5 0Z" fill="white" />
+                      </mask>
+                      <g mask="url(#mask0_18078_104881)">
+                        <path d="M25.5 0H8.5C3.80558 0 0 3.80558 0 8.5V25.5C0 30.1944 3.80558 34 8.5 34H25.5C30.1944 34 34 30.1944 34 25.5V8.5C34 3.80558 30.1944 0 25.5 0Z" fill="url(#paint0_linear_18078_104881)" />
+                        <path
+                          d="M16.1238 20.1522C16.511 19.662 17.2479 19.6428 17.66 20.1122L20.5526 23.41C21.1194 24.0563 20.6611 25.0689 19.8016 25.0692H14.3055C13.47 25.0692 13.0026 24.1059 13.5203 23.4501L16.1238 20.1522ZM16.1326 8.45497C16.5308 7.95801 17.286 7.95453 17.6883 8.44813L27.5164 20.5077C28.0488 21.161 27.5838 22.1395 26.741 22.1395H24.4442C24.1428 22.1395 23.8577 22.0034 23.6678 21.7694L17.7029 14.4188C17.2962 13.9175 16.5285 13.927 16.1346 14.4384L10.7303 21.454C10.5411 21.6996 10.2484 21.8435 9.9383 21.8436H7.4881C6.64925 21.8436 6.18332 20.8733 6.70783 20.2186L16.1326 8.45497Z"
+                          fill="url(#paint1_linear_18078_104881)" />
+                      </g>
+                      <path d="M25.5002 0.707886H8.50017C4.19695 0.707886 0.708496 4.19634 0.708496 8.49956V25.4996C0.708496 29.8028 4.19695 33.2912 8.50017 33.2912H25.5002C29.8034 33.2912 33.2918 29.8028 33.2918 25.4996V8.49956C33.2918 4.19634 29.8034 0.707886 25.5002 0.707886Z" stroke="url(#paint2_linear_18078_104881)" stroke-width="2" />
+                    </g>
+                    <defs>
+                      <linearGradient id="paint0_linear_18078_104881" x1="30.2812" y1="2.65625" x2="4.25" y2="32.4063" gradientUnits="userSpaceOnUse">
+                        <stop offset="0" stop-color="currentColor" />
+                        <stop offset="1" stop-color="currentColor" />
+                      </linearGradient>
+                      <linearGradient id="paint1_linear_18078_104881" x1="17.1147" y1="8.08008" x2="17.1147" y2="25.0692" gradientUnits="userSpaceOnUse">
+                        <stop offset="0" stop-color="white" />
+                        <stop offset="1" stop-color="white" stop-opacity="0.6" />
+                      </linearGradient>
+                      <linearGradient id="paint2_linear_18078_104881" x1="17.0002" y1="-0.000447931" x2="17.0002" y2="33.9996" gradientUnits="userSpaceOnUse">
+                        <stop offset="0" stop-color="white" stop-opacity="0.28" />
+                        <stop offset="1" stop-color="white" stop-opacity="0.04" />
+                      </linearGradient>
+                      <clipPath id="clip0_18078_104881">
+                        <rect width="34" height="34" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </span>
+
+                <div class="flex grow flex-col">
+                  <span class="text-base-content text-lg font-semibold">FlyonUI</span>
+                  <span class="text-base-content/50 text-xs">Dashboard Template</span>
+                </div>
+              </a>
+            </div>
+            <div class="h-full overflow-y-auto">
+              <ul class="accordion menu menu-sm gap-1 p-3">
+                <!-- Regular Menu Item (Level 0) -->
+                <li class="mt-2.5">
+                  <a href="common-dashboard.html" class="px-2">
+                    <span class="icon-[tabler--dashboard] size-4.5"></span>
+                    <span>Dashboard</span>
+                  </a>
+                </li>
+
+                <!-- Section Divider -->
+                <li class="text-base-content/50 before:bg-base-content/20 mt-2 p-2 text-xs uppercase before:absolute before:-start-3 before:top-1/2 before:h-0.5 before:w-2.5">Pages</li>
+
+                <!-- Accordion Menu Item (Level 0) -->
+                <li class="accordion-item" id="user-profile">
+                  <button class="accordion-toggle accordion-item-active:bg-neutral/10 inline-flex items-center p-2 text-start text-sm font-normal" aria-controls="user-profile-collapse-user-profile" aria-expanded="true">
+                    <span class="icon-[tabler--user] size-4.5"></span>
+                    <span class="grow">User Profile</span>
+                    <span class="icon-[tabler--chevron-right] accordion-item-active:rotate-90 size-4.5 shrink-0 transition-transform duration-300 rtl:rotate-180"></span>
+                  </button>
+                  <div id="user-profile-collapse-user-profile" class="accordion-content mt-1 hidden w-full overflow-hidden transition-[height] duration-300" aria-labelledby="user-profile" role="region">
+                    <ul class="space-y-1">
+                      <!-- Simple Link Item (for nested items) -->
+                      <li>
+                        <a href="pages-user-profile.html" class="px-2">Profile</a>
+                      </li>
+
+                      <!-- Simple Link Item (for nested items) -->
+                      <li>
+                        <a href="pages-user-teams.html" class="px-2">Teams</a>
+                      </li>
+
+                      <!-- Simple Link Item (for nested items) -->
+                      <li>
+                        <a href="pages-user-projects.html" class="px-2">Projects</a>
+                      </li>
+
+                      <!-- Simple Link Item (for nested items) -->
+                      <li>
+                        <a href="pages-user-connections.html" class="px-2">Connection</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+
+                <!-- Accordion Menu Item (Level 0) -->
+                <li class="accordion-item" id="account-settings">
+                  <button class="accordion-toggle accordion-item-active:bg-neutral/10 inline-flex items-center p-2 text-start text-sm font-normal" aria-controls="account-settings-collapse-account-settings" aria-expanded="true">
+                    <span class="icon-[tabler--settings] size-4.5"></span>
+                    <span class="grow">Account Setting</span>
+                    <span class="icon-[tabler--chevron-right] accordion-item-active:rotate-90 size-4.5 shrink-0 transition-transform duration-300 rtl:rotate-180"></span>
+                  </button>
+                  <div id="account-settings-collapse-account-settings" class="accordion-content mt-1 hidden w-full overflow-hidden transition-[height] duration-300" aria-labelledby="account-settings" role="region">
+                    <ul class="space-y-1">
+                      <!-- Simple Link Item (for nested items) -->
+                      <li>
+                        <a href="pages-account-settings-account.html" class="px-2">Account</a>
+                      </li>
+
+                      <!-- Simple Link Item (for nested items) -->
+                      <li>
+                        <a href="pages-account-settings-security.html" class="px-2">Security</a>
+                      </li>
+
+                      <!-- Simple Link Item (for nested items) -->
+                      <li>
+                        <a href="pages-account-settings-billing.html" class="px-2">Billings & Plans</a>
+                      </li>
+
+                      <!-- Simple Link Item (for nested items) -->
+                      <li>
+                        <a href="pages-account-settings-notifications.html" class="px-2">Notifications</a>
+                      </li>
+
+                      <!-- Simple Link Item (for nested items) -->
+                      <li>
+                        <a href="pages-account-settings-connections.html" class="px-2">Connections</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+
+                <!-- Regular Menu Item (Level 0) -->
+                <li>
+                  <a href="pages-faq.html" class="px-2">
+                    <span class="icon-[tabler--help] size-4.5"></span>
+                    <span>FAQ</span>
+                  </a>
+                </li>
+
+                <!-- Regular Menu Item (Level 0) -->
+                <li>
+                  <a href="pages-pricing.html" class="px-2">
+                    <span class="icon-[tabler--currency-dollar] size-4.5"></span>
+                    <span>Pricing</span>
+                  </a>
+                </li>
+
+                <!-- Accordion Menu Item (Level 0) -->
+                <li class="accordion-item" id="misc">
+                  <button class="accordion-toggle accordion-item-active:bg-neutral/10 inline-flex items-center p-2 text-start text-sm font-normal" aria-controls="misc-collapse-misc" aria-expanded="true">
+                    <span class="icon-[tabler--layout-grid] size-4.5"></span>
+                    <span class="grow">Misc</span>
+                    <span class="icon-[tabler--chevron-right] accordion-item-active:rotate-90 size-4.5 shrink-0 transition-transform duration-300 rtl:rotate-180"></span>
+                  </button>
+                  <div id="misc-collapse-misc" class="accordion-content mt-1 hidden w-full overflow-hidden transition-[height] duration-300" aria-labelledby="misc" role="region">
+                    <ul class="space-y-1">
+                      <!-- Simple Link Item (for nested items) -->
+                      <li>
+                        <a href="pages-misc-error.html" class="px-2" target="_blank">Error</a>
+                      </li>
+
+                      <!-- Simple Link Item (for nested items) -->
+                      <li>
+                        <a href="pages-misc-coming-soon.html" class="px-2" target="_blank">Coming Soon</a>
+                      </li>
+
+                      <!-- Simple Link Item (for nested items) -->
+                      <li>
+                        <a href="pages-misc-not-authorized.html" class="px-2" target="_blank">Not Authorized</a>
+                      </li>
+
+                      <!-- Simple Link Item (for nested items) -->
+                      <li>
+                        <a href="pages-misc-under-maintenance.html" class="px-2" target="_blank">Under Maintenance</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+
+                <!-- Accordion Menu Item (Level 0) -->
+                <li class="accordion-item" id="authentications">
+                  <button class="accordion-toggle accordion-item-active:bg-neutral/10 inline-flex items-center p-2 text-start text-sm font-normal" aria-controls="authentications-collapse-authentications" aria-expanded="true">
+                    <span class="icon-[tabler--lock] size-4.5"></span>
+                    <span class="grow">Authentications</span>
+                    <span class="icon-[tabler--chevron-right] accordion-item-active:rotate-90 size-4.5 shrink-0 transition-transform duration-300 rtl:rotate-180"></span>
+                  </button>
+                  <div id="authentications-collapse-authentications" class="accordion-content mt-1 hidden w-full overflow-hidden transition-[height] duration-300" aria-labelledby="authentications" role="region">
+                    <ul class="accordion space-y-1">
+                      <!-- Accordion Menu Item (Level 1) -->
+                      <li class="accordion-item" id="authentications-login">
+                        <button class="accordion-toggle accordion-item-active:bg-neutral/10 inline-flex items-center p-2 text-start text-sm font-normal" aria-controls="login-collapse-authentications-login" aria-expanded="true">
+                          <span class="grow">Login</span>
+                          <span class="icon-[tabler--chevron-right] accordion-item-active:rotate-90 size-4.5 shrink-0 transition-transform duration-300 rtl:rotate-180"></span>
+                        </button>
+                        <div id="login-collapse-authentications-login" class="accordion-content mt-1 hidden w-full overflow-hidden transition-[height] duration-300" aria-labelledby="authentications-login" role="region">
+                          <ul class="space-y-1">
+                            <!-- Simple Link Item (for nested items) -->
+                            <li>
+                              <a href="auth-login-1.html" class="px-2" target="_blank">Login 1</a>
+                            </li>
+
+                            <!-- Simple Link Item (for nested items) -->
+                            <li>
+                              <a href="auth-login-2.html" class="px-2" target="_blank">Login 2</a>
+                            </li>
+
+                            <!-- Simple Link Item (for nested items) -->
+                            <li>
+                              <a href="auth-login-3.html" class="px-2" target="_blank">Login 3</a>
+                            </li>
+
+                            <!-- Simple Link Item (for nested items) -->
+                            <li>
+                              <a href="auth-login-4.html" class="px-2" target="_blank">Login 4</a>
+                            </li>
+
+                            <!-- Simple Link Item (for nested items) -->
+                            <li>
+                              <a href="auth-login-5.html" class="px-2" target="_blank">Login 5</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+
+                      <!-- Accordion Menu Item (Level 1) -->
+                      <li class="accordion-item" id="authentications-register">
+                        <button class="accordion-toggle accordion-item-active:bg-neutral/10 inline-flex items-center p-2 text-start text-sm font-normal" aria-controls="register-collapse-authentications-register" aria-expanded="true">
+                          <span class="grow">Register</span>
+                          <span class="icon-[tabler--chevron-right] accordion-item-active:rotate-90 size-4.5 shrink-0 transition-transform duration-300 rtl:rotate-180"></span>
+                        </button>
+                        <div id="register-collapse-authentications-register" class="accordion-content mt-1 hidden w-full overflow-hidden transition-[height] duration-300" aria-labelledby="authentications-register" role="region">
+                          <ul class="space-y-1">
+                            <!-- Simple Link Item (for nested items) -->
+                            <li>
+                              <a href="auth-register-1.html" class="px-2" target="_blank">Register 1</a>
+                            </li>
+
+                            <!-- Simple Link Item (for nested items) -->
+                            <li>
+                              <a href="auth-register-2.html" class="px-2" target="_blank">Register 2</a>
+                            </li>
+
+                            <!-- Simple Link Item (for nested items) -->
+                            <li>
+                              <a href="auth-register-3.html" class="px-2" target="_blank">Register 3</a>
+                            </li>
+
+                            <!-- Simple Link Item (for nested items) -->
+                            <li>
+                              <a href="auth-register-4.html" class="px-2" target="_blank">Register 4</a>
+                            </li>
+
+                            <!-- Simple Link Item (for nested items) -->
+                            <li>
+                              <a href="auth-register-5.html" class="px-2" target="_blank">Register 5</a>
+                            </li>
+
+                            <!-- Simple Link Item (for nested items) -->
+                            <li>
+                              <a href="auth-register-multisteps.html" class="px-2" target="_blank">Multi Steps</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+
+                      <!-- Accordion Menu Item (Level 1) -->
+                      <li class="accordion-item" id="authentications-verify-email">
+                        <button class="accordion-toggle accordion-item-active:bg-neutral/10 inline-flex items-center p-2 text-start text-sm font-normal" aria-controls="verify-email-collapse-authentications-verify-email" aria-expanded="true">
+                          <span class="grow">Verify Email</span>
+                          <span class="icon-[tabler--chevron-right] accordion-item-active:rotate-90 size-4.5 shrink-0 transition-transform duration-300 rtl:rotate-180"></span>
+                        </button>
+                        <div id="verify-email-collapse-authentications-verify-email" class="accordion-content mt-1 hidden w-full overflow-hidden transition-[height] duration-300" aria-labelledby="authentications-verify-email" role="region">
+                          <ul class="space-y-1">
+                            <!-- Simple Link Item (for nested items) -->
+                            <li>
+                              <a href="auth-verify-email-1.html" class="px-2" target="_blank">Verify Email 1</a>
+                            </li>
+
+                            <!-- Simple Link Item (for nested items) -->
+                            <li>
+                              <a href="auth-verify-email-2.html" class="px-2" target="_blank">Verify Email 2</a>
+                            </li>
+
+                            <!-- Simple Link Item (for nested items) -->
+                            <li>
+                              <a href="auth-verify-email-3.html" class="px-2" target="_blank">Verify Email 3</a>
+                            </li>
+
+                            <!-- Simple Link Item (for nested items) -->
+                            <li>
+                              <a href="auth-verify-email-4.html" class="px-2" target="_blank">Verify Email 4</a>
+                            </li>
+
+                            <!-- Simple Link Item (for nested items) -->
+                            <li>
+                              <a href="auth-verify-email-5.html" class="px-2" target="_blank">Verify Email 5</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+
+                      <!-- Accordion Menu Item (Level 1) -->
+                      <li class="accordion-item" id="authentications-reset-password">
+                        <button class="accordion-toggle accordion-item-active:bg-neutral/10 inline-flex items-center p-2 text-start text-sm font-normal" aria-controls="reset-password-collapse-authentications-reset-password" aria-expanded="true">
+                          <span class="grow">Reset-password</span>
+                          <span class="icon-[tabler--chevron-right] accordion-item-active:rotate-90 size-4.5 shrink-0 transition-transform duration-300 rtl:rotate-180"></span>
+                        </button>
+                        <div id="reset-password-collapse-authentications-reset-password" class="accordion-content mt-1 hidden w-full overflow-hidden transition-[height] duration-300" aria-labelledby="authentications-reset-password" role="region">
+                          <ul class="space-y-1">
+                            <!-- Simple Link Item (for nested items) -->
+                            <li>
+                              <a href="auth-reset-password-1.html" class="px-2" target="_blank">Reset Password 1</a>
+                            </li>
+
+                            <!-- Simple Link Item (for nested items) -->
+                            <li>
+                              <a href="auth-reset-password-2.html" class="px-2" target="_blank">Reset Password 2</a>
+                            </li>
+
+                            <!-- Simple Link Item (for nested items) -->
+                            <li>
+                              <a href="auth-reset-password-3.html" class="px-2" target="_blank">Reset Password 3</a>
+                            </li>
+
+                            <!-- Simple Link Item (for nested items) -->
+                            <li>
+                              <a href="auth-reset-password-4.html" class="px-2" target="_blank">Reset Password 4</a>
+                            </li>
+
+                            <!-- Simple Link Item (for nested items) -->
+                            <li>
+                              <a href="auth-reset-password-5.html" class="px-2" target="_blank">Reset Password 5</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+
+                      <!-- Accordion Menu Item (Level 1) -->
+                      <li class="accordion-item" id="authentications-forgot-password">
+                        <button class="accordion-toggle accordion-item-active:bg-neutral/10 inline-flex items-center p-2 text-start text-sm font-normal" aria-controls="forgot-password-collapse-authentications-forgot-password" aria-expanded="true">
+                          <span class="grow">Forgot-password</span>
+                          <span class="icon-[tabler--chevron-right] accordion-item-active:rotate-90 size-4.5 shrink-0 transition-transform duration-300 rtl:rotate-180"></span>
+                        </button>
+                        <div id="forgot-password-collapse-authentications-forgot-password" class="accordion-content mt-1 hidden w-full overflow-hidden transition-[height] duration-300" aria-labelledby="authentications-forgot-password" role="region">
+                          <ul class="space-y-1">
+                            <!-- Simple Link Item (for nested items) -->
+                            <li>
+                              <a href="auth-forgot-password-1.html" class="px-2" target="_blank">Forgot Password 1</a>
+                            </li>
+
+                            <!-- Simple Link Item (for nested items) -->
+                            <li>
+                              <a href="auth-forgot-password-2.html" class="px-2" target="_blank">Forgot Password 2</a>
+                            </li>
+
+                            <!-- Simple Link Item (for nested items) -->
+                            <li>
+                              <a href="auth-forgot-password-3.html" class="px-2" target="_blank">Forgot Password 3</a>
+                            </li>
+
+                            <!-- Simple Link Item (for nested items) -->
+                            <li>
+                              <a href="auth-forgot-password-4.html" class="px-2" target="_blank">Forgot Password 4</a>
+                            </li>
+
+                            <!-- Simple Link Item (for nested items) -->
+                            <li>
+                              <a href="auth-forgot-password-5.html" class="px-2" target="_blank">Forgot Password 5</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+
+                      <!-- Accordion Menu Item (Level 1) -->
+                      <li class="accordion-item" id="authentications-two-step">
+                        <button class="accordion-toggle accordion-item-active:bg-neutral/10 inline-flex items-center p-2 text-start text-sm font-normal" aria-controls="two-step-collapse-authentications-two-step" aria-expanded="true">
+                          <span class="grow">Two Steps</span>
+                          <span class="icon-[tabler--chevron-right] accordion-item-active:rotate-90 size-4.5 shrink-0 transition-transform duration-300 rtl:rotate-180"></span>
+                        </button>
+                        <div id="two-step-collapse-authentications-two-step" class="accordion-content mt-1 hidden w-full overflow-hidden transition-[height] duration-300" aria-labelledby="authentications-two-step" role="region">
+                          <ul class="space-y-1">
+                            <!-- Simple Link Item (for nested items) -->
+                            <li>
+                              <a href="auth-two-steps-1.html" class="px-2" target="_blank">Two Step 1</a>
+                            </li>
+
+                            <!-- Simple Link Item (for nested items) -->
+                            <li>
+                              <a href="auth-two-steps-2.html" class="px-2" target="_blank">Two Step 2</a>
+                            </li>
+
+                            <!-- Simple Link Item (for nested items) -->
+                            <li>
+                              <a href="auth-two-steps-3.html" class="px-2" target="_blank">Two Step 3</a>
+                            </li>
+
+                            <!-- Simple Link Item (for nested items) -->
+                            <li>
+                              <a href="auth-two-steps-4.html" class="px-2" target="_blank">Two Steps 4</a>
+                            </li>
+
+                            <!-- Simple Link Item (for nested items) -->
+                            <li>
+                              <a href="auth-two-steps-5.html" class="px-2" target="_blank">Two-Step-5</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+
+                <!-- Accordion Menu Item (Level 0) -->
+                <li class="accordion-item" id="wizard">
+                  <button class="accordion-toggle accordion-item-active:bg-neutral/10 inline-flex items-center p-2 text-start text-sm font-normal" aria-controls="wizard-collapse-wizard" aria-expanded="true">
+                    <span class="icon-[tabler--list-details] size-4.5"></span>
+                    <span class="grow">Wizard Examples</span>
+                    <span class="icon-[tabler--chevron-right] accordion-item-active:rotate-90 size-4.5 shrink-0 transition-transform duration-300 rtl:rotate-180"></span>
+                  </button>
+                  <div id="wizard-collapse-wizard" class="accordion-content mt-1 hidden w-full overflow-hidden transition-[height] duration-300" aria-labelledby="wizard" role="region">
+                    <ul class="space-y-1">
+                      <!-- Simple Link Item (for nested items) -->
+                      <li>
+                        <a href="wizard-ex-checkout.html" class="px-2">Checkout</a>
+                      </li>
+
+                      <!-- Simple Link Item (for nested items) -->
+                      <li>
+                        <a href="wizard-ex-property-listing.html" class="px-2">Property Listing</a>
+                      </li>
+
+                      <!-- Simple Link Item (for nested items) -->
+                      <li>
+                        <a href="wizard-ex-create-deal.html" class="px-2">Create Deal</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+
+                <!-- Regular Menu Item (Level 0) -->
+                <li>
+                  <a href="modal-examples.html" class="px-2">
+                    <span class="icon-[tabler--copy] size-4.5"></span>
+                    <span>Modal Examples</span>
+                  </a>
+                </li>
+
+                <!-- Section Divider -->
+                <li class="text-base-content/50 before:bg-base-content/20 mt-2 p-2 text-xs uppercase before:absolute before:-start-3 before:top-1/2 before:h-0.5 before:w-2.5">Forms & Tables</li>
+
+                <!-- Accordion Menu Item (Level 0) -->
+                <li class="accordion-item" id="form-layout">
+                  <button class="accordion-toggle accordion-item-active:bg-neutral/10 inline-flex items-center p-2 text-start text-sm font-normal" aria-controls="form-layout-collapse-form-layout" aria-expanded="true">
+                    <span class="icon-[tabler--list-details] size-4.5"></span>
+                    <span class="grow">Form Layouts</span>
+                    <span class="icon-[tabler--chevron-right] accordion-item-active:rotate-90 size-4.5 shrink-0 transition-transform duration-300 rtl:rotate-180"></span>
+                  </button>
+                  <div id="form-layout-collapse-form-layout" class="accordion-content mt-1 hidden w-full overflow-hidden transition-[height] duration-300" aria-labelledby="form-layout" role="region">
+                    <ul class="space-y-1">
+                      <!-- Simple Link Item (for nested items) -->
+                      <li>
+                        <a href="form-layout-vertical.html" class="px-2">Vertical Form</a>
+                      </li>
+
+                      <!-- Simple Link Item (for nested items) -->
+                      <li>
+                        <a href="form-layout-horizontal.html" class="px-2">Horizontal Layout</a>
+                      </li>
+
+                      <!-- Simple Link Item (for nested items) -->
+                      <li>
+                        <a href="form-layout-sticky.html" class="px-2">Sticky Actions</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+
+                <!-- Regular Menu Item (Level 0) -->
+                <li>
+                  <a href="form-validation.html" class="px-2">
+                    <span class="icon-[tabler--checklist] size-4.5"></span>
+                    <span>Form Validation</span>
+                  </a>
+                </li>
+
+                <!-- Accordion Menu Item (Level 0) -->
+                <li class="accordion-item" id="datatable">
+                  <button class="accordion-toggle accordion-item-active:bg-neutral/10 inline-flex items-center p-2 text-start text-sm font-normal" aria-controls="datatable-collapse-datatable" aria-expanded="true">
+                    <span class="icon-[tabler--table] size-4.5"></span>
+                    <span class="grow">DataTables</span>
+                    <span class="icon-[tabler--chevron-right] accordion-item-active:rotate-90 size-4.5 shrink-0 transition-transform duration-300 rtl:rotate-180"></span>
+                  </button>
+                  <div id="datatable-collapse-datatable" class="accordion-content mt-1 hidden w-full overflow-hidden transition-[height] duration-300" aria-labelledby="datatable" role="region">
+                    <ul class="space-y-1">
+                      <!-- Simple Link Item (for nested items) -->
+                      <li>
+                        <a href="tables-datatables-basic.html" class="px-2">Basic</a>
+                      </li>
+
+                      <!-- Simple Link Item (for nested items) -->
+                      <li>
+                        <a href="tables-datatables-advanced.html" class="px-2">Advanced</a>
+                      </li>
+
+                      <!-- Simple Link Item (for nested items) -->
+                      <li>
+                        <a href="tables-datatables-extensions.html" class="px-2">Extensions</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+
+                <!-- Section Divider -->
+                <li class="text-base-content/50 before:bg-base-content/20 mt-2 p-2 text-xs uppercase before:absolute before:-start-3 before:top-1/2 before:h-0.5 before:w-2.5">Charts & Maps</li>
+
+                <!-- Regular Menu Item (Level 0) -->
+                <li>
+                  <a href="charts.html" class="px-2">
+                    <span class="icon-[tabler--chart-bar] size-4.5"></span>
+                    <span>Charts</span>
+                  </a>
+                </li>
+
+                <!-- Regular Menu Item (Level 0) -->
+                <li>
+                  <a href="maps.html" class="px-2">
+                    <span class="icon-[tabler--map-pin] size-4.5"></span>
+                    <span>Maps</span>
+                  </a>
+                </li>
+
+                <!-- Section Divider -->
+                <li class="text-base-content/50 before:bg-base-content/20 mt-2 p-2 text-xs uppercase before:absolute before:-start-3 before:top-1/2 before:h-0.5 before:w-2.5">Applications</li>
+
+                <!-- Accordion Menu Item (Level 0) -->
+                <li class="active accordion-item" id="app-user">
+                  <button class="accordion-toggle accordion-item-active:bg-neutral/10 inline-flex items-center p-2 text-start text-sm font-normal" aria-controls="app-user-collapse-app-user" aria-expanded="true">
+                    <span class="text-bg-neutral rounded-field flex size-6 items-center justify-center">
+                      <span class="icon-[tabler--user] size-4.5"></span>
+                    </span>
+                    <span class="grow">User</span>
+                    <span class="icon-[tabler--chevron-right] accordion-item-active:rotate-90 size-4.5 shrink-0 transition-transform duration-300 rtl:rotate-180"></span>
+                  </button>
+                  <div id="app-user-collapse-app-user" class="accordion-content mt-1 block w-full overflow-hidden transition-[height] duration-300" aria-labelledby="app-user" role="region">
+                    <ul class="accordion space-y-1">
+                      <!-- Simple Link Item (for nested items) -->
+                      <li>
+                        <a href="app-user-list.html" class="menu-active px-2">List</a>
+                      </li>
+
+                      <!-- Accordion Menu Item (Level 1) -->
+                      <li class="accordion-item" id="app-user-view">
+                        <button class="accordion-toggle accordion-item-active:bg-neutral/10 inline-flex items-center p-2 text-start text-sm font-normal" aria-controls="view-collapse-app-user-view" aria-expanded="true">
+                          <span class="grow">View</span>
+                          <span class="icon-[tabler--chevron-right] accordion-item-active:rotate-90 size-4.5 shrink-0 transition-transform duration-300 rtl:rotate-180"></span>
+                        </button>
+                        <div id="view-collapse-app-user-view" class="accordion-content mt-1 hidden w-full overflow-hidden transition-[height] duration-300" aria-labelledby="app-user-view" role="region">
+                          <ul class="space-y-1">
+                            <!-- Simple Link Item (for nested items) -->
+                            <li>
+                              <a href="app-user-view-account.html" class="px-2">Account</a>
+                            </li>
+
+                            <!-- Simple Link Item (for nested items) -->
+                            <li>
+                              <a href="app-user-view-security.html" class="px-2">Security</a>
+                            </li>
+
+                            <!-- Simple Link Item (for nested items) -->
+                            <li>
+                              <a href="app-user-view-billing.html" class="px-2">Billing & Plans</a>
+                            </li>
+
+                            <!-- Simple Link Item (for nested items) -->
+                            <li>
+                              <a href="app-user-view-notifications.html" class="px-2">Notifications</a>
+                            </li>
+
+                            <!-- Simple Link Item (for nested items) -->
+                            <li>
+                              <a href="app-user-view-connections.html" class="px-2">Connections</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+
+                <!-- Accordion Menu Item (Level 0) -->
+                <li class="accordion-item" id="roles-permission">
+                  <button class="accordion-toggle accordion-item-active:bg-neutral/10 inline-flex items-center p-2 text-start text-sm font-normal" aria-controls="roles-permission-collapse-roles-permission" aria-expanded="true">
+                    <span class="text-bg-neutral rounded-field flex size-6 items-center justify-center">
+                      <span class="icon-[tabler--shield-check] size-4.5"></span>
+                    </span>
+                    <span class="grow">Roles & Permissions</span>
+                    <span class="icon-[tabler--chevron-right] accordion-item-active:rotate-90 size-4.5 shrink-0 transition-transform duration-300 rtl:rotate-180"></span>
+                  </button>
+                  <div id="roles-permission-collapse-roles-permission" class="accordion-content mt-1 hidden w-full overflow-hidden transition-[height] duration-300" aria-labelledby="roles-permission" role="region">
+                    <ul class="space-y-1">
+                      <!-- Simple Link Item (for nested items) -->
+                      <li>
+                        <a href="app-access-roles.html" class="px-2">Roles</a>
+                      </li>
+
+                      <!-- Simple Link Item (for nested items) -->
+                      <li>
+                        <a href="app-access-permission.html" class="px-2">Permission</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </aside>
+      <!-- / Menu -->
+
+      <!-- Layout Container -->
+      <div class="xl:ps-65 flex grow flex-col">
+        <!-- Content -->
+        <main class="mx-auto w-full max-w-[1388px] flex-1 grow p-6">
+          <div class="mb-6 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
+            <div class="card">
+              <div class="card-body flex-row justify-between">
+                <div class="space-y-1">
+                  <p>Session</p>
+                  <div class="flex items-center gap-2">
+                    <h4 class="text-base-content text-2xl font-medium">21,459</h4>
+                    <p class="text-success">(+29%)</p>
+                  </div>
+                  <small>Total Users</small>
+                </div>
+                <div class="avatar avatar-placeholder">
+                  <div class="bg-primary/10 text-primary size-9.5 rounded-field">
+                    <span class="icon-[tabler--users] size-6 shrink-0"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-body flex-row justify-between">
+                <div class="space-y-1">
+                  <p>Paid Users</p>
+                  <div class="flex items-center gap-2">
+                    <h4 class="text-base-content text-2xl font-medium">4,567</h4>
+                    <p class="text-success">(+18%)</p>
+                  </div>
+                  <small>Last week analytics</small>
+                </div>
+                <div class="avatar avatar-placeholder">
+                  <div class="bg-error/10 text-error size-9.5 rounded-field">
+                    <span class="icon-[tabler--user-plus] size-6 shrink-0"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-body flex flex-row justify-between">
+                <div class="space-y-1">
+                  <p>Active Users</p>
+                  <div class="flex items-center gap-2">
+                    <h4 class="text-base-content text-2xl font-medium">19,860</h4>
+                    <p class="text-error">(-14%)</p>
+                  </div>
+                  <small>Last week analytics</small>
+                </div>
+                <div class="avatar avatar-placeholder">
+                  <div class="bg-success/10 text-success size-9.5 rounded-field">
+                    <span class="icon-[tabler--user-check] size-6 shrink-0"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-body flex flex-row justify-between">
+                <div class="space-y-1">
+                  <p>Pending Users</p>
+                  <div class="flex items-center gap-2">
+                    <h4 class="text-base-content text-2xl font-medium">237</h4>
+                    <p class="text-success">(+42%)</p>
+                  </div>
+                  <small>Last week analytics</small>
+                </div>
+                <div class="avatar avatar-placeholder">
+                  <div class="bg-warning/10 text-warning size-9.5 rounded-field">
+                    <span class="icon-[tabler--user-share] size-6 shrink-0"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            id="users-dashboard"
+            class="bg-base-100 --prevent-on-load-init flex flex-col rounded-md"
+            data-datatable='{
+  "pageLength": 10,
+  "pagingOptions": {
+    "pageBtnClasses": "btn btn-text btn-square"
+  },
+ "selecting": true,
+  "rowSelectingOptions": {
+    "selectAllSelector": "#table-ajax-all"
+},
+    "ajax": "../assets/json/user-list.json",
+    "columns": [
+      { "data": "" },
+    { "data": "full_name" },
+    { "data": "role" },
+    { "data": "current_plan" },
+    { "data": "billing" },
+    { "data": "status" },
+    { "data": "" }
+],
+  "language": {
+      "zeroRecords": "<div class=\"py-10 px-5 flex flex-col justify-center items-center text-center\"><span class=\"icon-[tabler--search] shrink-0 size-6 text-base-content\"></span><div class=\"max-w-sm mx-auto\"><p class=\"mt-2 text-sm text-base-content/80\">No search results</p></div></div>"
+    }
+}'>
+            <div class="border-base-content/25 border-b p-6">
+              <h2 class="card-title mb-4">Search Filters</h2>
+              <div class="flex items-center justify-between gap-6 max-sm:flex-col">
+                <select
+                  data-select='{
+            "placeholder": "Select Role...",
+            "toggleTag": "<button type=\"button\" aria-expanded=\"false\"></button>",
+            "toggleClasses": "advance-select-toggle",
+            "wrapperClasses": "w-full",
+            "dropdownClasses": "advance-select-menu",
+            "optionClasses": "advance-select-option selected:select-active",
+            "optionTemplate": "<div class=\"flex justify-between items-center w-full\"><span data-title></span><span class=\"icon-[tabler--check] shrink-0 size-5 text-primary hidden selected:block \"></span></div>",
+            "extraMarkup": "<span class=\"icon-[tabler--chevron-down] shrink-0 size-5 text-base-content absolute top-1/2 end-3 -translate-y-1/2 \"></span>"
+            }'
+                  class="hidden"
+                  id="select-role">
+                  <option value="all">All Role</option>
+                  <option value="Subscriber">Subscriber</option>
+                  <option value="Admin">Admin</option>
+                  <option value="Author">Author</option>
+                  <option value="Maintainer">Maintainer</option>
+                  <option value="Editor">Editor</option>
+                </select>
+                <select
+                  data-select='{
+            "placeholder": "Select Plan...",
+            "toggleTag": "<button type=\"button\" aria-expanded=\"false\"></button>",
+            "toggleClasses": "advance-select-toggle",
+            "wrapperClasses": "w-full",
+            "dropdownClasses": "advance-select-menu",
+            "optionClasses": "advance-select-option selected:select-active",
+            "optionTemplate": "<div class=\"flex justify-between items-center w-full\"><span data-title></span><span class=\"icon-[tabler--check] shrink-0 size-5 text-primary hidden selected:block \"></span></div>",
+            "extraMarkup": "<span class=\"icon-[tabler--chevron-down] shrink-0 size-5 text-base-content absolute top-1/2 end-3 -translate-y-1/2 \"></span>"
+            }'
+                  class="hidden"
+                  id="select-plan">
+                  <option value="all">All Plan</option>
+                  <option value="Enterprise">Enterprise</option>
+                  <option value="Company">Company</option>
+                  <option value="Team">Team</option>
+                </select>
+
+                <select
+                  data-select='{
+            "placeholder": "Select Status...",
+            "toggleTag": "<button type=\"button\" aria-expanded=\"false\"></button>",
+            "toggleClasses": "advance-select-toggle",
+            "wrapperClasses": "w-full",
+            "dropdownClasses": "advance-select-menu",
+            "optionClasses": "advance-select-option selected:select-active",
+            "optionTemplate": "<div class=\"flex justify-between items-center w-full\"><span data-title></span><span class=\"icon-[tabler--check] shrink-0 size-5 text-primary hidden selected:block \"></span></div>",
+            "extraMarkup": "<span class=\"icon-[tabler--chevron-down] shrink-0 size-5 text-base-content absolute top-1/2 end-3 -translate-y-1/2 \"></span>"
+            }'
+                  class="hidden"
+                  id="select-status">
+                  <option value="all">All Status</option>
+                  <option value="Pending">Pending</option>
+                  <option value="Inactive">Inactive</option>
+                  <option value="Active">Active</option>
+                </select>
+              </div>
+            </div>
+            <div class="border-base-content/25 flex items-center gap-3 border-b p-6">
+              <!-- Select -->
+              <select
+                data-select='{
+          "placeholder": "Select option...",
+          "toggleTag": "<button type=\"button\" aria-expanded=\"false\"></button>",
+          "toggleClasses": "advance-select-toggle w-20",
+          "dropdownClasses": "advance-select-menu w-24",
+          "optionClasses": "advance-select-option selected:select-active",
+          "optionTemplate": "<div class=\"flex justify-between items-center w-full\"><span data-title></span><span class=\"icon-[tabler--check] shrink-0 size-5 text-primary hidden selected:block \"></span></div>",
+          "extraMarkup": "<span class=\"icon-[tabler--chevron-down] shrink-0 size-5 text-base-content absolute top-1/2 end-3 -translate-y-1/2 \"></span>"
+          }'
+                class="hidden"
+                data-datatable-page-entities="">
+                <option value="10" selected="">10</option>
+                <option value="25">25</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+              </select>
+              <!-- End Select -->
+              <div class="flex flex-1 items-center justify-end gap-4">
+                <!-- Search user -->
+                <div class="input max-w-60">
+                  <span class="icon-[tabler--search] text-base-content/80 my-auto me-3 size-4 shrink-0"></span>
+                  <label class="sr-only" for="filter-search"></label>
+                  <input type="search" class="grow" placeholder="Search User" id="filter-search" data-datatable-search="" />
+                </div>
+                <!-- End Search user -->
+                <!-- Export Buttons -->
+                <div id="dropdown-datatable-with-export" class="dropdown relative inline-flex">
+                  <button id="datatable-export-dropdown" type="button" class="dropdown-toggle max-sm:btn-square btn btn-soft" aria-haspopup="menu" aria-expanded="false" aria-label="Dropdown">
+                    <span class="flex items-center gap-3">
+                      <span class="icon-[tabler--upload] size-5"></span>
+                      <span class="max-sm:hidden">Export</span>
+                    </span>
+                    <span class="icon-[tabler--chevron-down] dropdown-open:rotate-180 size-5 max-sm:hidden"></span>
+                  </button>
+                  <div class="dropdown-menu dropdown-open:opacity-100 max-w-35 hidden w-full" role="menu" aria-orientation="vertical" aria-labelledby="datatable-export-dropdown">
+                    <button type="button" class="dropdown-item cursor-pointer" data-datatable-action-type="print">
+                      <span class="icon-[tabler--printer] size-4 shrink-0"></span>
+                      Print
+                    </button>
+                    <button type="button" class="dropdown-item cursor-pointer" data-datatable-action-type="csv">
+                      <span class="icon-[tabler--file-type-csv] size-4 shrink-0"></span>
+                      CSV
+                    </button>
+                    <button type="button" class="dropdown-item cursor-pointer" data-datatable-action-type="excel">
+                      <span class="icon-[tabler--file-excel] size-4 shrink-0"></span>
+                      Excel
+                    </button>
+                    <button type="button" class="dropdown-item cursor-pointer" data-datatable-action-type="pdf">
+                      <span class="icon-[tabler--file-type-pdf] size-4 shrink-0"></span>
+                      PDF
+                    </button>
+                    <button type="button" class="dropdown-item cursor-pointer" data-datatable-action-type="copy">
+                      <span class="icon-[tabler--clipboard-copy] size-4 shrink-0"></span>
+                      Copy
+                    </button>
+                  </div>
+                </div>
+                <!-- End Export Buttons -->
+                <button class="btn btn-primary max-sm:btn-square">
+                  <span class="icon-[tabler--plus] size-5 shrink-0"></span>
+                  <span class="max-sm:hidden">Add New User</span>
+                </button>
+              </div>
+            </div>
+            <div class="overflow-x-auto">
+              <div class="inline-block min-w-full align-middle">
+                <div class="overflow-hidden">
+                  <table class="datatables-users table min-w-full">
+                    <thead>
+                      <tr>
+                        <th data-datatable-col-index="0" scope="col" class="--exclude-from-ordering w-3.5">
+                          <div class="flex h-5 items-center">
+                            <input id="table-ajax-all" type="checkbox" class="checkbox checkbox-primary checkbox-sm" />
+                            <label for="table-ajax-all" class="sr-only">Checkbox</label>
+                          </div>
+                        </th>
+                        <th data-datatable-col-index="1" scope="col" class="group w-fit">
+                          <div class="flex items-center justify-between">
+                            USER
+                            <span class="icon-[tabler--chevron-up] datatable-ordering-asc:block hidden"></span>
+                            <span class="icon-[tabler--chevron-down] datatable-ordering-desc:block hidden"></span>
+                          </div>
+                        </th>
+                        <th data-datatable-col-index="2" scope="col" class="group w-fit ps-0">
+                          <div class="flex items-center justify-between ps-5">
+                            ROLE
+                            <span class="icon-[tabler--chevron-up] datatable-ordering-asc:block hidden"></span>
+                            <span class="icon-[tabler--chevron-down] datatable-ordering-desc:block hidden"></span>
+                          </div>
+                        </th>
+                        <th data-datatable-col-index="3" scope="col" class="group w-fit ps-0">
+                          <div class="flex items-center justify-between ps-5">
+                            PLAN
+                            <span class="icon-[tabler--chevron-up] datatable-ordering-asc:block hidden"></span>
+                            <span class="icon-[tabler--chevron-down] datatable-ordering-desc:block hidden"></span>
+                          </div>
+                        </th>
+                        <th data-datatable-col-index="4" scope="col" class="group w-fit ps-0">
+                          <div class="flex items-center justify-between ps-5">
+                            BILLING
+                            <span class="icon-[tabler--chevron-up] datatable-ordering-asc:block hidden"></span>
+                            <span class="icon-[tabler--chevron-down] datatable-ordering-desc:block hidden"></span>
+                          </div>
+                        </th>
+                        <th data-datatable-col-index="5" scope="col" class="group w-fit ps-0">
+                          <div class="flex items-center justify-between ps-5">
+                            STATUS
+                            <span class="icon-[tabler--chevron-up] datatable-ordering-asc:block hidden"></span>
+                            <span class="icon-[tabler--chevron-down] datatable-ordering-desc:block hidden"></span>
+                          </div>
+                        </th>
+                        <th data-datatable-col-index="-1" scope="col" class="--exclude-from-ordering ps-0">
+                          <span class="ps-4">Actions</span>
+                        </th>
+                      </tr>
+                    </thead>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="border-base-content/25 flex items-center justify-between gap-3 border-t px-6 py-3 max-md:flex-wrap max-md:justify-center">
+              <div class="text-base-content/50 text-sm" data-datatable-info="">
+                Showing
+                <span data-datatable-info-from="1"></span>
+                to
+                <span data-datatable-info-to="30"></span>
+                of
+                <span data-datatable-info-length="50"></span>
+                entries
+              </div>
+              <div class="flex hidden items-center space-x-1" data-datatable-paging="">
+                <button type="button" class="btn btn-text btn-square" data-datatable-paging-prev="">
+                  <span class="icon-[tabler--chevrons-left] size-5.5 rtl:rotate-180"></span>
+                  <span class="sr-only">Previous</span>
+                </button>
+                <div class="[&>.active]:text-bg-soft-primary flex items-center space-x-1" data-datatable-paging-pages=""></div>
+                <button type="button" class="btn btn-text btn-square" data-datatable-paging-next="">
+                  <span class="sr-only">Next</span>
+                  <span class="icon-[tabler--chevrons-right] size-5.5 rtl:rotate-180"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </main>
+        <!-- / Content -->
+
+        <!-- Footer: Start -->
+        <footer class="mx-auto w-full max-w-[1388px] px-6 py-3.5 text-sm">
+          <div class="flex items-center justify-between gap-3 max-lg:flex-col">
+            <p class="text-base-content text-center">
+              &copy;2025
+              <a href="https://flyonui.com/" class="text-primary">FlyonUI</a>
+              , Made With ❤️ for a better web.
+            </p>
+            <div class="justify-enter flex items-center gap-4 max-sm:flex-col">
+              <a href="https://flyonui.com/templates" class="link link-primary link-animated font-normal" aria-label="More Templates" target="_blank">More Templates</a>
+              <a href="https://flyonui.com/docs/pro/templates/" class="link link-primary link-animated font-normal" aria-label="Documentation" target="_blank">Documentation</a>
+              <a href="https://flyonui.com/support" class="link link-primary link-animated font-normal" aria-label="Support" target="_blank">Support</a>
+              <a href="https://flyonui.com/docs/changelog-pro/" class="link link-primary link-animated font-normal" aria-label="Changelog" target="_blank">Changelog</a>
+              <a href="https://flyonui.com/license/" class="link link-primary link-animated font-normal" aria-label="License" target="_blank">License</a>
+            </div>
+          </div>
+        </footer>
+        <!-- Footer: End -->
+      </div>
+      <!-- / Layout Container -->
+    </div>
+    <!-- / Layout Wrapper -->
+
+    <!-- Vendors JS -->
+    <script src="../assets/dist/libs/jquery/dist/jquery.min.js"></script>
+    <script src="../assets/dist/libs/datatables.net/js/dataTables.min.js"></script>
+    <script src="../assets/dist/libs/jszip/dist/jszip.min.js"></script>
+    <script src="../assets/dist/libs/pdfmake/build/pdfmake.min.js"></script>
+    <script src="../assets/dist/libs/pdfmake/build/vfs_fonts.js"></script>
+    <script src="../assets/dist/libs/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="../assets/dist/libs/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="../assets/dist/libs/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <!-- FlyonUI JS -->
+    <script src="../assets/dist/libs/flyonui/flyonui.js"></script>
+
+    <!-- Theme Utils JS -->
+    <script src="../assets/dist/js/theme-utils.js"></script>
+
+    <!-- Main JS -->
+    <script src="../assets/dist/js/main.js"></script>
+
+    <!-- Search JS -->
+    <script src="../assets/dist/js/search.js"></script>
+
+    <!-- Page JS -->
+    <script src="../assets/dist/js/app-user-list.js"></script>
+  </body>
+</html>

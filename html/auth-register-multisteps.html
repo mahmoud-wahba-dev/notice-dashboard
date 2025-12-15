@@ -1,0 +1,406 @@
+<!doctype html>
+
+<html lang="en" data-theme="light" data-assets-path="../assets/" data-layout-path="dashboard-default/" dir="ltr" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Register - Pages | FlyonUI - Dashboard PRO</title>
+
+    <meta name="description" content=" FlyonUIPro is the best FlyonUI dashboard for responsive web apps. Streamline your app development process with ease." />
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&ampdisplay=swap" rel="stylesheet" />
+
+    <!-- Core CSS -->
+    <!-- endbuild -->
+
+    <!-- Vendor CSS -->
+
+    <!-- build:css -->
+    <link rel="stylesheet" href="../assets/dist/css/output.css" />
+
+    <!-- Page CSS -->
+
+    <!-- Theme JS -->
+    <script type="text/javascript">
+      (function () {
+        try {
+          const root = document.documentElement;
+          const layoutPath = root.getAttribute('data-layout-path')?.replace('/', '') || 'dashboard-default';
+          const localStorageKey = `${layoutPath}-theme`;
+
+          // Theme configuration loaded from page-config.json at build time
+          window.THEME_CONFIG = { 'dashboard-default': { default: 'light', light: 'light', dark: 'dark', system: { light: 'light', dark: 'dark' } } };
+
+          // Get current system theme preference
+          const getSystemPreference = () => window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+          // Resolve theme based on user selection and layout configuration
+          const resolveTheme = (selectedTheme, layoutPath) => {
+            const layoutConfig = window.THEME_CONFIG[layoutPath];
+            if (!layoutConfig) return selectedTheme === 'system' ? (getSystemPreference() ? 'dark' : 'light') : selectedTheme;
+
+            if (selectedTheme === 'system') {
+              const systemConfig = layoutConfig.system;
+              const prefersDark = getSystemPreference();
+              return prefersDark ? systemConfig.dark : systemConfig.light;
+            }
+
+            return layoutConfig[selectedTheme] || selectedTheme || layoutConfig.default || 'light';
+          };
+
+          const savedTheme = localStorage.getItem(localStorageKey) || 'system';
+          const resolvedTheme = resolveTheme(savedTheme, layoutPath);
+
+          root.setAttribute('data-theme', resolvedTheme);
+        } catch (e) {
+          console.warn('Early theme script error:', e);
+        }
+      })();
+    </script>
+  </head>
+
+  <body>
+    <!-- Layout wrapper -->
+    <!-- Content -->
+    <div class="bg-base-100 relative grid min-h-screen lg:grid-cols-12">
+      <!-- Logo -->
+      <div class="z-1 absolute start-6 top-6 flex items-center gap-3">
+        <span class="text-primary">
+          <svg width="32" height="32" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_18078_104881)">
+              <mask id="mask0_18078_104881" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="34" height="34">
+                <path d="M25.5 0H8.5C3.80558 0 0 3.80558 0 8.5V25.5C0 30.1944 3.80558 34 8.5 34H25.5C30.1944 34 34 30.1944 34 25.5V8.5C34 3.80558 30.1944 0 25.5 0Z" fill="white" />
+              </mask>
+              <g mask="url(#mask0_18078_104881)">
+                <path d="M25.5 0H8.5C3.80558 0 0 3.80558 0 8.5V25.5C0 30.1944 3.80558 34 8.5 34H25.5C30.1944 34 34 30.1944 34 25.5V8.5C34 3.80558 30.1944 0 25.5 0Z" fill="url(#paint0_linear_18078_104881)" />
+                <path
+                  d="M16.1238 20.1522C16.511 19.662 17.2479 19.6428 17.66 20.1122L20.5526 23.41C21.1194 24.0563 20.6611 25.0689 19.8016 25.0692H14.3055C13.47 25.0692 13.0026 24.1059 13.5203 23.4501L16.1238 20.1522ZM16.1326 8.45497C16.5308 7.95801 17.286 7.95453 17.6883 8.44813L27.5164 20.5077C28.0488 21.161 27.5838 22.1395 26.741 22.1395H24.4442C24.1428 22.1395 23.8577 22.0034 23.6678 21.7694L17.7029 14.4188C17.2962 13.9175 16.5285 13.927 16.1346 14.4384L10.7303 21.454C10.5411 21.6996 10.2484 21.8435 9.9383 21.8436H7.4881C6.64925 21.8436 6.18332 20.8733 6.70783 20.2186L16.1326 8.45497Z"
+                  fill="url(#paint1_linear_18078_104881)" />
+              </g>
+              <path d="M25.5002 0.707886H8.50017C4.19695 0.707886 0.708496 4.19634 0.708496 8.49956V25.4996C0.708496 29.8028 4.19695 33.2912 8.50017 33.2912H25.5002C29.8034 33.2912 33.2918 29.8028 33.2918 25.4996V8.49956C33.2918 4.19634 29.8034 0.707886 25.5002 0.707886Z" stroke="url(#paint2_linear_18078_104881)" stroke-width="2" />
+            </g>
+            <defs>
+              <linearGradient id="paint0_linear_18078_104881" x1="30.2812" y1="2.65625" x2="4.25" y2="32.4063" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="currentColor" />
+                <stop offset="1" stop-color="currentColor" />
+              </linearGradient>
+              <linearGradient id="paint1_linear_18078_104881" x1="17.1147" y1="8.08008" x2="17.1147" y2="25.0692" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="white" />
+                <stop offset="1" stop-color="white" stop-opacity="0.6" />
+              </linearGradient>
+              <linearGradient id="paint2_linear_18078_104881" x1="17.0002" y1="-0.000447931" x2="17.0002" y2="33.9996" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="white" stop-opacity="0.28" />
+                <stop offset="1" stop-color="white" stop-opacity="0.04" />
+              </linearGradient>
+              <clipPath id="clip0_18078_104881">
+                <rect width="34" height="34" fill="white" />
+              </clipPath>
+            </defs>
+          </svg>
+        </span>
+
+        <h2 class="text-base-content text-xl font-bold">FlyonUI</h2>
+      </div>
+
+      <div class="bg-base-200 relative h-full w-full overflow-hidden p-4 max-lg:hidden lg:col-span-4">
+        <img src="../assets/img/illustrations/auth-multisteps.png" alt="Illustration" class="bottom-1/5 z-1 h-146 absolute start-1/2 max-w-fit -translate-x-1/2 rtl:translate-x-1/2" />
+
+        <div class="bg-base-300/6 -start-1/5 -bottom-2/5 size-200 absolute rounded-full"></div>
+      </div>
+
+      <!-- Stepper -->
+      <div class="flex justify-center p-8 lg:col-span-8">
+        <div data-stepper="" class="lg:max-w-200 flex w-full flex-col justify-center gap-8 pt-16 sm:gap-12">
+          <!-- Stepper Nav -->
+          <ul class="relative flex gap-6 overflow-x-auto max-md:flex-col md:gap-2">
+            <li class="group flex flex-1 shrink basis-0 items-center gap-x-2" data-stepper-nav-item='{ "index": 1 }'>
+              <div class="flex items-center gap-2">
+                <div class="avatar avatar-placeholder">
+                  <div class="stepper-active:text-bg-primary stepper-success:text-bg-primary stepper-completed:text-bg-success text-bg-soft-neutral size-9.5 rounded-full">
+                    <span class="icon-[tabler--home] size-5 shrink-0"></span>
+                  </div>
+                </div>
+                <div class="shrink-0">
+                  <h6 class="text-base-content mb-0.5">Account Details</h6>
+                  <p class="text-base-content/50 text-sm">Account Details</p>
+                </div>
+              </div>
+              <span class="stepper-success:bg-primary stepper-completed:bg-success text-base-content icon-[tabler--chevron-right] size-4 flex-1 group-last:hidden max-md:hidden rtl:rotate-180"></span>
+            </li>
+            <li class="group flex flex-1 shrink basis-0 items-center gap-x-2" data-stepper-nav-item='{ "index": 2 }'>
+              <div class="flex items-center gap-2">
+                <div class="avatar avatar-placeholder">
+                  <div class="stepper-active:text-bg-primary stepper-success:text-bg-primary stepper-error:text-bg-error stepper-completed:text-bg-success text-bg-soft-neutral size-9.5 rounded-full">
+                    <span class="icon-[tabler--user] size-5 shrink-0"></span>
+                  </div>
+                </div>
+                <div class="shrink-0">
+                  <h6 class="text-base-content mb-0.5">Personal Info</h6>
+                  <p class="text-base-content/50 text-sm">Add Personal Info</p>
+                </div>
+              </div>
+              <span class="stepper-success:bg-primary stepper-completed:bg-success text-base-content icon-[tabler--chevron-right] size-4 flex-1 group-last:hidden max-md:hidden rtl:rotate-180"></span>
+            </li>
+            <li class="group flex flex-1 shrink basis-0 items-center gap-x-2" data-stepper-nav-item='{ "index": 3 }'>
+              <div class="flex items-center gap-2">
+                <div class="avatar avatar-placeholder">
+                  <div class="stepper-active:text-bg-primary stepper-success:text-bg-primary stepper-error:text-bg-error stepper-completed:text-bg-success text-bg-soft-neutral size-9.5 rounded-full">
+                    <span class="icon-[tabler--credit-card-pay] size-5 shrink-0"></span>
+                  </div>
+                </div>
+                <div class="shrink-0">
+                  <h6 class="text-base-content mb-0.5">Billing</h6>
+                  <p class="text-base-content/50 text-sm">Payment Details</p>
+                </div>
+              </div>
+              <span class="stepper-success:bg-primary stepper-completed:bg-success text-base-content icon-[tabler--chevron-right] size-4 flex-1 group-last:hidden rtl:rotate-180"></span>
+            </li>
+            <!-- End Item -->
+          </ul>
+          <!-- End Stepper Nav -->
+          <div>
+            <!-- First Content -->
+            <div data-stepper-content-item='{ "index": 1 }'>
+              <div class="space-y-4">
+                <h2 class="text-base-content text-2xl font-semibold">Account Details</h2>
+                <p class="text-base-content/80">Setup Account Details</p>
+                <div class="grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2">
+                  <!-- Username -->
+                  <div>
+                    <label class="label-text" for="username">Username</label>
+                    <input type="text" placeholder="johndoe" class="input" id="username" required />
+                  </div>
+                  <!-- Email -->
+                  <div>
+                    <label class="label-text" for="email">Email</label>
+                    <input type="email" placeholder="john@example.com" class="input" id="email" required />
+                  </div>
+                  <!-- Password -->
+                  <div>
+                    <label class="label-text" for="password">Password</label>
+                    <div class="input">
+                      <input id="password" type="password" placeholder="Enter password" required />
+                      <button type="button" data-toggle-password='{ "target": "#password" }' class="block cursor-pointer" aria-label="password toggle">
+                        <span class="icon-[tabler--eye] text-base-content/80 password-active:block hidden size-5 shrink-0"></span>
+                        <span class="icon-[tabler--eye-off] text-base-content/80 password-active:hidden block size-5 shrink-0"></span>
+                      </button>
+                    </div>
+                  </div>
+                  <!-- Confirm Password -->
+                  <div>
+                    <label class="label-text" for="confirmPassword">Confirm Password</label>
+                    <div class="input">
+                      <input id="confirmPassword" type="password" placeholder="Enter confirm password" required />
+                      <button type="button" data-toggle-password='{ "target": "#confirmPassword" }' class="block cursor-pointer" aria-label="password toggle">
+                        <span class="icon-[tabler--eye] text-base-content/80 password-active:block hidden size-5 shrink-0"></span>
+                        <span class="icon-[tabler--eye-off] text-base-content/80 password-active:hidden block size-5 shrink-0"></span>
+                      </button>
+                    </div>
+                  </div>
+                  <!-- Profile Link -->
+                  <div class="md:col-span-2">
+                    <label class="label-text" for="profileLink">Profile Link</label>
+                    <input type="text" placeholder="johndoe/profile" class="input" id="profileLink" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End First Content -->
+            <!-- Second Content -->
+            <div data-stepper-content-item='{ "index": 2 }' style="display: none;">
+              <div class="space-y-4">
+                <div>
+                  <h2 class="text-base-content mb-2 text-xl font-semibold">Personal Information</h2>
+                  <p class="mb-6">Enter Your Personal Information</p>
+                </div>
+                <div class="grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2">
+                  <!-- First Name -->
+                  <div>
+                    <label class="label-text" for="firstName">First Name</label>
+                    <input type="text" placeholder="John" class="input" id="firstName" required />
+                  </div>
+                  <!-- Last Name -->
+                  <div>
+                    <label class="label-text" for="lastName">Last Name</label>
+                    <input type="text" placeholder="Doe" class="input" id="lastName" required />
+                  </div>
+                  <!-- Mobile -->
+                  <div>
+                    <label class="label-text" for="mobile">Mobile</label>
+                    <input type="tel" placeholder="202 5698 1444" class="input" id="mobile" required />
+                  </div>
+                  <!-- Pincode -->
+                  <div>
+                    <label class="label-text" for="pincode">Pincode</label>
+                    <input type="text" placeholder="Postal code" class="input" id="pincode" required />
+                  </div>
+                  <!-- Address -->
+                  <div class="md:col-span-2">
+                    <label class="label-text" for="address">Address</label>
+                    <input type="text" placeholder="Address" class="input" id="address" required />
+                  </div>
+                  <!-- Landmark -->
+                  <div class="md:col-span-2">
+                    <label class="label-text" for="landmark">Landmark</label>
+                    <input type="text" placeholder="Landmark/Area" class="input" id="landmark" />
+                  </div>
+                  <!-- City -->
+                  <div>
+                    <label class="label-text" for="city">City</label>
+                    <input type="text" placeholder="Jackson" class="input" id="city" required />
+                  </div>
+                  <!-- State -->
+                  <div>
+                    <label class="label-text" for="state">State</label>
+                    <select class="select" id="state" required>
+                      <option value="">Select any country</option>
+                      <option value="alabama">Alabama</option>
+                      <option value="alaska">Alaska</option>
+                      <option value="arizona">Arizona</option>
+                      <option value="arkansas">Arkansas</option>
+                      <option value="california">California</option>
+                      <option value="colorado">Colorado</option>
+                      <option value="connecticut">Connecticut</option>
+                      <option value="delaware">Delaware</option>
+                      <option value="florida">Florida</option>
+                      <option value="georgia">Georgia</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End Second Content -->
+            <!-- Third Content -->
+            <div data-stepper-content-item='{ "index": 3 }' style="display: none;">
+              <div class="space-y-4">
+                <!-- Select Plan Section -->
+                <div>
+                  <h2 class="text-base-content text-2xl font-semibold">Select Plan</h2>
+                  <p class="text-base-content/80">Select plan as per your requirement</p>
+                </div>
+
+                <div class="grid grid-cols-1 gap-6 sm:grid-cols-3">
+                  <!-- Basic Plan -->
+                  <label class="custom-option flex flex-col items-center gap-3 text-center">
+                    <span class="label-text flex flex-col">
+                      <span class="mb-1 text-base font-medium">Basic</span>
+                      <span class="text-base-content/80">Get 1 project with 1 teams members.</span>
+                      <span class="mt-3 flex justify-center gap-0.5">
+                        <span class="text-base-content/80 self-start text-sm font-medium">$</span>
+                        <span class="text-primary text-3xl font-bold">0</span>
+                        <span class="text-base-content/50 mt-3 font-medium">/month</span>
+                      </span>
+                    </span>
+                    <input type="radio" name="radio-19" class="radio radio-primary radio-sm radio-inset" />
+                  </label>
+                  <!-- Pro Plan -->
+                  <label class="custom-option flex flex-col items-center gap-3 text-center">
+                    <span class="label-text flex flex-col">
+                      <span class="mb-1 text-base font-medium">Pro</span>
+                      <span class="text-base-content/80">Get 2 project with 2 teams members.</span>
+                      <span class="mt-3 flex justify-center gap-0.5">
+                        <span class="text-base-content/80 self-start text-sm font-medium">$</span>
+                        <span class="text-primary text-3xl font-bold">99</span>
+                        <span class="text-base-content/50 mt-3 font-medium">/month</span>
+                      </span>
+                    </span>
+                    <input type="radio" name="radio-19" class="radio radio-primary radio-sm radio-inset" checked />
+                  </label>
+                  <!-- Elite Plan -->
+                  <label class="custom-option flex flex-col items-center gap-3 text-center">
+                    <span class="label-text flex flex-col">
+                      <span class="mb-1 text-base font-medium">Elite</span>
+                      <span class="text-base-content/80">Get 10 project with 10 teams members.</span>
+                      <span class="mt-3 flex justify-center gap-0.5">
+                        <span class="text-base-content/80 self-start text-sm font-medium">$</span>
+                        <span class="text-primary text-3xl font-bold">299</span>
+                        <span class="text-base-content/50 mt-3 font-medium">/month</span>
+                      </span>
+                    </span>
+                    <input type="radio" name="radio-19" class="radio radio-primary radio-sm radio-inset" />
+                  </label>
+                </div>
+
+                <!-- Payment Information Section -->
+                <div>
+                  <h2 class="text-base-content text-2xl font-semibold">Payment Information</h2>
+                  <p class="text-base-content/80">Enter your card information</p>
+                </div>
+                <div class="grid grid-cols-1 gap-x-6 gap-y-4 md:grid-cols-5">
+                  <!-- Card Number -->
+                  <div class="md:col-span-5">
+                    <label class="label-text" for="cardNumber">Card Number</label>
+                    <input type="text" class="input" id="cardNumber" placeholder="1458 5222 02585" />
+                  </div>
+                  <!-- Name on Card -->
+                  <div class="md:col-span-3">
+                    <label class="label-text" for="cardName">Name on Card</label>
+                    <input type="text" class="input" id="cardName" placeholder="John Doe" />
+                  </div>
+                  <!-- Expiry Date -->
+                  <div>
+                    <label class="label-text" for="expiryDate">Expiry Date</label>
+                    <input type="text" class="input" id="expiryDate" placeholder="MM/YY" />
+                  </div>
+                  <!-- CVV Code -->
+                  <div>
+                    <label class="label-text" for="cvvCode">CVV Code</label>
+                    <input type="text" class="input" id="cvvCode" placeholder="635" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End Third Content -->
+            <!-- Final Content -->
+            <div data-stepper-content-item='{ "isFinal": true }' style="display: none;">
+              <div class="border-base-content/40 bg-base-200/50 flex h-48 items-center justify-center rounded-xl border border-dashed p-4">
+                <h3 class="text-base-content/50 text-2xl">Register Successfully</h3>
+              </div>
+            </div>
+            <!-- End Final Content -->
+            <!-- Button Group -->
+            <div class="mt-8 flex items-center justify-between gap-x-2">
+              <button type="button" class="btn btn-soft" data-stepper-back-btn="">
+                <span class="icon-[tabler--arrow-left] size-5 rtl:rotate-180"></span>
+                Previous
+              </button>
+              <button type="button" class="btn btn-primary" data-stepper-next-btn="">
+                Next
+                <span class="icon-[tabler--arrow-right] text-primary-content size-5 rtl:rotate-180"></span>
+              </button>
+              <button type="button" class="btn btn-success" data-stepper-finish-btn="" style="display: none;">
+                Submit
+                <span class="icon-[tabler--check] size-5 rtl:rotate-180"></span>
+              </button>
+              <button type="reset" class="btn btn-primary" data-stepper-reset-btn="" style="display: none;">Reset</button>
+            </div>
+            <!-- End Button Group -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- / Content -->
+
+    <!-- Vendors JS -->
+
+    <!-- FlyonUI JS -->
+    <script src="../assets/dist/libs/flyonui/flyonui.js"></script>
+
+    <!-- Theme Utils JS -->
+    <script src="../assets/dist/js/theme-utils.js"></script>
+
+    <!-- Main JS -->
+    <script src="../assets/dist/js/main.js"></script>
+
+    <!-- Search JS -->
+    <script src="../assets/dist/js/search.js"></script>
+
+    <!-- Page JS -->
+  </body>
+</html>

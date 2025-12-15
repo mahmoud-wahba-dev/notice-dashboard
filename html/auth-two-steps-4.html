@@ -1,0 +1,129 @@
+<!doctype html>
+
+<html lang="en" data-theme="light" data-assets-path="../assets/" data-layout-path="dashboard-default/" dir="ltr" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Two Steps Verifications - Pages | FlyonUI - Dashboard PRO</title>
+
+    <meta name="description" content=" FlyonUIPro is the best FlyonUI dashboard for responsive web apps. Streamline your app development process with ease." />
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&ampdisplay=swap" rel="stylesheet" />
+
+    <!-- Core CSS -->
+    <!-- endbuild -->
+
+    <!-- Vendor CSS -->
+
+    <!-- build:css -->
+    <link rel="stylesheet" href="../assets/dist/css/output.css" />
+
+    <!-- Page CSS -->
+
+    <!-- Theme JS -->
+    <script type="text/javascript">
+      (function () {
+        try {
+          const root = document.documentElement;
+          const layoutPath = root.getAttribute('data-layout-path')?.replace('/', '') || 'dashboard-default';
+          const localStorageKey = `${layoutPath}-theme`;
+
+          // Theme configuration loaded from page-config.json at build time
+          window.THEME_CONFIG = { 'dashboard-default': { default: 'light', light: 'light', dark: 'dark', system: { light: 'light', dark: 'dark' } } };
+
+          // Get current system theme preference
+          const getSystemPreference = () => window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+          // Resolve theme based on user selection and layout configuration
+          const resolveTheme = (selectedTheme, layoutPath) => {
+            const layoutConfig = window.THEME_CONFIG[layoutPath];
+            if (!layoutConfig) return selectedTheme === 'system' ? (getSystemPreference() ? 'dark' : 'light') : selectedTheme;
+
+            if (selectedTheme === 'system') {
+              const systemConfig = layoutConfig.system;
+              const prefersDark = getSystemPreference();
+              return prefersDark ? systemConfig.dark : systemConfig.light;
+            }
+
+            return layoutConfig[selectedTheme] || selectedTheme || layoutConfig.default || 'light';
+          };
+
+          const savedTheme = localStorage.getItem(localStorageKey) || 'system';
+          const resolvedTheme = resolveTheme(savedTheme, layoutPath);
+
+          root.setAttribute('data-theme', resolvedTheme);
+        } catch (e) {
+          console.warn('Early theme script error:', e);
+        }
+      })();
+    </script>
+  </head>
+
+  <body>
+    <!-- Layout wrapper -->
+    <!-- Content -->
+    <div class="lg:grid lg:grid-cols-2">
+      <div class="bg-base-200 flex flex-col items-center justify-between gap-12 p-10 max-lg:hidden">
+        <div>
+          <h1 class="text-base-content mb-6 font-bold lg:text-4xl">Enable Two-Factor Authentication (2FA)</h1>
+          <p class="text-xl">Enhance the security of your account by enabling Two-Factor Authentication (2FA). With 2FA, you'll add an extra layer of protection.</p>
+        </div>
+        <img src="../assets/img/illustrations/auth-landing.png" alt="dashboard" class="h-118 border-base-content/20 rounded-2xl border object-contain" />
+        <img src="../assets/img/illustrations/tech-icons.png" alt="tech icons" class="h-9 object-contain" />
+      </div>
+      <div class="bg-base-100 flex h-screen flex-col items-center justify-center">
+        <div class="flex w-full flex-col items-center space-y-8 max-sm:p-10 sm:max-w-sm">
+          <div class="text-center">
+            <h3 class="text-base-content mb-3 text-2xl font-semibold md:text-3xl lg:text-4xl">Password Reset 🔐</h3>
+            <p>
+              We sent a code to your mobile number
+              <span class="font-medium">*****1234</span>
+            </p>
+          </div>
+          <form class="mb-6 w-full space-y-6" action="index.html" method="GET">
+            <div class="flex items-center justify-between">
+              <p class="text-base-content font-medium">Code*</p>
+              <a href="#" class="link link-animated link-primary font-normal">Use a recovery code</a>
+            </div>
+            <div class="flex gap-3 max-sm:flex-wrap sm:justify-between" data-pin-input>
+              <input type="text" class="pin-input sm:pin-input-lg" aria-label="pin input" data-pin-input-item autofocus required />
+              <input type="text" class="pin-input sm:pin-input-lg" aria-label="pin input" data-pin-input-item required />
+              <input type="text" class="pin-input sm:pin-input-lg" aria-label="pin input" data-pin-input-item required />
+              <input type="text" class="pin-input sm:pin-input-lg" aria-label="pin input" data-pin-input-item required />
+              <input type="text" class="pin-input sm:pin-input-lg" aria-label="pin input" data-pin-input-item required />
+              <input type="text" class="pin-input sm:pin-input-lg" aria-label="pin input" data-pin-input-item required />
+            </div>
+            <button class="btn btn-lg btn-primary btn-gradient btn-block" type="submit">Reset Password</button>
+          </form>
+          <p class="text-base-content/80 text-center">
+            Didn’t get the code ?
+            <a href="#" class="link link-animated link-primary font-normal">Resend</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- / Content -->
+
+    <!-- Vendors JS -->
+
+    <!-- FlyonUI JS -->
+    <script src="../assets/dist/libs/flyonui/flyonui.js"></script>
+
+    <!-- Theme Utils JS -->
+    <script src="../assets/dist/js/theme-utils.js"></script>
+
+    <!-- Main JS -->
+    <script src="../assets/dist/js/main.js"></script>
+
+    <!-- Search JS -->
+    <script src="../assets/dist/js/search.js"></script>
+
+    <!-- Page JS -->
+  </body>
+</html>

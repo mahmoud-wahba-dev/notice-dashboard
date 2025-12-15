@@ -1,0 +1,410 @@
+[
+  {
+    "name": "Dashboard",
+    "icon": "icon-[tabler--smart-home] size-5 shrink-0",
+    "url": "index.html",
+    "section": "Dashboards"
+  },
+  {
+    "name": "User List",
+    "icon": "icon-[tabler--list-numbers] size-5 shrink-0",
+    "url": "app-user-list.html",
+    "section": "Apps"
+  },
+  {
+    "name": "User View - Account",
+    "icon": "icon-[tabler--user] size-5 shrink-0",
+    "url": "app-user-view-account.html",
+    "section": "Apps"
+  },
+  {
+    "name": "User View - Security",
+    "icon": "icon-[tabler--shield-chevron] size-5 shrink-0",
+    "url": "app-user-view-security.html",
+    "section": "Apps"
+  },
+  {
+    "name": "User View - Billing & Plans",
+    "icon": "icon-[tabler--file-text] size-5 shrink-0",
+    "url": "app-user-view-billing.html",
+    "section": "Apps"
+  },
+  {
+    "name": "User View - Notifications",
+    "icon": "icon-[tabler--notification] size-5 shrink-0",
+    "url": "app-user-view-notifications.html",
+    "section": "Apps"
+  },
+  {
+    "name": "User View - Connections",
+    "icon": "icon-[tabler--brand-google] size-5 shrink-0",
+    "url": "app-user-view-connections.html",
+    "section": "Apps"
+  },
+  {
+    "name": "Roles",
+    "icon": "icon-[tabler--shield-checkered] size-5 shrink-0",
+    "url": "app-access-roles.html",
+    "section": "Apps"
+  },
+  {
+    "name": "Permission",
+    "icon": "icon-[tabler--ban] size-5 shrink-0",
+    "url": "app-access-permission.html",
+    "section": "Apps"
+  },
+  {
+    "name": "User Profile",
+    "icon": "icon-[tabler--user-circle] size-5 shrink-0",
+    "url": "pages-user-profile.html",
+    "section": "Pages"
+  },
+  {
+    "name": "User Profile - Teams",
+    "icon": "icon-[tabler--users] size-5 shrink-0",
+    "url": "pages-user-teams.html",
+    "section": "Pages"
+  },
+  {
+    "name": "User Profile - Projects",
+    "icon": "icon-[tabler--layout-grid] size-5 shrink-0",
+    "url": "pages-user-projects.html",
+    "section": "Pages"
+  },
+  {
+    "name": "User Profile - Connections",
+    "icon": "icon-[tabler--link] size-5 shrink-0",
+    "url": "pages-user-connections.html",
+    "section": "Pages"
+  },
+  {
+    "name": "Account Settings - Account",
+    "icon": "icon-[tabler--user] size-5 shrink-0",
+    "url": "pages-account-settings-account.html",
+    "section": "Pages"
+  },
+  {
+    "name": "Account Settings - Security",
+    "icon": "icon-[tabler--shield-chevron] size-5 shrink-0",
+    "url": "pages-account-settings-security.html",
+    "section": "Pages"
+  },
+  {
+    "name": "Account Settings - Billing & Plans",
+    "icon": "icon-[tabler--file-text] size-5 shrink-0",
+    "url": "pages-account-settings-billing.html",
+    "section": "Pages"
+  },
+  {
+    "name": "Account Settings - Notifications",
+    "icon": "icon-[tabler--notification] size-5 shrink-0",
+    "url": "pages-account-settings-notifications.html",
+    "section": "Pages"
+  },
+  {
+    "name": "Account Settings - Connections",
+    "icon": "icon-[tabler--link] size-5 shrink-0",
+    "url": "pages-account-settings-connections.html",
+    "section": "Pages"
+  },
+  {
+    "name": "FAQ",
+    "icon": "icon-[tabler--help] size-5 shrink-0",
+    "url": "pages-faq.html",
+    "section": "Pages"
+  },
+  {
+    "name": "Pricing",
+    "icon": "icon-[tabler--diamond] size-5 shrink-0",
+    "url": "pages-pricing.html",
+    "section": "Pages"
+  },
+  {
+    "name": "Error",
+    "icon": "icon-[tabler--alert-circle] size-5 shrink-0",
+    "url": "pages-misc-error.html",
+    "section": "Pages"
+  },
+  {
+    "name": "Under Maintenance",
+    "icon": "icon-[tabler--barrier-block] size-5 shrink-0",
+    "url": "pages-misc-under-maintenance.html",
+    "section": "Pages"
+  },
+  {
+    "name": "Coming Soon",
+    "icon": "icon-[tabler--clock] size-5 shrink-0",
+    "url": "pages-misc-coming-soon.html",
+    "section": "Pages"
+  },
+  {
+    "name": "Not Authorized",
+    "icon": "icon-[tabler--user-x] size-5 shrink-0",
+    "url": "pages-misc-not-authorized.html",
+    "section": "Pages"
+  },
+  {
+    "name": "Login 1",
+    "icon": "icon-[tabler--login] size-5 shrink-0",
+    "url": "auth-login-1.html",
+    "section": "Authentication"
+  },
+  {
+    "name": "Login 2",
+    "icon": "icon-[tabler--login] size-5 shrink-0",
+    "url": "auth-login-2.html",
+    "section": "Authentication"
+  },
+  {
+    "name": "Login 3",
+    "icon": "icon-[tabler--login] size-5 shrink-0",
+    "url": "auth-login-3.html",
+    "section": "Authentication"
+  },
+  {
+    "name": "Login 4",
+    "icon": "icon-[tabler--login] size-5 shrink-0",
+    "url": "auth-login-4.html",
+    "section": "Authentication"
+  },
+  {
+    "name": "Login 5",
+    "icon": "icon-[tabler--login] size-5 shrink-0",
+    "url": "auth-login-5.html",
+    "section": "Authentication"
+  },
+  {
+    "name": "Register 1",
+    "icon": "icon-[tabler--user-plus] size-5 shrink-0",
+    "url": "auth-register-1.html",
+    "section": "Authentication"
+  },
+  {
+    "name": "Register 2",
+    "icon": "icon-[tabler--user-plus] size-5 shrink-0",
+    "url": "auth-register-2.html",
+    "section": "Authentication"
+  },
+  {
+    "name": "Register 3",
+    "icon": "icon-[tabler--user-plus] size-5 shrink-0",
+    "url": "auth-register-3.html",
+    "section": "Authentication"
+  },
+  {
+    "name": "Register 4",
+    "icon": "icon-[tabler--user-plus] size-5 shrink-0",
+    "url": "auth-register-4.html",
+    "section": "Authentication"
+  },
+  {
+    "name": "Register 5",
+    "icon": "icon-[tabler--user-plus] size-5 shrink-0",
+    "url": "auth-register-5.html",
+    "section": "Authentication"
+  },
+  {
+    "name": "Register Multi-steps",
+    "icon": "icon-[tabler--user-plus] size-5 shrink-0",
+    "url": "auth-register-multisteps.html",
+    "section": "Authentication"
+  },
+  {
+    "name": "Verify Email 1",
+    "icon": "icon-[tabler--mail] size-5 shrink-0",
+    "url": "auth-verify-email-1.html",
+    "section": "Authentication"
+  },
+  {
+    "name": "Verify Email 2",
+    "icon": "icon-[tabler--mail] size-5 shrink-0",
+    "url": "auth-verify-email-2.html",
+    "section": "Authentication"
+  },
+  {
+    "name": "Verify Email 3",
+    "icon": "icon-[tabler--mail] size-5 shrink-0",
+    "url": "auth-verify-email-3.html",
+    "section": "Authentication"
+  },
+  {
+    "name": "Verify Email 4",
+    "icon": "icon-[tabler--mail] size-5 shrink-0",
+    "url": "auth-verify-email-4.html",
+    "section": "Authentication"
+  },
+  {
+    "name": "Verify Email 5",
+    "icon": "icon-[tabler--mail] size-5 shrink-0",
+    "url": "auth-verify-email-5.html",
+    "section": "Authentication"
+  },
+  {
+    "name": "Reset Password 1",
+    "icon": "icon-[tabler--help] size-5 shrink-0",
+    "url": "auth-reset-password-1.html",
+    "section": "Authentication"
+  },
+  {
+    "name": "Reset Password 2",
+    "icon": "icon-[tabler--help] size-5 shrink-0",
+    "url": "auth-reset-password-2.html",
+    "section": "Authentication"
+  },
+  {
+    "name": "Reset Password 3",
+    "icon": "icon-[tabler--help] size-5 shrink-0",
+    "url": "auth-reset-password-3.html",
+    "section": "Authentication"
+  },
+  {
+    "name": "Reset Password 4",
+    "icon": "icon-[tabler--help] size-5 shrink-0",
+    "url": "auth-reset-password-4.html",
+    "section": "Authentication"
+  },
+  {
+    "name": "Reset Password 5",
+    "icon": "icon-[tabler--help] size-5 shrink-0",
+    "url": "auth-reset-password-5.html",
+    "section": "Authentication"
+  },
+  {
+    "name": "Forgot Password 1",
+    "icon": "icon-[tabler--question-mark] size-5 shrink-0",
+    "url": "auth-forgot-password-1.html",
+    "section": "Authentication"
+  },
+  {
+    "name": "Forgot Password 2",
+    "icon": "icon-[tabler--question-mark] size-5 shrink-0",
+    "url": "auth-forgot-password-2.html",
+    "section": "Authentication"
+  },
+  {
+    "name": "Forgot Password 3",
+    "icon": "icon-[tabler--question-mark] size-5 shrink-0",
+    "url": "auth-forgot-password-3.html",
+    "section": "Authentication"
+  },
+  {
+    "name": "Forgot Password 4",
+    "icon": "icon-[tabler--question-mark] size-5 shrink-0",
+    "url": "auth-forgot-password-4.html",
+    "section": "Authentication"
+  },
+  {
+    "name": "Forgot Password 5",
+    "icon": "icon-[tabler--question-mark] size-5 shrink-0",
+    "url": "auth-forgot-password-5.html",
+    "section": "Authentication"
+  },
+  {
+    "name": "Two Steps Verification 1",
+    "icon": "icon-[tabler--question-mark] size-5 shrink-0",
+    "url": "auth-two-steps-1.html",
+    "section": "Authentication"
+  },
+  {
+    "name": "Two Steps Verification 2",
+    "icon": "icon-[tabler--question-mark] size-5 shrink-0",
+    "url": "auth-two-steps-2.html",
+    "section": "Authentication"
+  },
+  {
+    "name": "Two Steps Verification 3",
+    "icon": "icon-[tabler--question-mark] size-5 shrink-0",
+    "url": "auth-two-steps-3.html",
+    "section": "Authentication"
+  },
+  {
+    "name": "Two Steps Verification 4",
+    "icon": "icon-[tabler--question-mark] size-5 shrink-0",
+    "url": "auth-two-steps-4.html",
+    "section": "Authentication"
+  },
+  {
+    "name": "Two Steps Verification 5",
+    "icon": "icon-[tabler--question-mark] size-5 shrink-0",
+    "url": "auth-two-steps-5.html",
+    "section": "Authentication"
+  },
+  {
+    "name": "Modal Examples",
+    "icon": "icon-[tabler--square] size-5 shrink-0",
+    "url": "modal-examples.html",
+    "section": "Components"
+  },
+  {
+    "name": "Checkout Wizard",
+    "icon": "icon-[tabler--shopping-cart] size-5 shrink-0",
+    "url": "wizard-ex-checkout.html",
+    "section": "Components"
+  },
+  {
+    "name": "Property Listing Wizard",
+    "icon": "icon-[tabler--building-cottage] size-5 shrink-0",
+    "url": "wizard-ex-property-listing.html",
+    "section": "Components"
+  },
+  {
+    "name": "Create Deal Wizard",
+    "icon": "icon-[tabler--gift] size-5 shrink-0",
+    "url": "wizard-ex-create-deal.html",
+    "section": "Components"
+  },
+  {
+    "name": "Vertical Form",
+    "icon": "icon-[tabler--file-text] size-5 shrink-0",
+    "url": "form-layout-vertical.html",
+    "section": "Forms"
+  },
+  {
+    "name": "Horizontal Form",
+    "icon": "icon-[tabler--file-text] size-5 shrink-0",
+    "url": "form-layout-horizontal.html",
+    "section": "Forms"
+  },
+  {
+    "name": "Sticky Actions",
+    "icon": "icon-[tabler--file-text] size-5 shrink-0",
+    "url": "form-layout-sticky.html",
+    "section": "Forms"
+  },
+  {
+    "name": "Form Validation",
+    "icon": "icon-[tabler--checkbox] size-5 shrink-0",
+    "url": "form-validation.html",
+    "section": "Forms"
+  },
+  {
+    "name": "Datatable Basic",
+    "icon": "icon-[tabler--layout-grid] size-5 shrink-0",
+    "url": "tables-datatables-basic.html",
+    "section": "Tables"
+  },
+  {
+    "name": "Datatable Advanced",
+    "icon": "icon-[tabler--layout-grid] size-5 shrink-0",
+    "url": "tables-datatables-advanced.html",
+    "section": "Tables"
+  },
+  {
+    "name": "Datatable Extensions",
+    "icon": "icon-[tabler--layout-grid] size-5 shrink-0",
+    "url": "tables-datatables-extensions.html",
+    "section": "Tables"
+  },
+  {
+    "name": "Charts",
+    "icon": "icon-[tabler--chart-line] size-5 shrink-0",
+    "url": "charts.html",
+    "section": "Charts & Maps"
+  },
+  {
+    "name": "Maps",
+    "icon": "icon-[tabler--map-pin] size-5 shrink-0",
+    "url": "maps.html",
+    "section": "Charts & Maps"
+  }
+]
