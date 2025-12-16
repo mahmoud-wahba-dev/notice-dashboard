@@ -21,9 +21,7 @@
 /* Apex charts */
 /* @import 'flyonui/src/vendor/apexcharts.css'; */
 
-@theme {
-  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto;
-}
+
 
 [data-theme='dark']
   li:not(.menu-title, .menu-disabled)
@@ -34,4 +32,130 @@
 
 body {
   color: color-mix(in oklab, var(--color-base-content) 80%, transparent);
+}
+:root {
+  scroll-behavior: smooth;
+
+  /* Primary brand color (used for btn-primary, etc) */
+  --primary: #2927f6;
+  --primary-foreground: #fff; /* White text on primary */
+
+  --dark-black: #464646;
+
+  /* Secondary accent color */
+  --secondary: #2ee378;
+  --secondary-foreground: #0a381c; /* For contrast on secondary bg */
+
+  /* Error/danger color */
+  --error: #ff4444;
+  --error-foreground: #fff;
+
+  /* Page background and main text */
+  --background: #fff; /* Default page background */
+  --foreground: #0a381c; /* Main base text color */
+
+  /* DaisyUI expected variable names */
+  --color-primary: #9C03E4;
+
+  --color-secondary: #0E0E0E;
+
+}
+
+
+
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto;
+
+
+  --color-primary: #9C03E4;
+  --color-secondary: #0E0E0E;
+
+
+    --color-dark-black: #464646;
+  --color-body: #f8f8f8;
+  --color-dot: #55cdff;
+  --color-greey: #595959;
+
+  /* Custom font sizes (px → rem) */
+  --text-8px: 0.5rem; /* 8px */
+  --text-9px: 0.5625rem; /* 9px */
+  --text-10px: 0.625rem; /* 10px */
+  --text-11px: 0.6875rem; /* 11px */
+  --text-12px: 0.75rem; /* 12px */
+  --text-13px: 0.8125rem; /* 13px */
+  --text-14px: 0.875rem; /* 14px */
+  --text-15px: 0.9375rem; /* 15px */
+  --text-16px: 1rem; /* 16px */
+  --text-17px: 1.0625rem; /* 17px */
+  --text-18px: 1.125rem; /* 18px */
+  --text-19px: 1.1875rem; /* 19px */
+  --text-20px: 1.25rem; /* 20px */
+  --text-21px: 1.3125rem; /* 21px */
+  --text-22px: 1.375rem; /* 22px */
+  --text-24px: 1.5rem; /* 24px */
+  --text-25px: 1.5625rem; /* 25px */
+  --text-28px: 1.75rem; /* 28px */
+  --text-30px: 1.875rem; /* 30px */
+  --text-32px: 2rem; /* 32px */
+  --text-36px: 2.25rem; /* 36px */
+  --text-40px: 2.5rem; /* 40px */
+  --text-42px: 2.625rem; /* 42px */
+  --text-45px: 2.8125rem; /* 45px */
+  --text-48px: 3rem; /* 48px */
+  --text-52px: 3.25rem; /* 52px */
+  --text-60px: 3.75rem; /* 60px */
+  --text-64px: 4rem; /* 64px */
+  --text-65px: 4.0625rem; /* 65px */
+
+  /* Custom border-radius (px → rem) */
+  --radius-5px: 0.3125rem; /* 5px */
+  --radius-8px: 0.5rem; /* 8px */
+  --radius-9px: 0.5625rem; /* 9px */
+  --radius-10px: 0.625rem; /* 10px */
+  --radius-11px: 0.6875rem; /* 11px */
+  --radius-12px: 0.75rem; /* 12px */
+  --radius-13px: 0.8125rem; /* 13px */
+  --radius-14px: 0.875rem; /* 14px */
+  --radius-15px: 0.9375rem; /* 15px */
+  --radius-16px: 1rem; /* 16px */
+  --radius-17px: 1.0625rem; /* 17px */
+  --radius-18px: 1.125rem; /* 18px */
+  --radius-19px: 1.1875rem; /* 19px */
+  --radius-20px: 1.25rem; /* 20px */
+  --radius-21px: 1.3125rem; /* 21px */
+  --radius-22px: 1.375rem; /* 22px */
+  --radius-24px: 1.5rem; /* 24px */
+  --radius-30px: 1.875rem; /* 30px */
+  --radius-40px: 2.5rem; /* 40px */
+  --radius-44px: 2.75rem; /* 44px */
+  --radius-53px: 3.3125rem; /* 53px */
+  --radius-58px: 3.625rem; /* 58px */
+  --radius-60px: 4rem; /* 60px */
+  --radius-65px: 4.0625rem; /* 65px */
+  --radius-66px: 4.125rem; /* 66px */
+  --radius-67px: 4.1875rem; /* 67px */
+}
+
+
+
+/* ========================
+   Container Styles
+======================== */
+ /* @layer utilities {
+  .container {
+    @apply w-full mx-auto max-w-full;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .center_flex {
+    @apply flex justify-center items-center;
+  }
+
+
+}  */
+
+.menu-active {
+  background-color: var(--color-primary);
+  color: white;
 }
