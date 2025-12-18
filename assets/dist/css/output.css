@@ -10308,6 +10308,21 @@
       --size: calc(var(--size-field, 0.25rem) * 7.5);
     }
   }
+  .sm\:mb-16 {
+    @media (width >= 40rem) {
+      margin-bottom: calc(var(--spacing) * 16);
+    }
+  }
+  .sm\:mb-20 {
+    @media (width >= 40rem) {
+      margin-bottom: calc(var(--spacing) * 20);
+    }
+  }
+  .sm\:mb-36 {
+    @media (width >= 40rem) {
+      margin-bottom: calc(var(--spacing) * 36);
+    }
+  }
   .sm\:w-65 {
     @media (width >= 40rem) {
       width: calc(var(--spacing) * 65);
@@ -10316,6 +10331,11 @@
   .sm\:grid-cols-2 {
     @media (width >= 40rem) {
       grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  .md\:mb-36 {
+    @media (width >= 48rem) {
+      margin-bottom: calc(var(--spacing) * 36);
     }
   }
   .md\:grid-cols-3 {
