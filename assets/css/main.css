@@ -59,13 +59,9 @@ body {
 
   --color-secondary: #0e0e0e;
   --color-green: #0a3e1b;
-  --btn-color:inherit;
-  --btn-bg:inherit;
 }
 
 @theme {
-    --btn-bg:inherit;
-
   --font-ibm: "IBM Plex Sans Arabic", ui-sans-serif, system-ui, -apple-system,
     BlinkMacSystemFont, Segoe UI, Roboto;
 
@@ -76,11 +72,14 @@ body {
   --color-f1: #f1f1f1;
   --color-f8: #f8f8f8;
   --color-dark: #141b34;
+  --color-grey: #595959;
+  --color-des: var(--color-grey);
+  --color-74: #747474;
 
   /* --color-dark-black: #464646;
   --color-body: #f8f8f8;
   --color-dot: #55cdff;
-  --color-greey: #595959; */
+ */
 
   /* Custom font sizes (px → rem) */
   --text-8px: 0.5rem;
