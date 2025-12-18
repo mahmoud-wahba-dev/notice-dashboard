@@ -4,8 +4,6 @@
   "description": "Default dashboard layout with vertical sidebar navigation",
   "main": "index.html",
   "scripts": {
-    "build": "npx @tailwindcss/cli -i ./assets/css/main.css -o ./assets/dist/css/output.css --minify",
-    "build:css": "npx @tailwindcss/cli -i ./assets/css/main.css -o ./assets/dist/css/output.css",
     "watch": "npx @tailwindcss/cli -i ./assets/css/main.css -o ./assets/dist/css/output.css --watch",
     "serve": "http-server . -p 8080 -o html/index.html",
     "dev": "npm run watch & npm run serve"
