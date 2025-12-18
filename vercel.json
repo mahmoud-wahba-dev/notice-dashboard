@@ -3,10 +3,14 @@
   "outputDirectory": ".",
   "cleanUrls": true,
   "trailingSlash": false,
-  "rewrites": [
+  "routes": [
     {
-      "source": "/",
-      "destination": "/html/index.html"
+      "src": "^/$",
+      "dest": "/html/index.html"
+    },
+    {
+      "src": "^/(.*)$",
+      "dest": "/$1"
     }
   ],
   "headers": [
