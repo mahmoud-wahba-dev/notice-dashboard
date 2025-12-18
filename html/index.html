@@ -64,8 +64,8 @@
 
           return layoutConfig[selectedTheme] || selectedTheme || layoutConfig.default || 'light';
         };
-        // zzzz edit here to set default theme to light
-        const savedTheme = localStorage.getItem(localStorageKey) || 'light';
+
+        const savedTheme = localStorage.getItem(localStorageKey) || 'system';
         const resolvedTheme = resolveTheme(savedTheme, layoutPath);
 
         root.setAttribute('data-theme', resolvedTheme);
