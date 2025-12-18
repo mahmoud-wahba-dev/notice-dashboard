@@ -1,7 +1,6 @@
 <!doctype html>
 
-<html dir="rtl" lang="ar" data-theme="light" data-assets-path="../assets/" data-layout-path="dashboard-default/"
-  class="scroll-smooth">
+<html dir="rtl" lang="ar" data-theme="light" class="scroll-smooth">
 
 <head>
   <meta charset="utf-8" />
@@ -37,44 +36,6 @@
 
   <!-- Page CSS -->
 
-  <!-- Theme JS -->
-  <!-- <script type="text/javascript">
-    (function () {
-      try {
-        const root = document.documentElement;
-        const layoutPath = root.getAttribute('data-layout-path')?.replace('/', '') || 'dashboard-default';
-        const localStorageKey = `${layoutPath}-theme`;
-
-        // Theme configuration loaded from page-config.json at build time
-        window.THEME_CONFIG = { 'dashboard-default': { default: 'light', light: 'light', dark: 'dark', system: { light: 'light', dark: 'dark' } } };
-
-        // Get current system theme preference
-        const getSystemPreference = () => window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-        // Resolve theme based on user selection and layout configuration
-        const resolveTheme = (selectedTheme, layoutPath) => {
-          const layoutConfig = window.THEME_CONFIG[layoutPath];
-          if (!layoutConfig) return selectedTheme === 'system' ? (getSystemPreference() ? 'dark' : 'light') : selectedTheme;
-
-          if (selectedTheme === 'system') {
-            const systemConfig = layoutConfig.system;
-            const prefersDark = getSystemPreference();
-            return prefersDark ? systemConfig.dark : systemConfig.light;
-          }
-
-          return layoutConfig[selectedTheme] || selectedTheme || layoutConfig.default || 'light';
-        };
-
-          // const savedTheme = localStorage.getItem(localStorageKey) || 'system';
-        const savedTheme = localStorage.getItem(localStorageKey) || 'light';
-        const resolvedTheme = resolveTheme(savedTheme, layoutPath);
-
-        root.setAttribute('data-theme', resolvedTheme);
-      } catch (e) {
-        console.warn('Early theme script error:', e);
-      }
-    })();
-  </script> -->
 </head>
 
 <body class="">
