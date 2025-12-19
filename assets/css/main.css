@@ -75,6 +75,10 @@ body {
   --color-grey: #595959;
   --color-des: var(--color-grey);
   --color-74: #747474;
+  --color-74: #747474;
+  --color-4d: #4d4c4c;
+  --color-de: #dedede;
+  --color-e2: #e2e2e2;
 
   /* --color-dark-black: #464646;
   --color-body: #f8f8f8;
