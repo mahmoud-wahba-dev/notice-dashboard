@@ -988,196 +988,119 @@
         <main class="mx-auto w-full max-w-[1388px] flex-1 grow p-6">
           <div class="flex justify-between items-center mb-8">
             <div>
-              <h1 class="font-bold text-24px text-secondary mb-3">الإعدادات</h1>
+              <h1 class="font-bold text-24px text-secondary mb-3">
+                الاشعارات المستخدمة
+              </h1>
               <p class="font-normal text-base text-grey mb-7">
-                إدارة حسابك وتفضيلات الإشعارات
+                تقارير ونتائج الاشعارات جاهزة يا تاجرنا 😎
               </p>
             </div>
           </div>
-          <div class="space-y-6 mb-20">
-            <nav
-              class="tabs overflow-x-auto mb-9 space-x-1 p-1 justify-between bg-white rounded-15px px-5 py-3 shadow-[0_0_16px_0_#B9B9B921]"
-              aria-label="Tabs"
-              role="tablist"
-              aria-orientation="horizontal"
-            >
-              <button
-                type="button"
-                class="active btn btn-text px-28 py-8 border font-bold text-20px text-[#898888] active-tab:bg-[#FBF3FF] active-tab:border-f2 active-tab:text-primary hover:text-primary active hover:bg-primary/20"
-                id="tabs-pill-icon-item-1"
-                data-tab="#tabs-pill-icon-1"
-                aria-controls="tabs-pill-icon-1"
-                role="tab"
-                aria-selected="true"
-              >
-                <span class="icon-[circum--user] size-5 shrink-0"></span>
-                <span class="">الحساب الشخصي</span>
-              </button>
-              <button
-                type="button"
-                class="btn btn-text px-28 py-8 border font-bold text-20px text-[#898888] active-tab:bg-[#FBF3FF] active-tab:border-f2 active-tab:text-primary hover:text-primary hover:bg-primary/20"
-                id="tabs-pill-icon-item-2"
-                data-tab="#tabs-pill-icon-2"
-                aria-controls="tabs-pill-icon-2"
-                role="tab"
-                aria-selected="false"
-              >
-                <span
-                  class="icon-[eos-icons--product-subscriptions-outlined] size-5 shrink-0"
-                ></span>
-                <span class="">الاشتراك</span>
-              </button>
-              <button
-                type="button"
-                class="btn btn-text px-28 py-8 border font-bold text-20px text-[#898888] active-tab:bg-[#FBF3FF] active-tab:border-f2 active-tab:text-primary hover:text-primary hover:bg-primary/20"
-                id="tabs-pill-icon-item-3"
-                data-tab="#tabs-pill-icon-3"
-                aria-controls="tabs-pill-icon-3"
-                role="tab"
-                aria-selected="false"
-              >
-                <span
-                  class="icon-[heroicons--identification] size-5 shrink-0"
-                ></span>
-                <span class="">الهوية البصرية</span>
-              </button>
-            </nav>
+          <div class="space-y-6 mb-20 bg-white rounded-14px px-8 py-11">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-11">
+              <div class="md:col-span-7">
+                <h1 class="font-semibold text-32px text-secondary mb-8">
+                  اعدادات الاشعار
+                </h1>
+                <nav
+                  class="tabs tabs-bordered overflow-x-auto mb-6 space-x-1 p-1 gap-16 bg-white rounded-15px px-5 py-3 shadow-[0_0_16px_0_#B9B9B921]"
+                  aria-label="Tabs"
+                  role="tablist"
+                  aria-orientation="horizontal"
+                >
+                  <button
+                    type="button"
+                    class="active tab active-tab:tab-active active w-full pb-3 px-0 w-max whitespace-nowrap"
+                    id="tabs-pill-icon-item-1"
+                    data-tab="#tabs-pill-icon-1"
+                    aria-controls="tabs-pill-icon-1"
+                    role="tab"
+                    aria-selected="true"
+                  >
+                    <span class="">البيانات الأساسية</span>
+                  </button>
+                  <button
+                    type="button"
+                    class="tab active-tab:tab-active w-full pb-3 px-0 w-max whitespace-nowrap"
+                    id="tabs-pill-icon-item-2"
+                    data-tab="#tabs-pill-icon-2"
+                    aria-controls="tabs-pill-icon-2"
+                    role="tab"
+                    aria-selected="false"
+                  >
+                    <span class="">المظهر</span>
+                  </button>
+                  <button
+                    type="button"
+                    class="tab active-tab:tab-active w-full pb-3 px-0 w-max whitespace-nowrap"
+                    id="tabs-pill-icon-item-3"
+                    data-tab="#tabs-pill-icon-3"
+                    aria-controls="tabs-pill-icon-3"
+                    role="tab"
+                    aria-selected="false"
+                  >
+                    <span class="">السلوك والظهور</span>
+                  </button>
+                  <button
+                    type="button"
+                    class="tab active-tab:tab-active w-full pb-3 px-0 w-max whitespace-nowrap"
+                    id="tabs-pill-icon-item-4"
+                    data-tab="#tabs-pill-icon-4"
+                    aria-controls="tabs-pill-icon-4"
+                    role="tab"
+                    aria-selected="false"
+                  >
+                    <span class="">التفاعل والربط</span>
+                  </button>
+                </nav>
 
-            <div class="mt-3">
-              <div
-                id="tabs-pill-icon-1"
-                role="tabpanel"
-                aria-labelledby="tabs-pill-icon-item-1"
-              >
-                <div class="px-14 py-8 bg-white rounded-30px">
-                  <h5 class="font-bold text-20px text-black mb-2">
-                    معلومات الحساب
-                  </h5>
-                  <p class="font-normal text-base text-89 mb-14">
-                    إدارة تفاصيل حسابك والتحكم بإعداداته الأساسية.
-                  </p>
-                  <div class="flex gap-16 max-sm:flex-wrap mb-14">
-                    <div>
-                      <div
-                        data-file-upload='{
-  "url": "/upload",
-  "acceptedFiles": "image/*",
-  "maxFiles": 1,
-  "singleton": true
-}'
+                <div class="mt-3">
+                  <div
+                    id="tabs-pill-icon-1"
+                    role="tabpanel"
+                    aria-labelledby="tabs-pill-icon-item-1"
+                  >
+                    <div class="mb-5">
+                      <label
+                        class="label-text font-medium text-base text-black mb-2"
+                        for="defaultInput"
+                        >عنوان الإشعار</label
                       >
-                        <template data-file-upload-preview="">
-                          <div class="size-20">
-                            <img
-                              class="w-full rounded-full object-contain"
-                              data-dz-thumbnail=""
-                            />
-                          </div>
-                        </template>
 
-                        <div
-                          class="flex flex-wrap justify-center items-center gap-3 sm:gap-5"
-                        >
-                          <div
-                            class="group cursor-pointer"
-                            data-file-upload-previews=""
-                            data-file-upload-pseudo-trigger=""
-                          >
-                            <span
-                              class="border-base-content/30 text-base-content/50 flex size-32 shrink-0 cursor-pointer items-center justify-center rounded-full m-auto border-2 border-dotted hover:bg-base-200/60 group-has-[div]:hidden"
-                            >
-                              <span
-                                class="icon-[tabler--user-square] size-9 shrink-0"
-                              ></span>
-                            </span>
-                          </div>
-                          <div class="grow">
-                            <div
-                              class="flex flex-col justify-center gap-4 items-center gap-x-2"
-                            >
-                              <button
-                                type="button"
-                                class="btn btn-primary hidden"
-                                data-file-upload-trigger=""
-                              >
-                                <span
-                                  class="icon-[tabler--upload] size-4 shrink-0"
-                                ></span>
-                                Upload photo
-                              </button>
-                              <button
-                                type="button"
-                                class="btn btn-outline btn-error"
-                                data-file-upload-clear=""
-                              >
-                                Delete
-                              </button>
-                              <p class="font-medium text-base text-secondary">
-                                قم بتحديث صورتك
-                              </p>
-                              <p class="font-normal text-12px text-a8">
-                                Max Size : 1MB
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                      <input
+                        type="text"
+                        placeholder="الطلب جاهز للاستلام"
+                        class="input w-full border-d4 rounded-lg"
+                        id="defaultInput"
+                      />
                     </div>
 
-                    <div class="grow">
-                      <div class="mb-5">
-                        <label
-                          class="label-text font-medium text-base text-black mb-2"
-                          for="defaultInput"
-                          >اسم الشركة</label
-                        >
-                        <input
-                          type="text"
-                          placeholder="شركة نوتس للتقنية"
-                          class="input w-full border-d4 rounded-lg"
-                          id="defaultInput"
-                        />
-                      </div>
+                    <div class="mb-5">
+                      <label
+                        class="label-text font-medium text-base text-black mb-2"
+                        for="defaultInput"
+                        >الوصف</label
+                      >
 
-                      <div class="mb-5">
-                        <label
-                          class="label-text font-medium text-base text-black mb-2"
-                          for="defaultInput"
-                          >البريد الإلكتروني</label
-                        >
-                        <input
-                          type="email"
-                          placeholder="عنوان البريد الإلكتروني المرتبط بالحساب."
-                          class="input w-full border-d4 rounded-lg"
-                          id="defaultInput"
-                        />
-                      </div>
+                      <input
+                        type="text"
+                        placeholder="طلبك رقم #241 تم تجهيزه ويمكنك استلامه الآن."
+                        class="input w-full border-d4 rounded-lg"
+                        id="defaultInput"
+                      />
+                    </div>
 
-                      <div class="mb-5">
-                        <label
-                          class="label-text font-medium text-base text-black mb-2"
-                          for="defaultInput"
-                          >رقم الهاتف</label
-                        >
-                        <input
-                          type="text"
-                          placeholder="+966 55 123 4567"
-                          class="input w-full border-d4 rounded-lg"
-                          id="defaultInput"
-                        />
-                      </div>
+                    <div class="mb-5">
+                      <label
+                        class="label-text font-medium text-base text-black mb-2"
+                        for="defaultInput"
+                        >الجهة المستهدفة</label
+                      >
 
-                      <div class="mb-5">
-                        <label
-                          class="label-text font-medium text-base text-black mb-2"
-                          for="defaultInput"
-                          >المنطقة الزمنية</label
-                        >
-
-                        <div class="max-w-full">
-                          <select
-                            data-select='{
-    "placeholder": "اختر المنطقة الزمنية التي تناسب موقعك.",
+                      <div class="max-w-full">
+                        <select
+                          data-select='{
+    "placeholder": "جميع المستخدمين",
     "toggleTag": "<button type=\"button\" aria-expanded=\"false\"></button>",
     "toggleClasses": "advance-select-toggle select-disabled:pointer-events-none select-disabled:opacity-40 text-70",
     "dropdownClasses": "advance-select-menu  w-full border-d4 rounded-lg",
@@ -1185,208 +1108,555 @@
     "optionTemplate": "<div class=\"flex justify-between items-center w-full\"><span data-title></span><span class=\"icon-[tabler--check] shrink-0 size-4 text-primary hidden selected:block \"></span></div>",
     "extraMarkup": "<span class=\"icon-[tabler--caret-up-down] shrink-0 size-4 text-base-content absolute top-1/2 end-3 -translate-y-1/2 \"></span>"
     }'
-                            class="hidden"
-                          >
-                            <option value="">Choose</option>
-                            <option value="name">Full Name</option>
-                            <option value="email">Email Address</option>
-                            <option value="description">
-                              Project Description
-                            </option>
-                            <option value="user_id">
-                              User Identification Number
-                            </option>
-                          </select>
+                          class="hidden"
+                        >
+                          <option value="">Choose</option>
+                          <option value="name">Full Name</option>
+                          <option value="email">Email Address</option>
+                          <option value="description">
+                            Project Description
+                          </option>
+                          <option value="user_id">
+                            User Identification Number
+                          </option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="mb-11">
+                      <label
+                        class="label-text font-medium text-base text-black mb-2"
+                        for="defaultInput"
+                        >إضافة متغيرات تلقائية</label
+                      >
+
+                      <div class="join drop-shadow gap-3">
+                        <input
+                          class="join-item btn btn-outline rounded-40px border-58 font-medium text-14px text-58"
+                          type="checkbox"
+                          name="radio-15"
+                          aria-label="+ اسم العميل"
+                          checked
+                        />
+                        <input
+                          class="join-item btn btn-outline rounded-40px border-58 font-medium text-14px text-58"
+                          type="checkbox"
+                          name="radio-15"
+                          aria-label="+ رقم الطلب"
+                        />
+                        <input
+                          class="join-item btn btn-outline rounded-40px border-58 font-medium text-14px text-58"
+                          type="checkbox"
+                          name="radio-15"
+                          aria-label="+ تاريخ الطلب"
+                        />
+                        <input
+                          class="join-item btn btn-outline rounded-40px border-58 font-medium text-14px text-58"
+                          type="checkbox"
+                          name="radio-15"
+                          aria-label="+  اسم المتجر"
+                        />
+                        <input
+                          class="join-item btn btn-outline rounded-40px border-58 font-medium text-14px text-58"
+                          type="checkbox"
+                          name="radio-15"
+                          aria-label="+ وقت التسليم المتوقع"
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <button
+                        class="btn btn-primary rounded-13px btn-block py-7"
+                      >
+                        حفظ التحديث
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    id="tabs-pill-icon-2"
+                    class="hidden"
+                    role="tabpanel"
+                    aria-labelledby="tabs-pill-icon-item-2"
+                  >
+                    <div>
+                      <p class="font-medium text-base mb-4 text-black">
+                        اختيار القالب
+                      </p>
+                      <div class="mb-7">
+                        <div class="flex md:flex-nowrap items-start gap-3">
+                          <label class="custom-option relative p-0">
+                            <span class="w-full">
+                              <img
+                                src="https://cdn.flyonui.com/fy-assets/components/radio/image-6.png"
+                                class="bg-contain"
+                                alt="checkbox image"
+                              />
+                            </span>
+                            <input
+                              type="radio"
+                              name="ss"
+                              class="radio radio-primary absolute end-0 top-0 m-3 hidden checked:block hover:block"
+                            />
+                          </label>
+                          <label class="custom-option relative p-0">
+                            <span class="w-full">
+                              <img
+                                src="https://cdn.flyonui.com/fy-assets/components/radio/image-3.png"
+                                class="bg-contain"
+                                alt="checkbox image"
+                              />
+                            </span>
+                            <input
+                              name="ss"
+                              type="radio"
+                              class="radio radio-primary absolute end-0 top-0 m-3 hidden checked:block hover:block"
+                            />
+                          </label>
                         </div>
                       </div>
-                      <div class="mb-5">
+                      <div
+                        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7"
+                      >
+                        <div>
+                          <div class="mb-5">
+                            <label
+                              class="label-text font-medium text-base text-black mb-5"
+                              for="defaultInput"
+                              >ألوان العنوان</label
+                            >
+
+                            <div class="flex items-center gap-4">
+                              <input
+                                type="color"
+                                class="max-w-14 w-full h-14 !rounded-24px border-0 p-0"
+                                value="#9C03E4"
+                              />
+                              <input
+                                type="text"
+                                placeholder="9C03E4#"
+                                class="input w-full border-d4 rounded-lg"
+                                id="defaultInput"
+                              />
+                            </div>
+                          </div>
+                        </div>
+
+                        <div>
+                          <div class="mb-5">
+                            <label
+                              class="label-text font-medium text-base text-black mb-5"
+                              for="defaultInput"
+                              >ألوان الوصف</label
+                            >
+
+                            <div class="flex items-center gap-4">
+                              <input
+                                type="color"
+                                class="max-w-14 w-full h-14 !rounded-24px border-0 p-0"
+                                value="#9C03E4"
+                              />
+                              <input
+                                type="text"
+                                placeholder="9C03E4#"
+                                class="input w-full border-d4 rounded-lg"
+                                id="defaultInput"
+                              />
+                            </div>
+                          </div>
+                        </div>
+
+                        <div>
+                          <div class="mb-5">
+                            <label
+                              class="label-text font-medium text-base text-black mb-5"
+                              for="defaultInput"
+                              >لون الخلفية</label
+                            >
+
+                            <div class="flex items-center gap-4">
+                              <input
+                                type="color"
+                                class="max-w-14 w-full h-14 !rounded-24px border-0 p-0"
+                                value="#9C03E4"
+                              />
+                              <input
+                                type="text"
+                                placeholder="9C03E4#"
+                                class="input w-full border-d4 rounded-lg"
+                                id="defaultInput"
+                              />
+                            </div>
+                          </div>
+                        </div>
+
+                        <div>
+                          <div class="mb-5">
+                            <label
+                              class="label-text font-medium text-base text-black mb-5"
+                              for="defaultInput"
+                              >ألوان العنوان</label
+                            >
+
+                            <div class="flex items-center gap-4">
+                              <input
+                                type="color"
+                                class="max-w-14 w-full h-14 !rounded-24px border-0 p-0"
+                                value="#9C03E4"
+                              />
+                              <input
+                                type="text"
+                                placeholder="9C03E4#"
+                                class="input w-full border-d4 rounded-lg"
+                                id="defaultInput"
+                              />
+                            </div>
+                          </div>
+                        </div>
+
+                        <div>
+                          <div class="mb-5">
+                            <label
+                              class="label-text font-medium text-base text-black mb-5"
+                              for="defaultInput"
+                              >ألوان الوصف</label
+                            >
+
+                            <div class="flex items-center gap-4">
+                              <input
+                                type="color"
+                                class="max-w-14 w-full h-14 !rounded-24px border-0 p-0"
+                                value="#9C03E4"
+                              />
+                              <input
+                                type="text"
+                                placeholder="9C03E4#"
+                                class="input w-full border-d4 rounded-lg"
+                                id="defaultInput"
+                              />
+                            </div>
+                          </div>
+                        </div>
+
+                        <div>
+                          <div class="mb-5">
+                            <label
+                              class="label-text font-medium text-base text-black mb-5"
+                              for="defaultInput"
+                              >لون الخلفية</label
+                            >
+
+                            <div class="flex items-center gap-4">
+                              <input
+                                type="color"
+                                class="max-w-14 w-full h-14 !rounded-24px border-0 p-0"
+                                value="#9C03E4"
+                              />
+                              <input
+                                type="text"
+                                placeholder="9C03E4#"
+                                class="input w-full border-d4 rounded-lg"
+                                id="defaultInput"
+                              />
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="mb-5">
+                          <label
+                            class="label-text font-medium text-base text-black mb-2"
+                            for="favorite-simpson"
+                            >الجهة المستهدفة</label
+                          >
+                          <div class="">
+                            <select
+                              class="select input w-full border-d4 rounded-lg"
+                              id="favorite-simpson"
+                            >
+                              <option disabled selected>جميع المستخدمين</option>
+                              <option>العربية</option>
+                              <option>English</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="mb-5">
+                          <label
+                            class="label-text font-medium text-base text-black mb-2"
+                            for="favorite-simpson"
+                            >الجهة المستهدفة</label
+                          >
+                          <div class="">
+                            <select
+                              class="select input w-full border-d4 rounded-lg"
+                              id="favorite-simpson"
+                            >
+                              <option disabled selected>جميع المستخدمين</option>
+                              <option>العربية</option>
+                              <option>English</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div class="mb-5">
+                          <label
+                            class="label-text font-medium text-base text-black mb-2"
+                            for="favorite-simpson"
+                            >الجهة المستهدفة</label
+                          >
+                          <div class="">
+                            <select
+                              class="select input w-full border-d4 rounded-lg"
+                              id="favorite-simpson"
+                            >
+                              <option disabled selected>جميع المستخدمين</option>
+                              <option>العربية</option>
+                              <option>English</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="mt-6">
+                        <button
+                          class="btn btn-primary rounded-13px btn-block py-7"
+                        >
+                          حفظ التحديث
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    id="tabs-pill-icon-3"
+                    class="hidden"
+                    role="tabpanel"
+                    aria-labelledby="tabs-pill-icon-item-3"
+                  >
+                    <div class="">
+                      <div
+                        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 mb-6"
+                      >
+                        <div class="">
+                          <label
+                            class="label-text font-medium text-base text-black mb-2"
+                            for="favorite-simpson"
+                            >مكان الظهور</label
+                          >
+                          <div class="">
+                            <select
+                              class="select input w-full border-d4 rounded-lg"
+                              id="favorite-simpson"
+                            >
+                              <option value="" selected>جميع المستخدمين</option>
+                              <option>العربية</option>
+                              <option>English</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div class="">
+                          <label
+                            class="label-text font-medium text-base text-black mb-2"
+                            for="favorite-simpson"
+                            >مدة الانتظار قبل الظهور</label
+                          >
+                          <div class="">
+                            <select
+                              class="select input w-full border-d4 rounded-lg"
+                              id="favorite-simpson"
+                            >
+                              <option value="" selected>جميع المستخدمين</option>
+                              <option>العربية</option>
+                              <option>English</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div class="">
+                          <label
+                            class="label-text font-medium text-base text-black mb-2"
+                            for="favorite-simpson"
+                            >تكرار الظهور</label
+                          >
+                          <div class="">
+                            <select
+                              class="select input w-full border-d4 rounded-lg"
+                              id="favorite-simpson"
+                            >
+                              <option value="" selected>جميع المستخدمين</option>
+                              <option>العربية</option>
+                              <option>English</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div class="">
+                          <label
+                            class="label-text font-medium text-base text-black mb-2"
+                            for="favorite-simpson"
+                            >عدد مرات الظهور المسموح به</label
+                          >
+                          <div class="">
+                            <select
+                              class="select input w-full border-d4 rounded-lg"
+                              id="favorite-simpson"
+                            >
+                              <option value="" selected>جميع المستخدمين</option>
+                              <option>العربية</option>
+                              <option>English</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="mb-5 flex items-center gap-2">
+                          <div>
+                            <div
+                              class="dropdown-item items-center justify-between gap-2 px-2 py-1"
+                            >
+                              <input
+                                type="checkbox"
+                                class="switch switch-success switch-sm"
+                                id="settings1"
+                                checked
+                              />
+                            </div>
+                          </div>
+
+                          <div>
+                            <p class="font-medium text-base text-black">
+                              تفعيل على الشاشات الصغيرة
+                            </p>
+                          </div>
+                        </div>
+                        <div class="mb-5 flex items-center gap-2">
+                          <div>
+                            <div
+                              class="dropdown-item items-center justify-between gap-2 px-2 py-1"
+                            >
+                              <input
+                                type="checkbox"
+                                class="switch switch-success switch-sm"
+                                id="settings1"
+                                checked
+                              />
+                            </div>
+                          </div>
+
+                          <div>
+                            <p class="font-medium text-base text-black">
+                              تفعيل على الشاشات الكبيرة
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="mt-9">
+                        <button
+                          class="btn btn-primary rounded-13px btn-block py-7"
+                        >
+                          حفظ التحديث
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    id="tabs-pill-icon-4"
+                    class="hidden"
+                    role="tabpanel"
+                    aria-labelledby="tabs-pill-icon-item-4"
+                  >
+                    <div class="mb-5">
+                      <label
+                        class="label-text font-medium text-base text-black mb-2"
+                        for="defaultInput"
+                      >
+                        رابط إعادة توجيه (URL)</label
+                      >
+
+                      <input
+                        type="text"
+                        placeholder="الطلب جاهز للاستلام"
+                        class="input w-full border-d4 rounded-lg"
+                        id="defaultInput"
+                      />
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-11">
+                      <div class="">
                         <label
                           class="label-text font-medium text-base text-black mb-2"
                           for="defaultInput"
-                          >تغيير كلمة المرور</label
                         >
-                        <input
-                          type="text"
-                          placeholder="كلمة المرور الحالية"
-                          class="input w-full border-d4 rounded-lg mb-2"
-                          id="defaultInput"
-                        />
+                          Mailchimp Audience ID</label
+                        >
 
                         <input
                           type="text"
-                          placeholder="كلمة المرور الجديدة"
-                          class="input w-full border-d4 rounded-lg mb-2"
+                          placeholder="الطلب جاهز للاستلام"
+                          class="input w-full border-d4 rounded-lg"
                           id="defaultInput"
                         />
+                      </div>
+                      <div class="">
+                        <label
+                          class="label-text font-medium text-base text-black mb-2"
+                          for="defaultInput"
+                        >
+                          Mailchimp API Key</label
+                        >
 
                         <input
                           type="text"
-                          placeholder="تأكيد كلمة المرور الجديدة"
+                          placeholder="الطلب جاهز للاستلام"
                           class="input w-full border-d4 rounded-lg"
                           id="defaultInput"
                         />
                       </div>
                     </div>
-                  </div>
-                  <hr class="text-e6 mb-7" />
-                  <div>
-                    <p class="font-medium text-15px text-error mb-1.5">
-                      منطقة الخطر
-                    </p>
-                    <p class="font-normal text15 text-70 mb-6">
-                      ⚠️ يرجى الانتباه: حذف الحساب إجراء نهائي ولا يمكن التراجع
-                      عنه.
-                    </p>
-                    <button class="btn btn-error rounded-5px">
-                      حذف الحساب
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div
-                id="tabs-pill-icon-2"
-                class="hidden"
-                role="tabpanel"
-                aria-labelledby="tabs-pill-icon-item-2"
-              >
-                <div class="px-14 py-8 bg-white rounded-30px">
-                  <h5 class="font-bold text-20px text-black mb-2">الاشتراك</h5>
-                  <p class="font-normal text-base text-89 mb-14">
-                    إدارة خطة الاشتراك والمعلومات الخاصة بالفوترة.
-                  </p>
-                  <div class="grid grid-cols-1 md:grid-cols-12 gap-16 mb-14">
-                    <div class="md:col-span-4">
-                      <div
-                        class="rounded-16px bg-f8 w-full h-full md:h-96"
-                      ></div>
-                    </div>
+                    <div class="mb-5">
+                      <label
+                        class="label-text font-medium text-base text-black mb-2"
+                        for="defaultInput"
+                      >
+                        Webhook URL</label
+                      >
 
-                    <div class="md:col-span-8">
-                      <div class="mb-5 font-semibold text-base text-secondary">
-                        <h5 class="font-semibold text-24px text-secondary mb-5">
-                          الخطة الحالية هي احترافي – Pro
-                        </h5>
-                        <p class="font-medium text-base mb-3.5">
-                          بدأ الاشتراك في:
-                          <span class="text-primary"> 12 مارس 2025</span>
-                        </p>
-                        <p class="mb-3.5">
-                          نوع الفوترة:
-                          <span class="text-primary">شهري / سنوي</span>
-                        </p>
-                        <p class="mb-9">تم تجديدها تلقائيًا</p>
-                        <p class="mb-3.5">
-                          التجديد القادم في:
-                          <span class="text-primary"> أبريل 2025</span>
-                        </p>
-                        <p class="">سيتم خصم الرسوم تلقائيًا</p>
-                      </div>
+                      <input
+                        type="text"
+                        placeholder="الطلب جاهز للاستلام"
+                        class="input w-full border-d4 rounded-lg"
+                        id="defaultInput"
+                      />
                     </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                id="tabs-pill-icon-3"
-                class="hidden"
-                role="tabpanel"
-                aria-labelledby="tabs-pill-icon-item-3"
-              >
-                <div class="px-14 py-8 bg-white rounded-30px">
-                  <h5 class="font-bold text-20px text-black mb-2">
-                    إعدادات الهوية
-                  </h5>
-                  <p class="font-normal text-base text-89 mb-14">
-                    خصص مظهر إشعاراتك ليناسب علامتك التجارية.
-                  </p>
-                  <div class="flex gap-16 max-sm:flex-wrap mb-14">
-                    <div>
+                    <div class="mb-5 flex items-center gap-2">
                       <div>
                         <div
-                          class="flex flex-wrap justify-center items-center gap-3 sm:gap-5"
+                          class="dropdown-item items-center justify-between gap-2 px-2 py-1"
                         >
-                          <div class="grow">
-                            <div
-                              class="flex flex-col justify-center gap-4 items-center gap-x-2"
-                            >
-                              <div class="w-36 h-32 rounded-9px center_flex">
-                                <img
-                                  src="../assets/img/home/store_name.png"
-                                  class="max-w-full rounded-9px"
-                                  alt=""
-                                />
-                              </div>
-                              <p class="font-medium text-base text-secondary">
-                                شعار الشركة
-                              </p>
-                              <p class="font-normal text-12px text-a8">
-                                Max Size : 1MB
-                              </p>
-                            </div>
-                          </div>
+                          <input
+                            type="checkbox"
+                            class="switch switch-success switch-sm"
+                            id="settings1"
+                            checked
+                          />
                         </div>
+                      </div>
+
+                      <div>
+                        <p class="font-medium text-base text-black">
+                      تفعيل التكامل
+                        </p>
                       </div>
                     </div>
 
-                    <div class="grow">
-                      <div class="mb-5">
-                        <label
-                          class="label-text font-medium text-base text-black mb-2"
-                          for="defaultInput"
-                          >اللون الرئيسي</label
-                        >
-
-                        <div class="flex items-center gap-4">
-                          <input
-                            type="color"
-                            class="w-32 h-11 !rounded-24px border-0 p-0"
-                            value="#9C03E4"
-                          />
-                          <input
-                            type="text"
-                            placeholder="9C03E4#"
-                            class="input w-full border-d4 rounded-lg"
-                            id="defaultInput"
-                          />
-                        </div>
-                      </div>
-                      <div class="mb-5">
-                        <label
-                          class="label-text font-medium text-base text-black mb-2"
-                          for="favorite-simpson"
-                          >اللغة الافتراضية</label
-                        >
-                        <div class="">
-                          <select
-                            class="select input w-full border-d4 rounded-lg"
-                            id="favorite-simpson"
-                          >
-                            <option>العربية</option>
-                            <option>English</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="mb-5 flex items-center gap-8">
-                        <div>
-                          <div
-                            class="dropdown-item items-center justify-between gap-2 px-2 py-1"
-                          >
-                            <input
-                              type="checkbox"
-                              class="switch switch-success switch-sm"
-                              id="settings1"
-                              checked
-                            />
-                          </div>
-                        </div>
-
-                        <div>
-                          <p class="font-medium text-base  text-black">دعم الاتجاه من اليمين لليسار</p>
-                          <p class="font-normal text-base text-89">تفعيل دعم اللغة العربية وتخطيط RTL.</p>
-                        </div>
-                      </div>
+                    <div>
+                      <button
+                        class="btn btn-primary rounded-13px btn-block py-7"
+                      >
+                        حفظ التحديث
+                      </button>
                     </div>
                   </div>
                 </div>
+              </div>
+              <div class="md:col-span-5">
+                <div class="bg-f2 w-full h-full rounded-10px"></div>
               </div>
             </div>
           </div>
