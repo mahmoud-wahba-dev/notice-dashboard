@@ -498,7 +498,7 @@
                               <div class="avatar">
                                 <div class="w-10 rounded-full">
                                   <img
-                                    src="../assets/img/avatars/6.png"
+                                    src="../assets/img/avatars/1.png"
                                     alt="avatar"
                                   />
                                 </div>
@@ -1003,7 +1003,7 @@
             >
               <button
                 type="button"
-                class="btn btn-text px-28 py-8 border font-bold text-20px text-[#898888] active-tab:bg-[#FBF3FF] active-tab:border-f2 active-tab:text-primary hover:text-primary active hover:bg-primary/20"
+                class="btn btn-text px-28 py-8 border font-bold text-20px text-[#898888] active-tab:bg-[#FBF3FF] active-tab:border-f2 active-tab:text-primary hover:text-primary hover:bg-primary/20"
                 id="tabs-pill-icon-item-1"
                 data-tab="#tabs-pill-icon-1"
                 aria-controls="tabs-pill-icon-1"
@@ -1015,14 +1015,16 @@
               </button>
               <button
                 type="button"
-                class="btn btn-text px-28 py-8 border font-bold text-20px text-[#898888] active-tab:bg-[#FBF3FF] active-tab:border-f2 active-tab:text-primary hover:text-primary hover:bg-primary/20"
+                class="active btn btn-text px-28 py-8 border font-bold text-20px text-[#898888] active-tab:bg-[#FBF3FF] active-tab:border-f2 active-tab:text-primary hover:text-primary hover:bg-primary/20"
                 id="tabs-pill-icon-item-2"
                 data-tab="#tabs-pill-icon-2"
                 aria-controls="tabs-pill-icon-2"
                 role="tab"
                 aria-selected="false"
               >
-                <span class="icon-[tabler--user] size-5 shrink-0"></span>
+                <span
+                  class="icon-[eos-icons--product-subscriptions-outlined] size-5 shrink-0"
+                ></span>
                 <span class="hidden sm:inline">الاشتراك</span>
               </button>
               <button
@@ -1034,7 +1036,9 @@
                 role="tab"
                 aria-selected="false"
               >
-                <span class="icon-[tabler--message] size-5 shrink-0"></span>
+                <span
+                  class="icon-[heroicons--identification] size-5 shrink-0"
+                ></span>
                 <span class="hidden sm:inline">الهوية البصرية</span>
               </button>
             </nav>
@@ -1071,7 +1075,9 @@
                           </div>
                         </template>
 
-                        <div class="flex flex-wrap justify-center items-center gap-3 sm:gap-5">
+                        <div
+                          class="flex flex-wrap justify-center items-center gap-3 sm:gap-5"
+                        >
                           <div
                             class="group cursor-pointer"
                             data-file-upload-previews=""
@@ -1086,7 +1092,9 @@
                             </span>
                           </div>
                           <div class="grow">
-                            <div class="flex flex-col justify-center gap-4 items-center gap-x-2">
+                            <div
+                              class="flex flex-col justify-center gap-4 items-center gap-x-2"
+                            >
                               <button
                                 type="button"
                                 class="btn btn-primary hidden"
@@ -1104,7 +1112,9 @@
                               >
                                 Delete
                               </button>
-                              <p class="font-medium text-base text-secondary">قم بتحديث صورتك</p>
+                              <p class="font-medium text-base text-secondary">
+                                قم بتحديث صورتك
+                              </p>
                               <p class="font-normal text-12px text-a8">
                                 Max Size : 1MB
                               </p>
@@ -1239,12 +1249,41 @@
                 role="tabpanel"
                 aria-labelledby="tabs-pill-icon-item-2"
               >
-                <p class="text-base-content/80">
-                  This is your
-                  <span class="text-base-content font-semibold">Profile</span>
-                  tab, where you can update your personal information and manage
-                  your account details.
-                </p>
+                <div class="px-14 py-8 bg-white rounded-30px">
+                  <h5 class="font-bold text-20px text-black mb-2">الاشتراك</h5>
+                  <p class="font-normal text-base text-89 mb-14">
+                    إدارة خطة الاشتراك والمعلومات الخاصة بالفوترة.
+                  </p>
+                  <div class="grid grid-cols-1 md:grid-cols-12 gap-16 mb-14">
+                    <div class="md:col-span-4">
+                      <div
+                        class="rounded-16px bg-f8 w-full h-full md:h-96"
+                      ></div>
+                    </div>
+
+                    <div class="md:col-span-8">
+                      <div class="mb-5 font-semibold text-base text-secondary">
+                        <h5 class="font-semibold text-24px text-secondary mb-5">
+                          الخطة الحالية هي احترافي – Pro
+                        </h5>
+                        <p class="font-medium text-base mb-3.5">
+                          بدأ الاشتراك في:
+                          <span class="text-primary"> 12 مارس 2025</span>
+                        </p>
+                        <p class="mb-3.5">
+                          نوع الفوترة:
+                          <span class="text-primary">شهري / سنوي</span>
+                        </p>
+                        <p class="mb-9">تم تجديدها تلقائيًا</p>
+                        <p class="mb-3.5">
+                          التجديد القادم في:
+                          <span class="text-primary"> أبريل 2025</span>
+                        </p>
+                        <p class="">سيتم خصم الرسوم تلقائيًا</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div
                 id="tabs-pill-icon-3"
@@ -1252,11 +1291,86 @@
                 role="tabpanel"
                 aria-labelledby="tabs-pill-icon-item-3"
               >
-                <p class="text-base-content/80">
-                  <span class="text-base-content font-semibold">Messages:</span>
-                  View your recent messages, chat with friends, and manage your
-                  conversations.
-                </p>
+                <div class="px-14 py-8 bg-white rounded-30px">
+                  <h5 class="font-bold text-20px text-black mb-2">
+                    إعدادات الهوية
+                  </h5>
+                  <p class="font-normal text-base text-89 mb-14">
+                    خصص مظهر إشعاراتك ليناسب علامتك التجارية.
+                  </p>
+                  <div class="flex gap-16 max-sm:flex-wrap mb-14">
+                    <div>
+                      <div>
+                        <div
+                          class="flex flex-wrap justify-center items-center gap-3 sm:gap-5"
+                        >
+                          <div class="grow">
+                            <div
+                              class="flex flex-col justify-center gap-4 items-center gap-x-2"
+                            >
+                              <div class="w-36 h-32 rounded-9px center_flex ">
+                                <img
+                                  src="../assets/img/home/store_name.png"
+                                  class="max-w-full rounded-9px"
+                                  alt=""
+                                />
+                              </div>
+                              <p class="font-medium text-base text-secondary">
+                                شعار الشركة
+                              </p>
+                              <p class="font-normal text-12px text-a8">
+                                Max Size : 1MB
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="grow">
+                      <div class="mb-5">
+                        <label
+                          class="label-text font-medium text-base text-black mb-2"
+                          for="defaultInput"
+                          >اللون الرئيسي</label
+                        >
+
+                        <div class="flex items-center gap-4">
+                          <input
+                            type="color"
+                            class="w-32 h-11 !rounded-24px border-0 p-0"
+                            value="#9C03E4"
+                          />
+                          <input
+                            type="text"
+                            placeholder="9C03E4#"
+                            class="input w-full border-d4 rounded-lg"
+                            id="defaultInput"
+                          />
+                        </div>
+                      </div>
+                      <div class="mb-5">
+                        <label
+                          class="label-text font-medium text-base text-black mb-2"
+                          for="defaultInput"
+                          >اللغة الافتراضية</label
+                        >
+                        <div class="">
+                          <label class="label-text" for="favorite-simpson"
+                            >Pick your favorite Movie</label
+                          >
+                          <select
+                            class="select input w-full border-d4 rounded-lg"
+                            id="favorite-simpson"
+                          >
+                            <option>العربية</option>
+                            <option>English</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
