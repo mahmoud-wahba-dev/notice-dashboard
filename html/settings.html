@@ -498,7 +498,7 @@
                               <div class="avatar">
                                 <div class="w-10 rounded-full">
                                   <img
-                                    src="../assets/img/avatars/1.png"
+                                    src="../assets/img/avatars/6.png"
                                     alt="avatar"
                                   />
                                 </div>
@@ -1071,14 +1071,14 @@
                           </div>
                         </template>
 
-                        <div class="flex flex-wrap items-center gap-3 sm:gap-5">
+                        <div class="flex flex-wrap justify-center items-center gap-3 sm:gap-5">
                           <div
-                            class="group"
+                            class="group cursor-pointer"
                             data-file-upload-previews=""
                             data-file-upload-pseudo-trigger=""
                           >
                             <span
-                              class="border-base-content/30 text-base-content/50 flex size-17 shrink-0 cursor-pointer items-center justify-center rounded-box border-2 border-dotted hover:bg-base-200/60 group-has-[div]:hidden"
+                              class="border-base-content/30 text-base-content/50 flex size-32 shrink-0 cursor-pointer items-center justify-center rounded-full m-auto border-2 border-dotted hover:bg-base-200/60 group-has-[div]:hidden"
                             >
                               <span
                                 class="icon-[tabler--user-square] size-9 shrink-0"
@@ -1086,7 +1086,17 @@
                             </span>
                           </div>
                           <div class="grow">
-                            <div class="flex items-center gap-x-2">
+                            <div class="flex flex-col justify-center gap-4 items-center gap-x-2">
+                              <button
+                                type="button"
+                                class="btn btn-primary hidden"
+                                data-file-upload-trigger=""
+                              >
+                                <span
+                                  class="icon-[tabler--upload] size-4 shrink-0"
+                                ></span>
+                                Upload photo
+                              </button>
                               <button
                                 type="button"
                                 class="btn btn-outline btn-error"
@@ -1094,6 +1104,10 @@
                               >
                                 Delete
                               </button>
+                              <p class="font-medium text-base text-secondary">قم بتحديث صورتك</p>
+                              <p class="font-normal text-12px text-a8">
+                                Max Size : 1MB
+                              </p>
                             </div>
                           </div>
                         </div>
@@ -1250,14 +1264,12 @@
       </div>
     </div>
 
-
     <!-- FlyonUI JS -->
     <!-- Load in correct order: Lodash → Dropzone → FlyonUI -->
     <script src="../assets/dist/libs/lodash/lodash.min.js"></script>
     <script src="../assets/dist/libs/dropzone/dist/dropzone-min.js"></script>
     <script src="../assets/dist/libs/flyonui/flyonui.js"></script>
 
-    
     <!-- Vendors JS -->
     <!--
     <script src="../assets/dist/libs/jquery/dist/jquery.min.js"></script>
