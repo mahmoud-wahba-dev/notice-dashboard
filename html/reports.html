@@ -30,8 +30,14 @@
     />
 
     <!-- Vendor CSS -->
-    <link rel="stylesheet" href="../assets/dist/libs/apexcharts/dist/apexcharts.css" />
-    <link rel="stylesheet" href="../assets/dist/libs/flyonui/src/vendor/apexcharts.css" />
+    <link
+      rel="stylesheet"
+      href="../assets/dist/libs/apexcharts/dist/apexcharts.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../assets/dist/libs/flyonui/src/vendor/apexcharts.css"
+    />
     <!--
     <link rel="stylesheet" href="../assets/dist/libs/flyonui/src/vendor/datatables.css" />
     -->
@@ -1010,7 +1016,7 @@
           >
             <div class="bg-white rounded-40px pt-6 ps-7 pe-9 pb-10">
               <h3 class="font-semibold text-20px text-secondary mb-7">
-          عدد النقرات
+                عدد النقرات
               </h3>
               <div class="flex justify-between items-center mb-7">
                 <span class="font-bold text-36px text-primary">12,540</span>
@@ -1023,7 +1029,7 @@
 
             <div class="bg-white rounded-40px pt-6 ps-7 pe-9 pb-10">
               <h3 class="font-semibold text-20px text-secondary mb-7">
-            معدل النقر (CTR)
+                معدل النقر (CTR)
               </h3>
               <div class="flex justify-between items-center mb-7">
                 <span class="font-bold text-36px text-primary">12,540</span>
@@ -1049,45 +1055,152 @@
           </div>
           <div class="space-y-6">
             <!-- Performance Chart Section -->
-            <div class="bg-white rounded-40px px-6 py-7">
-              <div class="flex justify-between items-center mb-7">
-                <div class="flex items-center gap-2.5">
-                  <span class="icon-[hugeicons--chart-line-01] size-8 text-primary"></span>
-                  <h2 class="font-semibold text-24px text-black">مخطط الأداء</h2>
-                </div>
-                <div class="dropdown relative inline-flex [--offset:12]">
-                  <button
-                    id="dateRangeDropdown"
-                    type="button"
-                    class="dropdown-toggle btn btn-outline btn-primary rounded-40px h-12 px-6 py-3 font-bold text-12px flex items-center gap-2"
-                    aria-haspopup="menu"
-                    aria-expanded="false"
-                  >
-                    <span class="icon-[tabler--calendar] size-5"></span>
-                    <span>آخر 30 يوم</span>
-                  </button>
-                  <ul
-                    class="dropdown-menu dropdown-open:opacity-100 hidden min-w-48"
-                    role="menu"
-                    aria-orientation="vertical"
-                    aria-labelledby="dateRangeDropdown"
-                  >
-                    <li><a class="dropdown-item font-medium text-13px" href="#" data-range="7">آخر 7 أيام</a></li>
-                    <li><a class="dropdown-item font-medium text-13px" href="#" data-range="30">آخر 30 يوم</a></li>
-                    <li><a class="dropdown-item font-medium text-13px" href="#" data-range="90">آخر 90 يوم</a></li>
-                    <li><a class="dropdown-item font-medium text-13px" href="#" data-range="180">آخر 6 أشهر</a></li>
-                  </ul>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+              <div class="lg:col-span-8">
+                <div class="bg-white rounded-40px px-6 py-7">
+                  <div class="flex justify-between items-center mb-7">
+                    <div class="flex items-center gap-2.5">
+                      <span
+                        class="icon-[hugeicons--chart-histogram] size-8 text-primary scale-x-[-1]"
+                      ></span>
+                      <h2 class="font-bold text-20px text-black">
+                        مخطط الأداء
+                      </h2>
+                    </div>
+                    <div class="dropdown relative inline-flex [--offset:12]">
+                      <button
+                        id="dateRangeDropdown"
+                        type="button"
+                        class="dropdown-toggle btn btn-outline btn-primary rounded-40px h-12 px-6 py-3 font-bold text-12px flex items-center gap-2"
+                        aria-haspopup="menu"
+                        aria-expanded="false"
+                      >
+                        <span class="icon-[tabler--calendar] size-5"></span>
+                        <span>آخر 30 يوم</span>
+                      </button>
+                      <ul
+                        class="dropdown-menu dropdown-open:opacity-100 hidden min-w-48"
+                        role="menu"
+                        aria-orientation="vertical"
+                        aria-labelledby="dateRangeDropdown"
+                      >
+                        <li>
+                          <a
+                            class="dropdown-item font-medium text-13px"
+                            href="#"
+                            data-range="7"
+                            >آخر 7 أيام</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            class="dropdown-item font-medium text-13px"
+                            href="#"
+                            data-range="30"
+                            >آخر 30 يوم</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            class="dropdown-item font-medium text-13px"
+                            href="#"
+                            data-range="90"
+                            >آخر 90 يوم</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            class="dropdown-item font-medium text-13px"
+                            href="#"
+                            data-range="180"
+                            >آخر 6 أشهر</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div id="performanceChart" style="height: 400px"></div>
+                  <div class="flex items-center gap-6 mt-6 justify-center">
+                    <div class="flex items-center gap-2">
+                      <div
+                        class="w-3 h-3 rounded-full"
+                        style="background-color: #7c3aed"
+                      ></div>
+                      <span class="font-medium text-13px text-secondary"
+                        >عدد الزوار</span
+                      >
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <div
+                        class="w-3 h-3 rounded-full"
+                        style="background-color: #06b6d4"
+                      ></div>
+                      <span class="font-medium text-13px text-secondary"
+                        >مرات الظهور</span
+                      >
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div id="performanceChart" style="height: 400px;"></div>
-              <div class="flex items-center gap-6 mt-6 justify-center">
-                <div class="flex items-center gap-2">
-                  <div class="w-3 h-3 rounded-full" style="background-color: #7C3AED;"></div>
-                  <span class="font-medium text-13px text-secondary">عدد الزوار</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <div class="w-3 h-3 rounded-full" style="background-color: #06B6D4;"></div>
-                  <span class="font-medium text-13px text-secondary">مرات الظهور</span>
+              <div class="lg:col-span-4">
+                <div class="bg-white px-6 pt-8 pb-16">
+                  <div class="flex items-center gap-2.5 mb-10">
+                    <span
+                      class="icon-[hugeicons--chart-histogram] size-8 text-primary scale-x-[-1]"
+                    ></span>
+                    <h2 class="font-bold text-20px text-black">
+                      آخر التحديثات
+                    </h2>
+                  </div>
+                  <div class="flex items-center gap-4">
+                    <div class="size-12 bg-d9 rounded-full center_flex"></div>
+                    <div>
+                      <h5 class="font-semibold text-base text-secondary mb-1.5">
+                        تم تفعيل حملة “خصم نهاية الأسبوع” بنجاح
+                      </h5>
+                      <p class="font-normal text-12px text-primary">
+                        11:20 ص – 24 أبريل
+                      </p>
+                    </div>
+                  </div>
+                  <hr class="my-6 text-[#F2EFEF]" />
+                  <div class="flex items-center gap-4">
+                    <div class="size-12 bg-d9 rounded-full center_flex"></div>
+                    <div>
+                      <h5 class="font-semibold text-base text-secondary mb-1.5">
+                        تم تفعيل حملة “خصم نهاية الأسبوع” بنجاح
+                      </h5>
+                      <p class="font-normal text-12px text-primary">
+                        11:20 ص – 24 أبريل
+                      </p>
+                    </div>
+                  </div>
+
+                  <hr class="my-6 text-[#F2EFEF]" />
+                  <div class="flex items-center gap-4">
+                    <div class="size-12 bg-d9 rounded-full center_flex"></div>
+                    <div>
+                      <h5 class="font-semibold text-base text-secondary mb-1.5">
+                        تم تفعيل حملة “خصم نهاية الأسبوع” بنجاح
+                      </h5>
+                      <p class="font-normal text-12px text-primary">
+                        11:20 ص – 24 أبريل
+                      </p>
+                    </div>
+                  </div>
+
+                  <hr class="my-6 text-[#F2EFEF]" />
+                  <div class="flex items-center gap-4">
+                    <div class="size-12 bg-d9 rounded-full center_flex"></div>
+                    <div>
+                      <h5 class="font-semibold text-base text-secondary mb-1.5">
+                        تم تفعيل حملة “خصم نهاية الأسبوع” بنجاح
+                      </h5>
+                      <p class="font-normal text-12px text-primary">
+                        11:20 ص – 24 أبريل
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
