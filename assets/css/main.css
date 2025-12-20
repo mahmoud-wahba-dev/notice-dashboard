@@ -72,6 +72,8 @@ body {
   --color-success: #00cf3e;
 
   --color-f1: #f1f1f1;
+  --color-f2: #f2f2f2;
+
   --color-f8: #f8f8f8;
   --color-dark: #141b34;
   --color-grey: #595959;
@@ -85,7 +87,12 @@ body {
   --color-71: #717171;
   --color-e5: #e5e5e5;
   --color-d9: #d9d9d9;
+  --color-89: #898888;
+  --color-d4: #d4d4d4;
+  --color-70: #707070;
+  --color-e6:  #E6E6E6;
 
+ 
   /* --color-dark-black: #464646;
   --color-body: #f8f8f8;
   --color-dot: #55cdff;
