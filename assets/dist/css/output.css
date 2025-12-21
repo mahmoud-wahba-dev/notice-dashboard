@@ -7426,6 +7426,9 @@
   .gap-8 {
     gap: calc(var(--spacing) * 8);
   }
+  .gap-9 {
+    gap: calc(var(--spacing) * 9);
+  }
   .gap-10 {
     gap: calc(var(--spacing) * 10);
   }
@@ -8158,6 +8161,14 @@
     border-inline-end-style: var(--tw-border-style);
     border-inline-end-width: 1px;
   }
+  .border-t {
+    border-top-style: var(--tw-border-style);
+    border-top-width: 1px;
+  }
+  .border-t-0 {
+    border-top-style: var(--tw-border-style);
+    border-top-width: 0px;
+  }
   .border-t-1 {
     border-top-style: var(--tw-border-style);
     border-top-width: 1px;
@@ -8682,6 +8693,9 @@
   }
   .border-de {
     border-color: var(--color-de);
+  }
+  .border-e2 {
+    border-color: var(--color-e2);
   }
   .border-e5 {
     border-color: var(--color-e5);
@@ -9350,14 +9364,29 @@
   .px-8 {
     padding-inline: calc(var(--spacing) * 8);
   }
+  .px-10 {
+    padding-inline: calc(var(--spacing) * 10);
+  }
   .px-11 {
     padding-inline: calc(var(--spacing) * 11);
   }
   .px-14 {
     padding-inline: calc(var(--spacing) * 14);
   }
+  .px-16 {
+    padding-inline: calc(var(--spacing) * 16);
+  }
+  .px-20 {
+    padding-inline: calc(var(--spacing) * 20);
+  }
+  .px-24 {
+    padding-inline: calc(var(--spacing) * 24);
+  }
   .px-28 {
     padding-inline: calc(var(--spacing) * 28);
+  }
+  .px-40 {
+    padding-inline: calc(var(--spacing) * 40);
   }
   .\!py-0\.5 {
     padding-block: calc(var(--spacing) * 0.5) !important;
@@ -9415,6 +9444,9 @@
   }
   .pe-9 {
     padding-inline-end: calc(var(--spacing) * 9);
+  }
+  .pt-0 {
+    padding-top: calc(var(--spacing) * 0);
   }
   .pt-1 {
     padding-top: calc(var(--spacing) * 1);
@@ -11416,12 +11448,28 @@
       background-color: #FBF3FF;
     }
   }
+  .active-tab\:bg-primary {
+    &[data-tab].active {
+      background-color: var(--color-primary);
+    }
+    [data-tab].active & {
+      background-color: var(--color-primary);
+    }
+  }
   .active-tab\:text-primary {
     &[data-tab].active {
       color: var(--color-primary);
     }
     [data-tab].active & {
       color: var(--color-primary);
+    }
+  }
+  .active-tab\:text-white {
+    &[data-tab].active {
+      color: var(--color-white);
+    }
+    [data-tab].active & {
+      color: var(--color-white);
     }
   }
   .overlay-open\:translate-x-0 {
