@@ -28,6 +28,10 @@
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="/assets/dist/libs/flatpickr/dist/flatpickr.css"
+    />
 
     <!-- Vendor CSS -->
     <!--
@@ -37,7 +41,7 @@
     -->
 
     <!-- build:css -->
-    <link rel="stylesheet" href="../assets/dist/css/output.css" />
+    <link rel="stylesheet" href="/assets/dist/css/output.css" />
 
     <!-- Page CSS -->
   </head>
@@ -1067,7 +1071,7 @@
                           class="label-text font-medium text-base text-black mb-2"
                           for="defaultInput"
                         >
-                       عنوان الإشعار
+                          عنوان الإشعار
                         </label>
 
                         <input
@@ -1246,7 +1250,7 @@
                     aria-labelledby="tabs-large-item-2"
                   >
                     <div>
-                      <div class="mb-9 flex  gap-4">
+                      <div class="mb-9 flex gap-4">
                         <div>
                           <div
                             class="dropdown-item items-center justify-between gap-2 px-2 py-1"
@@ -1261,50 +1265,388 @@
                         </div>
 
                         <div>
-                        <p class="font-medium text-base mb-2 text-black">زر التشغيل في جميع الصفحات</p>
+                          <p class="font-medium text-base mb-2 text-black">
+                            زر التشغيل في جميع الصفحات
+                          </p>
 
-                          <p class="font-normal text-14px text-black">أين يجب أن يظهر الإشعار؟</p>
+                          <p class="font-normal text-14px text-black">
+                            أين يجب أن يظهر الإشعار؟
+                          </p>
                         </div>
                       </div>
 
                       <div class="mb-5">
-                        
-                 <div class="flex gap-4">
-                         <input
-                          type="text"
-                          placeholder="تطابق تام"
-                          class="input w-full bg-f8 border-d4 rounded-lg h-[58px]"
-                          id="defaultInput"
-                        />
-                              <input
-                          type="text"
-                          placeholder="تطابق تام"
-                          class="input w-full bg-f8 border-d4 rounded-lg h-[58px]"
-                          id="defaultInput"
-                        />
-                        <div class=""></div>
-                 </div>
+                        <div class="flex gap-4">
+                          <input
+                            type="text"
+                            placeholder="تطابق تام"
+                            class="input bg-f8 border-d4 rounded-lg h-[58px] grow basis-0"
+                            id="defaultInput"
+                          />
+                          <input
+                            type="text"
+                            placeholder="Full URL - e.g. https://domain.com"
+                            class="input bg-f8 border-d4 rounded-lg h-[58px] grow-[2] basis-0"
+                            id="defaultInput"
+                          />
+                          <div class="grow-0 basis-0">
+                            <button
+                              class="btn bg-[#FFF3F3] btn-soft rounded-8px font-semibold text-20px h-[58px] px-6"
+                            >
+                              <span
+                                class="icon-[basil--cross-outline] text-[#FF6060] size-9"
+                              ></span>
+                            </button>
+                          </div>
+                        </div>
                       </div>
                       <div class="mb-5">
                         <label
                           class="label-text font-medium text-base text-black mb-2"
                           for="defaultInput"
-                          >عنوان الإشعار</label
+                          >عرض المشغل</label
                         >
 
-                        <input
-                          type="text"
-                          placeholder="إشعار بعد الظهر - الساعة 2 مساءً، 15 يناير 2026"
-                          class="input w-full border-d4 rounded-lg h-[58px]"
-                          id="defaultInput"
-                        />
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+                          <label
+                            class="custom-soft-option flex gap-3 bg-transparent rounded-8px border border-[#D4D4D4] center_flex text-center cursor-pointer has-[:checked]:text-white has-[:checked]:bg-primary has-[:checked]:border-primary has-[:checked]:outline-none"
+                          >
+                            <input
+                              type="radio"
+                              name="radio-18"
+                              class="hidden"
+                              checked
+                            />
+
+                            <span
+                              class="w-full font-normal text-base has-[:checked]:font-semibold has-[:checked]:!text-white"
+                            >
+                              تاخير
+                            </span>
+                          </label>
+
+                          <label
+                            class="custom-soft-option flex gap-3 bg-transparent rounded-8px border border-[#D4D4D4] center_flex text-center cursor-pointer has-[:checked]:text-white has-[:checked]:bg-primary has-[:checked]:border-primary has-[:checked]:outline-none"
+                          >
+                            <input
+                              type="radio"
+                              name="radio-18"
+                              class="hidden"
+                              checked
+                            />
+
+                            <span
+                              class="w-full font-normal text-base has-[:checked]:font-semibold has-[:checked]:!text-white"
+                            >
+                              الوقت في الموقع
+                            </span>
+                          </label>
+
+                          <label
+                            class="custom-soft-option flex gap-3 bg-transparent rounded-8px border border-[#D4D4D4] center_flex text-center cursor-pointer has-[:checked]:text-white has-[:checked]:bg-primary has-[:checked]:border-primary has-[:checked]:outline-none"
+                          >
+                            <input
+                              type="radio"
+                              name="radio-18"
+                              class="hidden"
+                              checked
+                            />
+
+                            <span
+                              class="w-full font-normal text-base has-[:checked]:font-semibold has-[:checked]:!text-white"
+                            >
+                              عدم نشاط الصفحة
+                            </span>
+                          </label>
+
+                          <label
+                            class="custom-soft-option flex gap-3 bg-transparent rounded-8px border border-[#D4D4D4] center_flex text-center cursor-pointer has-[:checked]:text-white has-[:checked]:bg-primary has-[:checked]:border-primary has-[:checked]:outline-none"
+                          >
+                            <input
+                              type="radio"
+                              name="radio-18"
+                              class="hidden"
+                              checked
+                            />
+
+                            <span
+                              class="w-full font-normal text-base has-[:checked]:font-semibold has-[:checked]:!text-white"
+                            >
+                              مشاهدات الصفحة
+                            </span>
+                          </label>
+                          <label
+                            class="custom-soft-option flex gap-3 bg-transparent rounded-8px border border-[#D4D4D4] center_flex text-center cursor-pointer has-[:checked]:text-white has-[:checked]:bg-primary has-[:checked]:border-primary has-[:checked]:outline-none"
+                          >
+                            <input
+                              type="radio"
+                              name="radio-18"
+                              class="hidden"
+                              checked
+                            />
+
+                            <span
+                              class="w-full font-normal text-base has-[:checked]:font-semibold has-[:checked]:!text-white"
+                            >
+                              الخروج
+                            </span>
+                          </label>
+                          <label
+                            class="custom-soft-option flex gap-3 bg-transparent rounded-8px border border-[#D4D4D4] center_flex text-center cursor-pointer has-[:checked]:text-white has-[:checked]:bg-primary has-[:checked]:border-primary has-[:checked]:outline-none"
+                          >
+                            <input
+                              type="radio"
+                              name="radio-18"
+                              class="hidden"
+                              checked
+                            />
+
+                            <span
+                              class="w-full font-normal text-base has-[:checked]:font-semibold has-[:checked]:!text-white"
+                            >
+                              تمرير الصفحة
+                            </span>
+                          </label>
+                          <label
+                            class="custom-soft-option flex gap-3 bg-transparent rounded-8px border border-[#D4D4D4] center_flex text-center cursor-pointer has-[:checked]:text-white has-[:checked]:bg-primary has-[:checked]:border-primary has-[:checked]:outline-none"
+                          >
+                            <input
+                              type="radio"
+                              name="radio-18"
+                              class="hidden"
+                              checked
+                            />
+
+                            <span
+                              class="w-full font-normal text-base has-[:checked]:font-semibold has-[:checked]:!text-white"
+                            >
+                              انقر بالماوس
+                            </span>
+                          </label>
+                          <label
+                            class="custom-soft-option flex gap-3 bg-transparent rounded-8px border border-[#D4D4D4] center_flex text-center cursor-pointer has-[:checked]:text-white has-[:checked]:bg-primary has-[:checked]:border-primary has-[:checked]:outline-none"
+                          >
+                            <input
+                              type="radio"
+                              name="radio-18"
+                              class="hidden"
+                              checked
+                            />
+
+                            <span
+                              class="w-full font-normal text-base has-[:checked]:font-semibold has-[:checked]:!text-white"
+                            >
+                              تحريك الماوس
+                            </span>
+                          </label>
+                        </div>
                       </div>
-            
-                 
-                   
-                
+
+                      <div class="mb-12">
+                        <label
+                          class="label-text font-medium text-base text-black mb-2"
+                          for="defaultInput"
+                          >تاخير</label
+                        >
+                        <div class="join w-full bg-f8 border-d4">
+                          <input
+                            class="input join-item input rounded-lg h-[58px] rounded-tl-none rounded-bl-none"
+                            placeholder="2"
+                          />
+                          <span
+                            class="bg-f8 font-medium text-base text-black center_flex join-item w-36 border-d4 border"
+                          >
+                            ثواني
+                          </span>
+                        </div>
+                      </div>
+
+                      <div class="mb-5">
+                        <label
+                          class="label-text font-medium text-base text-black mb-2"
+                          for="defaultInput"
+                          >تردد العرض</label
+                        >
+
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+                          <label
+                            class="custom-soft-option flex gap-3 bg-transparent rounded-8px border border-[#D4D4D4] center_flex text-center cursor-pointer has-[:checked]:text-white has-[:checked]:bg-primary has-[:checked]:border-primary has-[:checked]:outline-none"
+                          >
+                            <input
+                              type="radio"
+                              name="radio-19"
+                              class="hidden"
+                              checked
+                            />
+
+                            <span
+                              class="w-full font-normal text-base has-[:checked]:font-semibold has-[:checked]:!text-white"
+                            >
+                              كل الوقت
+                            </span>
+                          </label>
+
+                          <label
+                            class="custom-soft-option flex gap-3 bg-transparent rounded-8px border border-[#D4D4D4] center_flex text-center cursor-pointer has-[:checked]:text-white has-[:checked]:bg-primary has-[:checked]:border-primary has-[:checked]:outline-none"
+                          >
+                            <input
+                              type="radio"
+                              name="radio-19"
+                              class="hidden"
+                              checked
+                            />
+
+                            <span
+                              class="w-full font-normal text-base has-[:checked]:font-semibold has-[:checked]:!text-white"
+                            >
+                              واحد لكل جلسة
+                            </span>
+                          </label>
+
+                          <label
+                            class="custom-soft-option flex gap-3 bg-transparent rounded-8px border border-[#D4D4D4] center_flex text-center cursor-pointer has-[:checked]:text-white has-[:checked]:bg-primary has-[:checked]:border-primary has-[:checked]:outline-none"
+                          >
+                            <input
+                              type="radio"
+                              name="radio-19"
+                              class="hidden"
+                              checked
+                            />
+
+                            <span
+                              class="w-full font-normal text-base has-[:checked]:font-semibold has-[:checked]:!text-white"
+                            >
+                              واحد لكل تصفح
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+
+                      <div class="mb-5">
+                        <label
+                          class="label-text font-medium text-base text-black mb-2"
+                          for="defaultInput"
+                          >نوع التأخير في العرض بعد إغلاق الإشعار</label
+                        >
+
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+                          <label
+                            class="custom-soft-option flex gap-3 bg-transparent rounded-8px border border-[#D4D4D4] center_flex text-center cursor-pointer has-[:checked]:text-white has-[:checked]:bg-primary has-[:checked]:border-primary has-[:checked]:outline-none"
+                          >
+                            <input
+                              type="radio"
+                              name="radio-20"
+                              class="hidden"
+                              checked
+                            />
+
+                            <span
+                              class="w-full font-normal text-base has-[:checked]:font-semibold has-[:checked]:!text-white"
+                            >
+                              الوقت في الموقع
+                            </span>
+                          </label>
+
+                          <label
+                            class="custom-soft-option flex gap-3 bg-transparent rounded-8px border border-[#D4D4D4] center_flex text-center cursor-pointer has-[:checked]:text-white has-[:checked]:bg-primary has-[:checked]:border-primary has-[:checked]:outline-none"
+                          >
+                            <input
+                              type="radio"
+                              name="radio-20"
+                              class="hidden"
+                              checked
+                            />
+
+                            <span
+                              class="w-full font-normal text-base has-[:checked]:font-semibold has-[:checked]:!text-white"
+                            >
+                              مشاهدات الصفحة
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+
+                      <div class="mb-12">
+                        <label
+                          class="label-text font-medium text-base text-black mb-2"
+                          for="defaultInput"
+                          >الوقت في الموقع</label
+                        >
+                        <div class="join w-full bg-f8 border-d4">
+                          <input
+                            class="input join-item input rounded-lg h-[58px] rounded-tl-none rounded-bl-none"
+                            placeholder="2"
+                          />
+                          <span
+                            class="bg-f8 font-medium text-base text-black center_flex join-item w-36 border-d4 border"
+                          >
+                            ثواني
+                          </span>
+                        </div>
+                      </div>
+
+                      <div class="mb-12 flex gap-4">
+                        <div>
+                          <div
+                            class="dropdown-item items-center justify-between gap-2 px-2 py-1"
+                          >
+                            <input
+                              type="checkbox"
+                              class="switch switch-primary switch-sm"
+                              id="settings1"
+                              checked
+                            />
+                          </div>
+                        </div>
+
+                        <div>
+                          <p class="font-medium text-base mb-2 text-black">
+                            جدول
+                          </p>
+
+                          <p class="font-normal text-14px text-black">
+                            قم بتفعيل الإشعار فقط خلال فترة زمنية محددة.
+                          </p>
+                        </div>
+                      </div>
+
+                      <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 mb-20">
+                        <div>
+                          <label
+                            class="label-text font-medium text-base text-black mb-2"
+                            for="defaultInput"
+                            >تاريخ البدء</label
+                          >
+
+                          <input
+                            type="text"
+                            class="input input border-d4 rounded-lg h-[58px]"
+                            placeholder="YYYY-MM-DD HH:MM"
+                            id="flatpickr-date-time"
+                          />
+                        </div>
+                        <div>
+                          <label
+                            class="label-text font-medium text-base text-black mb-2"
+                            for="defaultInput"
+                            >تاريخ الانتهاء</label
+                          >
+
+                          <input
+                            type="text"
+                            class="input input border-d4 rounded-lg h-[58px]"
+                            placeholder="YYYY-MM-DD HH:MM"
+                            id="flatpickr-date-time"
+                          />
+                        </div>
+                      </div>
 
                       <div>
+                        <button
+                          class="btn bg-f8 text-black border-0 mb-8 shadow rounded-13px font-semibold text-20px btn-block py-7"
+                        >
+                          تشغيل
+                        </button>
                         <button
                           class="btn btn-primary rounded-13px font-semibold text-20px btn-block py-7"
                         >
@@ -1439,7 +1781,18 @@
     <!-- FlyonUI JS -->
     <script src="../assets/dist/libs/lodash/lodash.min.js"></script>
     <script src="../assets/dist/libs/dropzone/dist/dropzone-min.js"></script>
+    <script src="/assets/dist/libs/flatpickr/dist/flatpickr.js"></script>
     <script src="../assets/dist/libs/flyonui/flyonui.js"></script>
+
+    <script>
+      window.addEventListener("load", function () {
+        // Date Time
+        flatpickr("#flatpickr-date-time", {
+          enableTime: true,
+          dateFormat: "Y-m-d H:i",
+        });
+      });
+    </script>
     <!-- Vendors JS -->
     <!--
     <script src="../assets/dist/libs/jquery/dist/jquery.min.js"></script>

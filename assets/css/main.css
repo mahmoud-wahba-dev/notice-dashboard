@@ -234,3 +234,87 @@ body {
   background-color: var(--color-primary);
   color: white;
 }
+
+
+
+
+
+
+
+
+
+
+/* ===== Flatpickr Theme (Brand Primary) ===== */
+
+.flatpickr-calendar {
+  border-radius: 12px;
+  border: 1px solid #D4D4D4;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  font-family: var(--font-ibm);
+}
+
+/* Header */
+.flatpickr-months {
+  background: var(--color-primary);
+  color: white;
+  border-radius: 12px 12px 0 0;
+}
+.flatpickr-current-month .flatpickr-monthDropdown-months .flatpickr-monthDropdown-month{
+  background: var(--color-base-content);
+}
+.flatpickr-day.selected, .flatpickr-day.startRange, .flatpickr-day.endRange, .flatpickr-day.selected.inRange, .flatpickr-day.startRange.inRange, .flatpickr-day.endRange.inRange, .flatpickr-day.selected:focus, .flatpickr-day.startRange:focus, .flatpickr-day.endRange:focus, .flatpickr-day.selected:hover, .flatpickr-day.startRange:hover, .flatpickr-day.endRange:hover, .flatpickr-day.selected.prevMonthDay, .flatpickr-day.startRange.prevMonthDay, .flatpickr-day.endRange.prevMonthDay, .flatpickr-day.selected.nextMonthDay, .flatpickr-day.startRange.nextMonthDay, .flatpickr-day.endRange.nextMonthDay{
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.flatpickr-month,
+.flatpickr-current-month,
+.flatpickr-prev-month,
+.flatpickr-next-month {
+  color: white;
+}
+
+/* Weekdays */
+.flatpickr-weekdays {
+  background: rgba(156, 3, 228, 0.08);
+}
+
+/* Days */
+.flatpickr-day {
+  border-radius: 8px;
+  color: #464646;
+}
+
+.flatpickr-day:hover {
+  background: rgba(156, 3, 228, 0.12);
+}
+
+/* Selected day */
+.flatpickr-day.selected,
+.flatpickr-day.startRange,
+.flatpickr-day.endRange {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
+}
+
+/* Today */
+.flatpickr-day.today {
+  border-color: var(--color-primary);
+}
+
+/* Time picker */
+.flatpickr-time {
+  border-top: 1px solid #E5E7EB;
+}
+
+.flatpickr-time input {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+/* Focused input inside time */
+.flatpickr-time input:focus {
+  outline: none;
+  box-shadow: none;
+}

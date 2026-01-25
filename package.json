@@ -26,7 +26,7 @@
     "datatables.net-fixedcolumns": "5.0.4",
     "datatables.net-fixedheader": "4.0.3",
     "dropzone": "6.0.0-beta.2",
-    "flatpickr": "4.6.13",
+    "flatpickr": "^4.6.13",
     "flyonui": "2.4.0",
     "jquery": "3.7.1",
     "jszip": "3.10.1",
