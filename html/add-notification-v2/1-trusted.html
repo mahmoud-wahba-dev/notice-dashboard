@@ -33,12 +33,10 @@
       href="../../assets/dist/libs/flatpickr/dist/flatpickr.css"
     />
 
-    <!-- Vendor CSS -->
-    <!--
-    <link rel="stylesheet" href="../../assets/dist/libs/apexcharts/dist/apexcharts.css" />
-    <link rel="stylesheet" href="../../assets/dist/libs/flyonui/src/vendor/apexcharts.css" />
-    <link rel="stylesheet" href="../../assets/dist/libs/flyonui/src/vendor/datatables.css" />
-    -->
+    <link
+      rel="stylesheet"
+      href="../../assets/dist/libs/nouislider/dist/nouislider.min.css"
+    />
 
     <!-- build:css -->
     <link rel="stylesheet" href="../../assets/dist/css/output.css" />
@@ -2020,57 +2018,26 @@
                           value="#ACACAC"
                         />
                       </div>
-                      <div class="mb-4">
-                        <div
-                          data-range-slider='{
-  "start": 50,
-  "connect": "lower",
-  "range": {
-    "min": 0,
-    "max": 100
-  }
-}'
-                        ></div>
-                        <label class="sr-only">Example</label>
+                      <div class="mb-6">
+                        <label
+                          class="label-text font-medium text-base text-black mb-2"
+                          for="defaultInput"
+                        >
+                          حشوة داخلية</label
+                        >
 
-                        <div
-                          data-range-slider='{
-  "start": 50,
-  "connect": "lower",
-  "range": {
-    "min": 0,
-    "max": 100
-  },
-  "cssClasses": {
-    "target": "relative h-2 rounded-full bg-neutral/10",
-    "base": "size-full relative z-1",
-    "origin": "absolute top-0 end-0 rtl:start-0 size-full origin-[0_0] rounded-full",
-    "handle": "absolute top-1/2 end-0 rtl:start-0 size-4 bg-base-100 border-[3px] border-primary rounded-full translate-x-2/4 -translate-y-2/4 hover:cursor-grab active:cursor-grabbing hover:ring-2 ring-primary active:ring-[3px]",
-    "connects": "relative z-0 w-full h-2 rtl:rounded-e-full rtl:rounded-s-none rounded-s-full overflow-hidden",
-    "connect": "absolute top-0 end-0 rtl:start-0 z-1 size-full bg-primary origin-[0_0]",
-    "touchArea": "absolute -top-1 -bottom-1 -start-1 -end-1"
-  }
-}'
-                        ></div>
-                        <div
-                          data-range-slider='{
-    "start": 50,
-    "connect": "lower",
-    "range": {
-      "min": 0,
-      "max": 100
-    },
-    "cssClasses": {
-      "target": "relative h-3 rounded-full bg-neutral/10",
-      "base": "size-full relative z-1",
-      "origin": "absolute top-0 end-0 rtl:start-0 size-full origin-[0_0] rounded-full",
-     "handle": "absolute top-1/2 end-0 rtl:start-0 size-6 bg-base-100 border-4 border-primary rounded-full translate-x-2/4 -translate-y-2/4 hover:cursor-grab active:cursor-grabbing hover:ring-2 ring-primary active:ring-[3px]",
-      "connects": "relative z-0 w-full h-3 rtl:rounded-e-full rtl:rounded-s-none rounded-s-full overflow-hidden",
-      "connect": "absolute top-0 end-0 rtl:start-0 z-1 size-full bg-primary origin-[0_0]",
-      "touchArea": "absolute -top-1 -bottom-1 -start-1 -end-1"
-    }
-  }'
-                        ></div>
+                        <div class="slider-styled" id="slider-round1"></div>
+                      </div>
+
+                      <div class="mb-12">
+                        <label
+                          class="label-text font-medium text-base text-black mb-2"
+                          for="defaultInput"
+                        >
+                          طمس الخلفية</label
+                        >
+
+                        <div class="slider-styled" id="slider-round2"></div>
                       </div>
                       <div>
                         <button
@@ -2145,20 +2112,20 @@
       });
     </script>
 
-    <!-- Vendors JS -->
-    <!--
-    <script src="../assets/dist/libs/jquery/dist/jquery.min.js"></script>
-    <script src="../assets/dist/libs/datatables.net/js/dataTables.min.js"></script>
-    <script src="../assets/dist/libs/apexcharts/dist/apexcharts.min.js"></script>
-    <script src="../assets/dist/libs/lodash/lodash.min.js"></script>
-    <script src="../assets/dist/libs/flyonui/dist/helper-apexcharts.js"></script>
-    -->
+    <script>
+      const sliders = document.querySelectorAll(".slider-styled");
 
-    <!-- Optional app scripts (disabled for minimal setup) -->
-    <!--
-    <script src="../js/main.js"></script>
-    <script src="../assets/dist/js/search.js"></script>
-    <script src="../assets/dist/js/common-dashboard.js"></script>
-    -->
+      sliders.forEach((slider) => {
+        noUiSlider.create(slider, {
+          start: 40, // default value
+          connect: "lower", // fill the lower part of track
+          range: {
+            min: 0,
+            max: 100,
+          },
+          tooltips: false, // optional: show tooltip with value
+        });
+      });
+    </script>
   </body>
 </html>
