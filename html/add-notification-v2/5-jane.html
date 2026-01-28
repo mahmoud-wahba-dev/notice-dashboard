@@ -1050,6 +1050,7 @@
                   >
                     التخصيص
                   </button>
+
                   <button
                     type="button"
                     class="btn btn-text lg:min-w-40 h-12 font-medium text-20px text-secondary active-tab:bg-primary active-tab:text-white hover:text-primary hover:bg-primary/20 rounded-30px bg-f8"
@@ -1119,21 +1120,91 @@
                         <label
                           class="label-text font-medium text-base text-black mb-2"
                           for="defaultInput"
-                          >عد البيانات من الماضي</label
+                        >
+                          الصورة</label
+                        >
+                        <div
+                          class="bg-f8 border border-d4 rounded-8px"
+                          data-file-upload='{
+  "url": "/upload",
+  "acceptedFiles": "image/*",
+  "maxFiles": 1,
+  "singleton": true
+}'
+                        >
+                          <template data-file-upload-preview="">
+                            <div class="size-20">
+                              <img
+                                class="w-full rounded-full object-contain aspect-square"
+                                data-dz-thumbnail=""
+                              />
+                            </div>
+                          </template>
+
+                          <div
+                            class="flex flex-wrap mx-6 justify-center items-center gap-3 sm:gap-5"
+                          >
+                            <div
+                              class="group cursor-pointer bg-white"
+                              data-file-upload-previews=""
+                              data-file-upload-pseudo-trigger=""
+                            >
+                              <span
+                                class="border-base-content/30 text-base-content/50 flex size-32 shrink-0 cursor-pointer items-center justify-center w-36 h-11 m-auto border-2 border-dotted hover:bg-base-200/60 group-has-[div]:hidden"
+                              >
+                                <span> قم بتحميل صورة </span>
+                              </span>
+                            </div>
+                            <div class="grow">
+                              <div
+                                class="flex py-4 flex-col justify-center gap-4 items-center gap-x-2"
+                              >
+                                <button
+                                  type="button"
+                                  class="btn btn-primary hidden"
+                                  data-file-upload-trigger=""
+                                >
+                                  <span
+                                    class="icon-[tabler--upload] size-4 shrink-0"
+                                  ></span>
+                                  Upload photo
+                                </button>
+                                <button
+                                  type="button"
+                                  class="btn btn-outline btn-error"
+                                  data-file-upload-clear=""
+                                >
+                                  Delete
+                                </button>
+                                <p class="font-medium text-base text-secondary">
+                                  قم بتحميل صورة
+                                </p>
+                                <p class="font-normal text-12px text-a8">
+                                  Max Size : 1MB
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="mb-5">
+                        <label
+                          class="label-text font-medium text-base text-black mb-2"
+                          for="defaultInput"
+                          >بديل الصورة</label
                         >
 
                         <input
                           type="text"
-                          placeholder="5"
+                          placeholder="جميع المستخدمين"
                           class="input w-full border-d4 rounded-lg h-[58px]"
                           id="defaultInput"
                         />
                       </div>
-
                       <div class="mb-5">
                         <label
                           class="label-text font-medium text-base text-black mb-2"
-                          for="actionTitle"
+                          for="defaultInput"
                           >عنوان URL للإشعار</label
                         >
 
@@ -1141,11 +1212,11 @@
                           type="text"
                           placeholder="جميع المستخدمين"
                           class="input w-full border-d4 rounded-lg h-[58px]"
-                          id="actionTitle"
+                          id="defaultInput"
                         />
                       </div>
 
-                      <div class="mb-5 flex items-center gap-4">
+                      <div class="mb-14 flex items-start gap-4">
                         <div>
                           <div
                             class="dropdown-item items-center justify-between gap-2 px-2 py-1"
@@ -1158,13 +1229,90 @@
                             />
                           </div>
                         </div>
+
                         <div>
+                          <p class="font-medium text-base text-black mb-5">
+                            عرض الطابع الزمني
+                          </p>
                           <p class="font-medium text-base text-black">
                             عند النقر، سيتم فتحه في علامة تبويب جديدة
                           </p>
                         </div>
                       </div>
 
+                      <div class="mb-5">
+                        <label
+                          class="label-text font-medium text-base text-black mb-2"
+                          for="defaultInput"
+                          >ترتيب العرض</label
+                        >
+
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+                          <label
+                            class="custom-soft-option flex gap-3 bg-transparent text-70 rounded-8px border border-[#D4D4D4] center_flex text-center cursor-pointer has-[:checked]:text-white has-[:checked]:bg-primary has-[:checked]:border-primary has-[:checked]:outline-none"
+                          >
+                            <input
+                              type="radio"
+                              name="radio-19"
+                              class="hidden"
+                              checked
+                            />
+
+                            <span
+                              class="w-full font-normal text-base has-[:checked]:font-semibold has-[:checked]:!text-white"
+                            >
+                              تنازلي
+                            </span>
+                          </label>
+
+                          <label
+                            class="custom-soft-option text-70 flex gap-3 bg-transparent rounded-8px border border-[#D4D4D4] center_flex text-center cursor-pointer has-[:checked]:text-white has-[:checked]:bg-primary has-[:checked]:border-primary has-[:checked]:outline-none"
+                          >
+                            <input
+                              type="radio"
+                              name="radio-19"
+                              class="hidden"
+                              checked
+                            />
+
+                            <span
+                              class="w-full font-normal text-base has-[:checked]:font-semibold has-[:checked]:!text-white"
+                            >
+                              عشوائي
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+
+                      <div class="mb-5">
+                        <label
+                          class="label-text font-medium text-base text-black mb-2"
+                          for="defaultInput"
+                          >كم عدد التحويلات التي يجب عرضها؟</label
+                        >
+
+                        <input
+                          type="text"
+                          placeholder="5"
+                          class="input w-full border-d4 rounded-lg h-[58px]"
+                          id="defaultInput"
+                        />
+                      </div>
+
+                      <div class="mb-24">
+                        <label
+                          class="label-text font-medium text-base text-black mb-2"
+                          for="defaultInput"
+                          >بين التأخير</label
+                        >
+
+                        <input
+                          type="text"
+                          placeholder="5"
+                          class="input w-full border-d4 rounded-lg h-[58px]"
+                          id="defaultInput"
+                        />
+                      </div>
                       <div>
                         <button
                           class="btn btn-primary rounded-13px font-semibold text-20px btn-block py-7"
@@ -1573,19 +1721,7 @@
                           />
                         </div>
                       </div>
-                      <div class="mb-8">
-                        <label
-                          class="label-text font-medium text-base text-black mb-2"
-                          for="defaultInput"
-                          >الحد الأدنى من النشاط</label
-                        >
 
-                        <input
-                          type="text"
-                          class="input border-d4 rounded-lg h-[58px]"
-                          placeholder="الحد الأدنى من النشاط"
-                        />
-                      </div>
                       <div>
                         <button
                           class="btn bg-f8 text-black border-0 mb-8 shadow rounded-13px font-semibold text-20px btn-block py-7"
