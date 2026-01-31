@@ -1,0 +1,2201 @@
+<!doctype html>
+
+<html dir="rtl" lang="ar" data-theme="light" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
+    />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Notice Dashboard</title>
+
+    <meta
+      name="description"
+      content="Notice Dashboard for managing and viewing important notifications."
+    />
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../../assets/img/favicon/favicon.ico"
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="../../assets/dist/libs/flatpickr/dist/flatpickr.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="../../assets/dist/libs/nouislider/dist/nouislider.min.css"
+    />
+
+    <!-- build:css -->
+    <link rel="stylesheet" href="../../assets/dist/css/output.css" />
+    <!-- Page CSS -->
+  </head>
+
+  <body class="">
+    <!-- Layout wrapper -->
+    <!-- Layout wrapper -->
+    <div class="bg-f8 flex min-h-screen flex-col">
+      <!-- Layout Navbar -->
+
+      <!-- ---------- HEADER ---------- -->
+      <div
+        class="supports-[backdrop-filter]:bg-base-200/60 h-20.5 mask-[linear-gradient(var(--color-base-200),var(--color-base-200)_18%,transparent_100%)] fixed top-0 z-40 w-full backdrop-blur-md backdrop-saturate-200"
+      ></div>
+      <!-- navbar -->
+      <div class="xl:ps-65 sticky top-0 z-50 flex">
+        <div class="mx-auto mt-6 w-full max-w-[1388px] px-6">
+          <nav class="navbar rounded-field shadow-base-300/10 py-2.5 shadow-sm">
+            <div class="navbar-start gap-2 items-center">
+              <button
+                type="button"
+                class="btn btn-soft btn-square btn-sm xl:hidden"
+                aria-haspopup="dialog"
+                aria-expanded="false"
+                aria-controls="layout-sidebar"
+                data-overlay="#layout-sidebar"
+              >
+                <span class="icon-[tabler--menu-2] size-4.5"></span>
+              </button>
+
+              <!-- Search  -->
+              <div class="size-12 bg-f1 p-4 rounded-full center_flex">
+                <button
+                  type="button"
+                  class="max-sm:btn max-sm:btn-text max-sm:btn-sm max-sm:btn-square flex items-center gap-2 text-sm"
+                  aria-haspopup="dialog"
+                  aria-expanded="false"
+                  aria-controls="search-modal"
+                  data-overlay="#search-modal"
+                >
+                  <span
+                    class="icon-[hugeicons--searching] size-5 text-dark text-base-content"
+                  ></span>
+                  <!-- <span class="icon-[tabler--search] text-base-content size-5"></span> -->
+                  <!-- <span class="text-base-content/50 max-sm:hidden">Search [CTRL + K]</span> -->
+                </button>
+              </div>
+              <a
+                href=""
+                class="btn btn-soft flex items-center gap-2.5 bg-f8 rounded-40px px-3 py-3.5 font-bold text-12px text-secondary max-sm:hidden"
+              >
+                <span class="icon-[hugeicons--help-square] size-4"></span>
+                <span> مركز المساعدة </span>
+              </a>
+            </div>
+
+            <div class="navbar-end gap-4">
+              <div class="flex items-center gap-2.5">
+                <!-- Theme Dropdown -->
+                <!-- <div class="dropdown relative inline-flex">
+                <button id="dropdown-toggle-theme" type="button" class="dropdown-toggle btn btn-square btn-sm btn-text"
+                  aria-haspopup="menu" aria-expanded="false" aria-label="Dropdown">
+                  <span class="icon-[tabler--sun] size-4.5 theme-icon hidden"></span>
+                  <span class="icon-[tabler--moon] size-4.5 theme-icon hidden"></span>
+                  <span class="icon-[tabler--sun-moon] size-4.5 theme-icon"></span>
+                </button>
+                <ul class="dropdown-menu dropdown-open:opacity-100 hidden min-w-60" role="menu"
+                  aria-orientation="vertical" aria-labelledby="dropdown-toggle-theme">
+                  <li>
+                    <button type="button" data-theme-value="light" data-icon="sun" class="dropdown-item"
+                      aria-pressed="false">Light</button>
+                  </li>
+                  <li>
+                    <button type="button" data-theme-value="dark" data-icon="moon" class="dropdown-item"
+                      aria-pressed="false">Dark</button>
+                  </li>
+                  <li>
+                    <button type="button" data-theme-value="system" data-icon="sun-moon"
+                      class="dropdown-item dropdown-active" aria-pressed="true">System</button>
+                  </li>
+                </ul>
+              </div> -->
+
+                <!-- Language Dropdown -->
+                <!-- <div class="dropdown relative inline-flex [--offset:24]">
+                <button id="language-dropdown" type="button" class="dropdown-toggle btn btn-sm btn-square btn-text"
+                  aria-haspopup="menu" aria-expanded="false" aria-label="Dropdown">
+                  <span class="icon-[tabler--language] size-4.5"></span>
+                </button>
+                <ul class="dropdown-menu dropdown-open:opacity-100 hidden w-full max-w-60 space-y-0.5" role="menu"
+                  aria-orientation="vertical" aria-labelledby="language-dropdown">
+                  <li><a class="dropdown-item dropdown-active px-3" href="#">English</a></li>
+                  <li><a class="dropdown-item px-3" href="#">Deutsch</a></li>
+                  <li><a class="dropdown-item px-3" href="#">한국인</a></li>
+                  <li><a class="dropdown-item px-3" href="#">Española</a></li>
+                  <li><a class="dropdown-item px-3" href="#">Português</a></li>
+                </ul>
+              </div> -->
+
+                <!-- Activity Dropdown -->
+                <!-- <button type="button" class="btn btn-sm btn-text btn-square" aria-haspopup="dialog" aria-expanded="false"
+                aria-controls="activity-drawer" data-overlay="#activity-drawer">
+                <span class="icon-[tabler--activity] size-4.5"></span>
+              </button> -->
+
+                <div
+                  class="bg-primary btn btn-soft rounded-40px h-12 px-3 py-3.5 font-bold text-12px text-white max-sm:hidden"
+                >
+                  <a href="" class="flex items-center gap-2.5">
+                    <span> ترقية الباقة </span>
+                    <span
+                      class="icon-[teenyicons--star-circle-solid] size-4"
+                    ></span>
+                  </a>
+                </div>
+
+                <!-- Notification Dropdown -->
+                <div
+                  class="dropdown relative inline-flex [--auto-close:inside] [--offset:24]"
+                >
+                  <div class="">
+                    <button
+                      id="notification-dropdown "
+                      type="button"
+                      class="dropdown-toggle size-12 !bg-f1 p-4 !rounded-full center_flex btn btn-soft"
+                      aria-haspopup="menu"
+                      aria-expanded="false"
+                      aria-label="Dropdown"
+                    >
+                      <span class="indicator">
+                        <span
+                          class="indicator-item bg-primary size-2 rounded-full rtl:end-[100%]"
+                        ></span>
+                        <span class="icon-[tabler--bell] size-4.5"></span>
+                      </span>
+                    </button>
+                  </div>
+                  <div
+                    class="dropdown-menu dropdown-open:opacity-100 max-w-122 hidden w-full space-y-0.5 px-3"
+                    role="menu"
+                    aria-orientation="vertical"
+                    aria-labelledby="notification-dropdown"
+                  >
+                    <div
+                      class="mb-0 flex w-full items-center justify-between gap-4 py-2.5"
+                    >
+                      <h6 class="text-base-content/50 text-sm uppercase">
+                        Notification
+                      </h6>
+                      <span
+                        class="badge badge-soft badge-sm badge-primary rounded-full"
+                        >8 New</span
+                      >
+                    </div>
+                    <div class="flex items-center justify-between">
+                      <nav
+                        class="tabs tabs-bordered"
+                        aria-label="Tabs"
+                        role="tablist"
+                        aria-orientation="horizontal"
+                      >
+                        <button
+                          type="button"
+                          class="tab active-tab:tab-active active font-medium"
+                          id="tabs-basic-item-1"
+                          data-tab="#tabs-basic-1"
+                          aria-controls="tabs-basic-1"
+                          role="tab"
+                          aria-selected="true"
+                        >
+                          4 Inbox
+                        </button>
+                        <button
+                          type="button"
+                          class="tab active-tab:tab-active font-medium"
+                          id="tabs-basic-item-2"
+                          data-tab="#tabs-basic-2"
+                          aria-controls="tabs-basic-2"
+                          role="tab"
+                          aria-selected="false"
+                        >
+                          General
+                        </button>
+                      </nav>
+                      <div
+                        class="dropdown relative inline-flex [--auto-close:inside]"
+                      >
+                        <button
+                          id="notification-settings"
+                          type="button"
+                          class="dropdown-toggle btn btn-text btn-sm btn-square"
+                          aria-haspopup="menu"
+                          aria-expanded="false"
+                          aria-label="Dropdown"
+                        >
+                          <span class="icon-[tabler--settings] size-5"></span>
+                        </button>
+                        <div
+                          class="dropdown-menu dropdown-open:opacity-100 min-w-30 hidden"
+                          role="menu"
+                          aria-orientation="vertical"
+                          aria-labelledby="notification-settings"
+                        >
+                          <div
+                            class="dropdown-item items-center justify-between gap-2 px-2 py-1"
+                          >
+                            <label class="label-text text-base" for="settings1"
+                              >Notification</label
+                            >
+                            <input
+                              type="checkbox"
+                              class="switch switch-primary switch-sm"
+                              id="settings1"
+                              checked
+                            />
+                          </div>
+                          <div
+                            class="dropdown-item items-center justify-between gap-2 px-2 py-1"
+                          >
+                            <label class="label-text text-base" for="settings2"
+                              >Location</label
+                            >
+                            <input
+                              type="checkbox"
+                              class="switch switch-primary switch-sm"
+                              id="settings2"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <hr class="border-base-content/20 border-1 -mx-3 -mt-1" />
+                    <div>
+                      <div
+                        id="tabs-basic-1"
+                        role="tabpanel"
+                        aria-labelledby="tabs-basic-item-1"
+                      >
+                        <ul>
+                          <li>
+                            <div class="flex w-full items-center gap-3 py-3">
+                              <div class="avatar">
+                                <div class="size-10 rounded-full">
+                                  <img
+                                    src="/assets/img/avatars/1.png"
+                                    alt="avatar"
+                                  />
+                                </div>
+                              </div>
+                              <div class="flex-1">
+                                <h6
+                                  class="text-base-content mb-0.5 font-medium"
+                                >
+                                  Cristofer Torff
+                                </h6>
+                                <div class="flex items-center gap-x-2.5">
+                                  <p class="text-base-content/50 text-sm">
+                                    12 Minutes ago
+                                  </p>
+                                  <span
+                                    class="bg-neutral/20 size-1.5 rounded-full"
+                                  ></span>
+                                  <p class="text-base-content/50 text-sm">
+                                    New post
+                                  </p>
+                                </div>
+                              </div>
+                              <div class="flex flex-col items-center gap-3">
+                                <button class="btn btn-xs btn-circle btn-text">
+                                  <span
+                                    class="icon-[tabler--x] text-base-content/80 size-4"
+                                  ></span>
+                                </button>
+                                <div
+                                  class="bg-primary size-1.5 rounded-full"
+                                ></div>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <hr class="border-base-content/20 -mx-3 my-1.5" />
+                          </li>
+                          <li>
+                            <div class="flex w-full items-center gap-3 py-3">
+                              <div class="avatar">
+                                <div class="size-10 rounded-full">
+                                  <img
+                                    src="../../assets/img/avatars/1.png"
+                                    alt="avatar"
+                                  />
+                                </div>
+                              </div>
+                              <div class="flex-1">
+                                <h6
+                                  class="text-base-content mb-0.5 font-medium"
+                                >
+                                  Deni Arison
+                                </h6>
+                                <div class="flex items-center gap-x-2.5">
+                                  <p class="text-base-content/50 text-sm">
+                                    27 Minutes ago
+                                  </p>
+                                  <span
+                                    class="bg-neutral/20 size-1.5 rounded-full"
+                                  ></span>
+                                  <p class="text-base-content/50 text-sm">
+                                    New comment
+                                  </p>
+                                </div>
+                              </div>
+                              <div class="flex flex-col items-center gap-3">
+                                <button class="btn btn-xs btn-circle btn-text">
+                                  <span
+                                    class="icon-[tabler--x] text-base-content/80 size-4"
+                                  ></span>
+                                </button>
+                                <div
+                                  class="bg-primary size-1.5 rounded-full"
+                                ></div>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <hr class="border-base-content/20 -mx-3 my-1.5" />
+                          </li>
+                          <li>
+                            <div class="flex w-full gap-3 py-3">
+                              <div class="avatar">
+                                <div class="size-10 rounded-full">
+                                  <img
+                                    src="../../assets/img/avatars/1.png"
+                                    alt="avatar"
+                                  />
+                                </div>
+                              </div>
+                              <div class="flex-1">
+                                <h6
+                                  class="text-base-content mb-0.5 text-wrap font-medium"
+                                >
+                                  Anna has applied to create an ad for your
+                                  campaign
+                                </h6>
+                                <div class="mb-3 flex items-center gap-2.5">
+                                  <p class="text-base-content/50 text-sm">
+                                    2 hours ago
+                                  </p>
+                                  <span
+                                    class="bg-neutral/20 size-1.5 rounded-full"
+                                  ></span>
+                                  <p class="text-base-content/50 text-sm">
+                                    New request for campaign
+                                  </p>
+                                </div>
+                                <div class="flex gap-4">
+                                  <button class="btn btn-sm">Decline</button>
+                                  <button class="btn btn-sm btn-primary">
+                                    Accept
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <hr class="border-base-content/20 -mx-3 my-1.5" />
+                          </li>
+                          <li>
+                            <div class="flex w-full gap-3 py-3">
+                              <div class="avatar">
+                                <div class="size-10 rounded-full">
+                                  <img
+                                    src="../../assets/img/avatars/1.png"
+                                    alt="avatar"
+                                  />
+                                </div>
+                              </div>
+                              <div class="flex-1">
+                                <h6
+                                  class="text-base-content mb-0.5 line-clamp-1 font-medium"
+                                >
+                                  Jason attached the file
+                                </h6>
+                                <div class="mb-3 flex items-center gap-2.5">
+                                  <p class="text-base-content/50 text-sm">
+                                    6 hours ago
+                                  </p>
+                                  <span
+                                    class="bg-neutral/20 size-1.5 rounded-full"
+                                  ></span>
+                                  <p class="text-base-content/50 text-sm">
+                                    Attached files
+                                  </p>
+                                </div>
+                                <div class="flex items-center gap-2 py-1">
+                                  <span
+                                    class="icon-[tabler--link] size-4"
+                                  ></span>
+                                  <p class="link link-hover">
+                                    Work examples.com
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                      <div
+                        id="tabs-basic-2"
+                        class="hidden"
+                        role="tabpanel"
+                        aria-labelledby="tabs-basic-item-2"
+                      >
+                        <ul class="space-y-0.5">
+                          <li>
+                            <div class="flex w-full items-center gap-3 py-3">
+                              <div class="avatar">
+                                <div class="w-10 rounded-full">
+                                  <img
+                                    src="../../assets/img/avatars/1.png"
+                                    alt="avatar"
+                                  />
+                                </div>
+                              </div>
+                              <div class="flex-1">
+                                <h6
+                                  class="text-base-content mb-0.5 font-medium"
+                                >
+                                  New Update Available
+                                </h6>
+                                <div class="flex items-center gap-2.5">
+                                  <p class="text-base-content/50 text-sm">
+                                    1 hour ago
+                                  </p>
+                                  <span
+                                    class="bg-neutral/20 size-1.5 rounded-full"
+                                  ></span>
+                                  <p class="text-base-content/50 text-sm">
+                                    Click to update
+                                  </p>
+                                </div>
+                              </div>
+                              <div class="flex flex-col items-center gap-3">
+                                <button class="btn btn-xs btn-circle btn-text">
+                                  <span
+                                    class="icon-[tabler--x] text-base-content/80 size-4"
+                                  ></span>
+                                </button>
+                                <div
+                                  class="bg-primary size-1.5 rounded-full"
+                                ></div>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <hr class="border-base-content/20 -mx-3 my-1.5" />
+                          </li>
+                          <li>
+                            <div class="flex w-full items-center gap-3 py-3">
+                              <div class="avatar">
+                                <div class="w-10 rounded-full">
+                                  <img
+                                    src="../../assets/img/avatars/1.png"
+                                    alt="avatar"
+                                  />
+                                </div>
+                              </div>
+                              <div class="flex-1">
+                                <h6
+                                  class="text-base-content mb-0.5 font-medium"
+                                >
+                                  Privacy Policy Update
+                                </h6>
+                                <div class="flex items-center gap-2.5">
+                                  <p class="text-base-content/50 text-sm">
+                                    3 hours ago
+                                  </p>
+                                  <span
+                                    class="bg-neutral/20 size-1.5 rounded-full"
+                                  ></span>
+                                  <p class="text-base-content/50 text-sm">
+                                    Review terms
+                                  </p>
+                                </div>
+                              </div>
+                              <div class="flex flex-col items-center gap-3">
+                                <button class="btn btn-xs btn-circle btn-text">
+                                  <span
+                                    class="icon-[tabler--x] text-base-content/80 size-4"
+                                  ></span>
+                                </button>
+                                <div
+                                  class="bg-primary size-1.5 rounded-full"
+                                ></div>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <hr class="border-base-content/20 -mx-3 my-1.5" />
+                          </li>
+                          <li>
+                            <div class="flex w-full items-center gap-3 py-3">
+                              <div class="avatar">
+                                <div class="w-10 rounded-full">
+                                  <img
+                                    src="../../assets/img/avatars/1.png"
+                                    alt="avatar"
+                                  />
+                                </div>
+                              </div>
+                              <div class="flex-1">
+                                <h6
+                                  class="text-base-content mb-0.5 font-medium"
+                                >
+                                  Account Security Alert
+                                </h6>
+                                <div class="flex items-center gap-2.5">
+                                  <p class="text-base-content/50 text-sm">
+                                    5 hours ago
+                                  </p>
+                                  <span
+                                    class="bg-neutral/20 size-1.5 rounded-full"
+                                  ></span>
+                                  <p class="text-base-content/50 text-sm">
+                                    Check activity
+                                  </p>
+                                </div>
+                              </div>
+                              <div class="flex flex-col items-center gap-3">
+                                <button class="btn btn-xs btn-circle btn-text">
+                                  <span
+                                    class="icon-[tabler--x] text-base-content/80 size-4"
+                                  ></span>
+                                </button>
+                                <div
+                                  class="bg-primary size-1.5 rounded-full"
+                                ></div>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Profile Dropdown -->
+              <div class="dropdown relative inline-flex [--offset:21]">
+                <button
+                  id="profile-dropdown"
+                  type="button"
+                  class="dropdown-toggle flex items-center gap-2"
+                  aria-haspopup="menu"
+                  aria-expanded="false"
+                  aria-label="Dropdown"
+                >
+                  <div class="avatar avatar-online-top">
+                    <div class="w-10 rounded-full">
+                      <img src="../../assets/img/avatars/1.png" alt="avatar" />
+                    </div>
+                  </div>
+                  <div>
+                    <h6 class="mb-0.5 font-bold text-12px text-secondary">
+                      سعد الغامدي
+                    </h6>
+                    <p class="font-normal text-12px text-primary">
+                      saad@contact.com
+                    </p>
+                  </div>
+                </button>
+                <ul
+                  class="dropdown-menu dropdown-open:opacity-100 max-w-75 hidden w-full space-y-0.5"
+                  role="menu"
+                  aria-orientation="vertical"
+                  aria-labelledby="profile-dropdown"
+                >
+                  <li class="dropdown-header pt-4.5 mb-1 gap-4 px-5 pb-3.5">
+                    <div class="avatar avatar-online-top">
+                      <div class="w-10 rounded-full">
+                        <img
+                          src="../../assets/img/avatars/1.png"
+                          alt="avatar"
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <h6 class="text-base-content mb-0.5 font-semibold">
+                        سعد الغامدي
+                      </h6>
+                      <p class="text-base-content/80 font-medium">
+                        saad@contact.com
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <a class="dropdown-item px-3" href="#">
+                      <span class="icon-[tabler--user] size-5"></span>
+                      My account
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item px-3" href="#">
+                      <span class="icon-[tabler--settings] size-5"></span>
+                      Setting
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item px-3" href="#">
+                      <span class="icon-[tabler--credit-card] size-5"></span>
+                      Billing
+                    </a>
+                  </li>
+                  <li>
+                    <hr class="border-base-content/20 -mx-2 my-1" />
+                  </li>
+                  <li>
+                    <a class="dropdown-item px-3" href="#">
+                      <span class="icon-[tabler--users] size-5"></span>
+                      Manage team
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item px-3" href="#">
+                      <span class="icon-[tabler--edit] size-5"></span>
+                      Customisation
+                    </a>
+                  </li>
+                  <li class="mb-1">
+                    <a class="dropdown-item px-3" href="#">
+                      <span class="icon-[tabler--circle-plus] size-5"></span>
+                      Add team account
+                    </a>
+                  </li>
+                  <li class="dropdown-footer p-2 pt-1">
+                    <a
+                      class="btn btn-text btn-error btn-block h-11 justify-start px-3 font-normal"
+                      href="#"
+                    >
+                      <span class="icon-[tabler--logout] size-5"></span>
+                      Logout
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <!-- navbar -->
+
+      <!-- SearchBox Modal -->
+      <div
+        id="search-modal"
+        class="overlay modal overlay-open:opacity-100 overlay-open:duration-300 hidden"
+        role="dialog"
+        tabindex="-1"
+      >
+        <div
+          class="modal-dialog overlay-open:opacity-100 overlay-open:duration-300"
+        >
+          <div class="modal-content">
+            <div
+              class="relative"
+              data-combo-box='{
+          "preventVisibility": true,
+          "groupingType": "default",
+          "apiUrl": "",
+          "apiGroupField": "section",
+          "outputItemTemplate": "<li class=\"rounded-field focus-within:outline-0 focus-within:bg-base-200\" data-combo-box-output-item> <a class=\"dropdown-item combo-box-selected:dropdown-active\" data-combo-box-output-item-attr=&apos;[{\"valueFrom\": \"url\", \"attr\": \"href\"}]&apos;> <div class=\"flex items-center justify-between w-full\"> <div class=\"flex items-center gap-3\"> <span class=\"size-5\" data-combo-box-output-item-attr=&apos;[{\"valueFrom\": \"icon\", \"attr\": \"class\"}]&apos;></span> <div data-combo-box-output-item-field=\"name\" data-combo-box-search-text data-combo-box-value></div> </div> <span class=\"icon-[tabler--check] text-primary combo-box-selected:block hidden size-4 shrink-0\"></span> </div> </a></li>",
+          "groupingTitleTemplate": "<li class=\"block text-xs text-base-content/50 m-3 mb-1\"></li>"
+       }'
+            >
+              <!-- SearchBox -->
+              <div class="modal-header block">
+                <div class="relative">
+                  <input
+                    class="input ps-8"
+                    type="text"
+                    placeholder="Search or type a command"
+                    role="combobox"
+                    aria-expanded="false"
+                    value=""
+                    autofocus=""
+                    data-combo-box-input=""
+                  />
+                  <span
+                    class="icon-[tabler--search] text-base-content absolute start-3 top-1/2 size-4 shrink-0 -translate-y-1/2"
+                  ></span>
+                  <div
+                    class="absolute inset-y-0 end-0 flex items-center justify-center pe-3"
+                  >
+                    <button
+                      id="searchbox-clear"
+                      type="button"
+                      class="focus:outline-hidden inline-flex size-6 shrink-0 items-center justify-center rounded-full text-gray-500 hover:text-blue-600 focus:text-blue-600 dark:text-neutral-500 dark:hover:text-blue-500 dark:focus:text-blue-500"
+                      aria-label="Close"
+                      data-combo-box-close
+                    >
+                      <span class="sr-only">Close</span>
+                      <span
+                        class="icon-[tabler--circle-x] size-5 shrink-0"
+                      ></span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- SearchBox Modal Body -->
+              <div class="modal-body" data-combo-box-output="">
+                <ul
+                  class="max-h-92 menu-sm space-y-0.5 overflow-y-auto"
+                  data-combo-box-output-items-wrapper=""
+                ></ul>
+              </div>
+              <div
+                class="modal-footer border-base-content/20 text-base-content/50 border-t-1 gap-4 py-4 max-sm:hidden"
+              >
+                <div class="flex grow items-center gap-2 text-sm">
+                  <kbd class="kbd kbd-sm">esc</kbd>
+                  <span>To close</span>
+                </div>
+                <div class="flex items-center gap-2 text-sm">
+                  <kbd class="kbd kbd-sm p-0"
+                    ><span class="icon-[tabler--arrow-back] size-4"></span
+                  ></kbd>
+                  <span>To Select</span>
+                </div>
+                <div class="flex items-center gap-2 text-sm">
+                  <kbd class="kbd kbd-sm p-0"
+                    ><span class="icon-[tabler--arrow-up] size-4"></span
+                  ></kbd>
+                  <kbd class="kbd kbd-sm p-0"
+                    ><span class="icon-[tabler--arrow-down] size-4"></span
+                  ></kbd>
+                  <span>To Navigate</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ---------- END HEADER ---------- -->
+
+      <!-- Layout Menu -->
+
+      <!-- Menu -->
+      <aside
+        id="layout-sidebar"
+        class="overlay overlay-open:translate-x-0 drawer drawer-start sm:w-65 inset-y-0 start-0 hidden h-full [--auto-close:xl] xl:z-50 xl:block xl:translate-x-0 xl:transition-none"
+        aria-label="Sidebar"
+        tabindex="-1"
+      >
+        <div class="drawer-body h-full p-0">
+          <div class="flex h-full max-h-full flex-col">
+            <button
+              type="button"
+              class="btn btn-text btn-circle btn-sm absolute end-3 top-3 xl:hidden"
+              aria-label="Close"
+              data-overlay="#layout-sidebar"
+            >
+              <span class="icon-[tabler--x] size-4.5"></span>
+            </button>
+            <div class="flex items-center gap-3 px-4 pt-10 mb-20 ps-6">
+              <a href="/index.html" class="inline-flex items-center gap-3">
+                <span class="text-primary">
+                  <img
+                    src="../../assets/img/global/logo.png"
+                    alt="Notice Logo"
+                    class=""
+                  />
+                </span>
+
+                <!-- <div class="flex grow flex-col">
+                  <span class="text-base-content text-lg font-semibold">Notice</span>
+                  <span class="text-base-content/50 text-xs">Notice</span>
+                </div> -->
+              </a>
+            </div>
+            <div class="h-full overflow-y-auto">
+              <ul class="accordion menu menu-sm gap-4 ps-6 pe-8">
+                <!-- Regular Menu Item (Level 0) -->
+                <li class="mt-2.5">
+                  <a
+                    href="/index.html"
+                    class="menu-active px-5 py-3.5 rounded-40px font-bold text-12px"
+                  >
+                    <span class="icon-[solar--home-smile-bold] size-4.5"></span>
+                    <span>لـــــــــوحـــة الــــتـــــــــحــــكـــــم</span>
+                  </a>
+                </li>
+
+                <!-- Regular Menu Item (Level 0) -->
+                <li>
+                  <a
+                    href="/html/add-notification.html"
+                    class="px-5 py-3.5 rounded-40px bg-f8 font-bold text-12px text-secondary"
+                  >
+                    <span
+                      class="icon-[hugeicons--bookmark-add-01] size-4.5 font-bold"
+                    ></span>
+                    <span>إضــافـة اشــــعــار جـــديــــد</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    href="/html/notification-used.html"
+                    class="px-5 py-3.5 rounded-40px bg-f8 font-bold text-12px text-secondary"
+                  >
+                    <span
+                      class="icon-[hugeicons--collections-bookmark] size-4.5 font-bold"
+                    ></span>
+                    <span>الاشـــعارات المستخدمة</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    href="/html/reports.html"
+                    class="px-5 py-3.5 rounded-40px bg-f8 font-bold text-12px text-secondary"
+                  >
+                    <span
+                      class="icon-[hugeicons--analytics-01] size-4.5 font-bold"
+                    ></span>
+                    <span>تقارير وسجل الإشعارات</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/html/settings.html"
+                    class="px-5 py-3.5 rounded-40px bg-f8 font-bold text-12px text-secondary"
+                  >
+                    <span class="icon-[uil--setting] size-4.5 font-bold"></span>
+                    <span>الإعـــــــــدادات</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    href="/html/notice-explains.html"
+                    class="px-5 py-3.5 rounded-40px bg-f8 font-bold text-12px text-secondary"
+                  >
+                    <span
+                      class="icon-[hugeicons--video-replay] size-4.5 font-bold"
+                    ></span>
+                    <span>شــروحـــــات نوتس</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    href="/html/support.html"
+                    class="px-5 py-3.5 rounded-40px bg-f8 font-bold text-12px text-secondary"
+                  >
+                    <span
+                      class="icon-[hugeicons--comment-01] size-4.5 font-bold"
+                    ></span>
+                    <span>الدعم والمساعدة</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    href="/html/integration.html"
+                    class="px-5 py-3.5 rounded-40px bg-f8 font-bold text-12px text-secondary"
+                  >
+                    <img
+                      src="../../assets/img/global/integration.png"
+                      class="size-5"
+                      alt=""
+                    />
+                    <span>التكامل مع قوقل</span>
+                    <img
+                      src="../../assets/img/global/soon.png"
+                      class="size-5"
+                      alt=""
+                    />
+                  </a>
+                </li>
+
+                <!-- Section Divider -->
+                <!-- <li class="text-base-content/50 before:bg-base-content/20 mt-2 p-2 text-xs uppercase before:absolute before:-start-3 before:top-1/2 before:h-0.5 before:w-2.5">Pages</li> -->
+
+                <!-- Accordion Menu Item drop down (Level 0) -->
+                <!-- <li class="accordion-item" id="user-profile">
+                  <button class="accordion-toggle accordion-item-active:bg-neutral/10 inline-flex items-center p-2 text-start text-sm font-normal" aria-controls="user-profile-collapse-user-profile" aria-expanded="true">
+                    <span class="icon-[tabler--user] size-4.5"></span>
+                    <span class="grow">إضــافـة اشــــعــار جـــديــــد</span>
+                    <span class="icon-[tabler--chevron-right] accordion-item-active:rotate-90 size-4.5 shrink-0 transition-transform duration-300 rtl:rotate-180"></span>
+                  </button>
+                  <div id="user-profile-collapse-user-profile" class="accordion-content mt-1 hidden w-full overflow-hidden transition-[height] duration-300" aria-labelledby="user-profile" role="region">
+                    <ul class="space-y-1">
+                      <li>
+                        <a href="pages-user-profile.html" class="px-2">Profile</a>
+                      </li>
+
+                      <li>
+                        <a href="pages-user-teams.html" class="px-2">Teams</a>
+                      </li>
+
+                      <li>
+                        <a href="pages-user-projects.html" class="px-2">Projects</a>
+                      </li>
+
+                      <li>
+                        <a href="pages-user-connections.html" class="px-2">Connection</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li> -->
+              </ul>
+              <div
+                class="rounded-20px mx-6 mt-24 mb-11 bg-[linear-gradient(180deg,_#0A3E1B_63.46%,_#00CF79_100%)] p-5"
+              >
+                <div class="mb-3">
+                  <img
+                    src="../../assets/img/global/moatmt_letter_logo.svg"
+                    class="w-14 h-8 m-auto"
+                    alt=""
+                  />
+                </div>
+                <p class="font-bold text-13px text-f8 text-center mb-6">
+                  استفد من مــــــزايا مـــؤتـــمــت لخدمة عملاء افتراضية
+                  بالذكاء الاصطناعي
+                </p>
+                <div>
+                  <a
+                    href=""
+                    class="btn bg-f8 px-5 whitespace-nowrap rounded-40px h-7 font-bold text-8px text-green border-0 mx-auto flex items-center gap-2"
+                  >
+                    <span class=""> اسـتـكـشـف مـؤتـمـت </span>
+                    <div
+                      class="dot !size-1.5 bg-error rounded-full !w-1.5 h-1.5"
+                    ></div>
+                    <div class="xl:size-5 rounded-full bg-green center_flex">
+                      <span
+                        class="icon-[famicons--arrow-up-outline] xl:size-3.5 text-white center_flex"
+                      ></span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+      <!-- / Menu -->
+
+      <!-- Layout Container -->
+      <div class="xl:ps-65 flex grow flex-col">
+        <!-- Content -->
+        <main class="mx-auto w-full max-w-[1388px] flex-1 grow p-6">
+          <div class="flex justify-between items-center mb-8">
+            <div>
+              <h1 class="font-bold text-24px text-secondary mb-3">
+                اضافة اشعار جديد
+              </h1>
+              <p class="font-normal text-base text-grey mb-7">
+                أنشئ إشعارًا جديدًا لعرضه لعملائك بسهولة..
+              </p>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-5">
+            <div class="md:col-span-9">
+              <div class="space-y-6 bg-white rounded-14px py-11 px-8">
+                <!-- Tabs Navigation (large) -->
+                <nav
+                  class="tabs tabs-lg overflow-x-auto w-full bg-white rounded-20px justify-between mb-12"
+                  aria-label="Tabs"
+                  role="tablist"
+                  aria-orientation="horizontal"
+                >
+                  <button
+                    type="button"
+                    class="btn btn-text lg:min-w-40 h-12 font-medium text-20px text-secondary active-tab:bg-primary active-tab:text-white hover:text-primary hover:bg-primary/20 rounded-30px bg-f8 active"
+                    id="tabs-large-item-1"
+                    data-tab="#tabs-large-1"
+                    aria-controls="tabs-large-1"
+                    role="tab"
+                  >
+                    الاساسية
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-text lg:min-w-40 h-12 font-medium text-20px text-secondary active-tab:bg-primary active-tab:text-white hover:text-primary hover:bg-primary/20 rounded-30px bg-f8"
+                    id="tabs-large-item-2"
+                    data-tab="#tabs-large-2"
+                    aria-controls="tabs-large-2"
+                    role="tab"
+                  >
+                    التشغيل
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-text lg:min-w-40 h-12 font-medium text-20px text-secondary active-tab:bg-primary active-tab:text-white hover:text-primary hover:bg-primary/20 rounded-30px bg-f8"
+                    id="tabs-large-item-3"
+                    data-tab="#tabs-large-3"
+                    aria-controls="tabs-large-3"
+                    role="tab"
+                  >
+                    عرض
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-text lg:min-w-40 h-12 font-medium text-20px text-secondary active-tab:bg-primary active-tab:text-white hover:text-primary hover:bg-primary/20 rounded-30px bg-f8"
+                    id="tabs-large-item-4"
+                    data-tab="#tabs-large-4"
+                    aria-controls="tabs-large-4"
+                    role="tab"
+                  >
+                    التخصيص
+                  </button>
+                </nav>
+
+                <!-- Tab Content -->
+                <div class="mt-6">
+                  <div
+                    id="tabs-large-1"
+                    role="tabpanel"
+                    aria-labelledby="tabs-large-item-1"
+                  >
+                    <div>
+                      <div class="mb-5">
+                        <label
+                          class="label-text font-medium text-base text-black mb-2"
+                          for="defaultInput"
+                        >
+                          عنوان الإشعار
+                        </label>
+
+                        <input
+                          type="text"
+                          placeholder="إشعار بعد الظهر - الساعة 2 مساءً، 15 يناير 2026"
+                          class="input w-full border-d4 rounded-lg h-[58px]"
+                          id="defaultInput"
+                        />
+                      </div>
+                      <div class="mb-5">
+                        <label
+                          class="label-text font-medium text-base text-black mb-2"
+                          for="defaultInput"
+                          >رسالة العنوان</label
+                        >
+
+                        <input
+                          type="text"
+                          placeholder="قيم خدماتنا"
+                          class="input w-full border-d4 rounded-lg h-[58px]"
+                          id="defaultInput"
+                        />
+                      </div>
+                      <div class="mb-5">
+                        <label
+                          class="label-text font-medium text-base text-black mb-2"
+                          for="defaultInput"
+                        >
+                          ملف صوتي</label
+                        >
+                        <div
+                          class="bg-f8 border border-d4 rounded-8px"
+                          data-file-upload='{
+  "url": "/upload",
+  "acceptedFiles": "image/*",
+  "maxFiles": 1,
+  "singleton": true
+}'
+                        >
+                          <template data-file-upload-preview="">
+                            <div class="size-20">
+                              <img
+                                class="w-full rounded-full object-contain aspect-square"
+                                data-dz-thumbnail=""
+                              />
+                            </div>
+                          </template>
+
+                          <div
+                            class="flex flex-wrap mx-6 justify-center items-center gap-3 sm:gap-5"
+                          >
+                            <div
+                              class="group cursor-pointer bg-white"
+                              data-file-upload-previews=""
+                              data-file-upload-pseudo-trigger=""
+                            >
+                              <span
+                                class="border-base-content/30 text-base-content/50 flex size-32 shrink-0 cursor-pointer items-center justify-center w-36 h-11 m-auto border-2 border-dotted hover:bg-base-200/60 group-has-[div]:hidden"
+                              >
+                                <span> اختار ملف من هنا </span>
+                              </span>
+                            </div>
+                            <div class="grow">
+                              <div
+                                class="flex py-4 flex-col justify-center gap-4 items-center gap-x-2"
+                              >
+                                <button
+                                  type="button"
+                                  class="btn btn-primary hidden"
+                                  data-file-upload-trigger=""
+                                >
+                                  <span
+                                    class="icon-[tabler--upload] size-4 shrink-0"
+                                  ></span>
+                                  Upload photo
+                                </button>
+                                <button
+                                  type="button"
+                                  class="btn btn-outline btn-error"
+                                  data-file-upload-clear=""
+                                >
+                                  Delete
+                                </button>
+                                <p class="font-medium text-base text-secondary">
+                                  قم بتحميل ملف
+                                </p>
+                                <p class="font-normal text-12px text-a8">
+                                  Max Size : 10MB
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="mb-4 flex items-start gap-4">
+                        <div>
+                          <div
+                            class="dropdown-item items-center justify-between gap-2 px-2 py-1"
+                          >
+                            <input
+                              type="checkbox"
+                              class="switch switch-primary switch-sm"
+                              id="settings1"
+                              checked
+                            />
+                          </div>
+                        </div>
+
+                        <div>
+                          <p class="font-medium text-base text-black">
+                            السماح بالتشغيل التلقائي للفيديو
+                          </p>
+                        </div>
+                      </div>
+                      <div class="mb-4 flex items-start gap-4">
+                        <div>
+                          <div
+                            class="dropdown-item items-center justify-between gap-2 px-2 py-1"
+                          >
+                            <input
+                              type="checkbox"
+                              class="switch switch-primary switch-sm"
+                              id="settings1"
+                              checked
+                            />
+                          </div>
+                        </div>
+
+                        <div>
+                          <p class="font-medium text-base text-black">
+                            عرض عناصر التحكم في الفيديو
+                          </p>
+                        </div>
+                      </div>
+
+                      <div class="mb-4 flex items-start gap-4">
+                        <div>
+                          <div
+                            class="dropdown-item items-center justify-between gap-2 px-2 py-1"
+                          >
+                            <input
+                              type="checkbox"
+                              class="switch switch-primary switch-sm"
+                              id="settings1"
+                              checked
+                            />
+                          </div>
+                        </div>
+
+                        <div>
+                          <p class="font-medium text-base text-black">
+                            تم تمكين حلقة الفيديو
+                          </p>
+                        </div>
+                      </div>
+
+                      <div class="mb-4 flex items-start gap-4">
+                        <div>
+                          <div
+                            class="dropdown-item items-center justify-between gap-2 px-2 py-1"
+                          >
+                            <input
+                              type="checkbox"
+                              class="switch switch-primary switch-sm"
+                              id="settings1"
+                              checked
+                            />
+                          </div>
+                        </div>
+
+                        <div>
+                          <p class="font-medium text-base text-black">
+                            تم كتم صوت الفيديو
+                          </p>
+                        </div>
+                      </div>
+
+                      <div class="mb-5">
+                        <label
+                          class="label-text font-medium text-base text-black mb-2"
+                          for="defaultInput"
+                          >عنوان URL للزر</label
+                        >
+
+                        <input
+                          type="text"
+                          placeholder="جميع المستخدمين"
+                          class="input w-full border-d4 rounded-lg h-[58px]"
+                          id="defaultInput"
+                        />
+                      </div>
+
+                      <div class="mb-5">
+                        <label
+                          class="label-text font-medium text-base text-black mb-2"
+                          for="defaultInput"
+                          >نص الزر</label
+                        >
+
+                        <input
+                          type="text"
+                          placeholder="جميع المستخدمين"
+                          class="input w-full border-d4 rounded-lg h-[58px]"
+                          id="defaultInput"
+                        />
+                      </div>
+
+                      <div class="mb-14 flex items-start gap-4">
+                        <div>
+                          <div
+                            class="dropdown-item items-center justify-between gap-2 px-2 py-1"
+                          >
+                            <input
+                              type="checkbox"
+                              class="switch switch-primary switch-sm"
+                              id="settings1"
+                              checked
+                            />
+                          </div>
+                        </div>
+
+                        <div>
+                          <p class="font-medium text-base text-black">
+                            عند النقر، سيتم فتحه في علامة تبويب جديدة
+                          </p>
+                        </div>
+                      </div>
+
+                      <div>
+                        <button
+                          class="btn btn-primary rounded-13px font-semibold text-20px btn-block py-7"
+                        >
+                          حفظ التحديث
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    id="tabs-large-2"
+                    role="tabpanel"
+                    aria-labelledby="tabs-large-item-2"
+                    class="hidden"
+                  >
+                    <div>
+                      <div class="mb-9 flex gap-4">
+                        <div>
+                          <div
+                            class="dropdown-item items-center justify-between gap-2 px-2 py-1"
+                          >
+                            <input
+                              type="checkbox"
+                              class="switch switch-primary switch-sm"
+                              id="settings1"
+                              checked
+                            />
+                          </div>
+                        </div>
+
+                        <div>
+                          <p class="font-medium text-base mb-2 text-black">
+                            زر التشغيل في جميع الصفحات
+                          </p>
+
+                          <p class="font-normal text-14px text-black">
+                            أين يجب أن يظهر الإشعار؟
+                          </p>
+                        </div>
+                      </div>
+
+                      <div class="mb-5">
+                        <div class="flex gap-4">
+                          <input
+                            type="text"
+                            placeholder="تطابق تام"
+                            class="input bg-f8 border-d4 rounded-lg h-[58px] grow basis-0"
+                            id="defaultInput"
+                          />
+                          <input
+                            type="text"
+                            placeholder="Full URL - e.g. https://domain.com"
+                            class="input bg-f8 border-d4 rounded-lg h-[58px] grow-[2] basis-0"
+                            id="defaultInput"
+                          />
+
+                          <div class="grow-0 basis-0">
+                            <button
+                              class="btn bg-[#FFF3F3] btn-soft rounded-8px font-semibold text-20px h-[58px] px-6"
+                            >
+                              <span
+                                class="icon-[basil--cross-outline] text-[#FF6060] size-9"
+                              ></span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="mb-5">
+                        <label
+                          class="label-text font-medium text-base text-black mb-2"
+                          for="defaultInput"
+                          >عرض المشغل</label
+                        >
+
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+                          <label
+                            class="custom-soft-option flex gap-3 bg-transparent rounded-8px border border-[#D4D4D4] center_flex text-center cursor-pointer has-[:checked]:text-white has-[:checked]:bg-primary has-[:checked]:border-primary has-[:checked]:outline-none"
+                          >
+                            <input
+                              type="radio"
+                              name="radio-18"
+                              class="hidden"
+                              checked
+                            />
+
+                            <span
+                              class="w-full font-normal text-base has-[:checked]:font-semibold has-[:checked]:!text-white"
+                            >
+                              تاخير
+                            </span>
+                          </label>
+
+                          <label
+                            class="custom-soft-option flex gap-3 bg-transparent rounded-8px border border-[#D4D4D4] center_flex text-center cursor-pointer has-[:checked]:text-white has-[:checked]:bg-primary has-[:checked]:border-primary has-[:checked]:outline-none"
+                          >
+                            <input
+                              type="radio"
+                              name="radio-18"
+                              class="hidden"
+                              checked
+                            />
+
+                            <span
+                              class="w-full font-normal text-base has-[:checked]:font-semibold has-[:checked]:!text-white"
+                            >
+                              الوقت في الموقع
+                            </span>
+                          </label>
+
+                          <label
+                            class="custom-soft-option flex gap-3 bg-transparent rounded-8px border border-[#D4D4D4] center_flex text-center cursor-pointer has-[:checked]:text-white has-[:checked]:bg-primary has-[:checked]:border-primary has-[:checked]:outline-none"
+                          >
+                            <input
+                              type="radio"
+                              name="radio-18"
+                              class="hidden"
+                              checked
+                            />
+
+                            <span
+                              class="w-full font-normal text-base has-[:checked]:font-semibold has-[:checked]:!text-white"
+                            >
+                              عدم نشاط الصفحة
+                            </span>
+                          </label>
+
+                          <label
+                            class="custom-soft-option flex gap-3 bg-transparent rounded-8px border border-[#D4D4D4] center_flex text-center cursor-pointer has-[:checked]:text-white has-[:checked]:bg-primary has-[:checked]:border-primary has-[:checked]:outline-none"
+                          >
+                            <input
+                              type="radio"
+                              name="radio-18"
+                              class="hidden"
+                              checked
+                            />
+
+                            <span
+                              class="w-full font-normal text-base has-[:checked]:font-semibold has-[:checked]:!text-white"
+                            >
+                              مشاهدات الصفحة
+                            </span>
+                          </label>
+                          <label
+                            class="custom-soft-option flex gap-3 bg-transparent rounded-8px border border-[#D4D4D4] center_flex text-center cursor-pointer has-[:checked]:text-white has-[:checked]:bg-primary has-[:checked]:border-primary has-[:checked]:outline-none"
+                          >
+                            <input
+                              type="radio"
+                              name="radio-18"
+                              class="hidden"
+                              checked
+                            />
+
+                            <span
+                              class="w-full font-normal text-base has-[:checked]:font-semibold has-[:checked]:!text-white"
+                            >
+                              الخروج
+                            </span>
+                          </label>
+                          <label
+                            class="custom-soft-option flex gap-3 bg-transparent rounded-8px border border-[#D4D4D4] center_flex text-center cursor-pointer has-[:checked]:text-white has-[:checked]:bg-primary has-[:checked]:border-primary has-[:checked]:outline-none"
+                          >
+                            <input
+                              type="radio"
+                              name="radio-18"
+                              class="hidden"
+                              checked
+                            />
+
+                            <span
+                              class="w-full font-normal text-base has-[:checked]:font-semibold has-[:checked]:!text-white"
+                            >
+                              تمرير الصفحة
+                            </span>
+                          </label>
+                          <label
+                            class="custom-soft-option flex gap-3 bg-transparent rounded-8px border border-[#D4D4D4] center_flex text-center cursor-pointer has-[:checked]:text-white has-[:checked]:bg-primary has-[:checked]:border-primary has-[:checked]:outline-none"
+                          >
+                            <input
+                              type="radio"
+                              name="radio-18"
+                              class="hidden"
+                              checked
+                            />
+
+                            <span
+                              class="w-full font-normal text-base has-[:checked]:font-semibold has-[:checked]:!text-white"
+                            >
+                              انقر بالماوس
+                            </span>
+                          </label>
+                          <label
+                            class="custom-soft-option flex gap-3 bg-transparent rounded-8px border border-[#D4D4D4] center_flex text-center cursor-pointer has-[:checked]:text-white has-[:checked]:bg-primary has-[:checked]:border-primary has-[:checked]:outline-none"
+                          >
+                            <input
+                              type="radio"
+                              name="radio-18"
+                              class="hidden"
+                              checked
+                            />
+
+                            <span
+                              class="w-full font-normal text-base has-[:checked]:font-semibold has-[:checked]:!text-white"
+                            >
+                              تحريك الماوس
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+
+                      <div class="mb-12">
+                        <label
+                          class="label-text font-medium text-base text-black mb-2"
+                          for="defaultInput"
+                          >تاخير</label
+                        >
+                        <div class="join w-full bg-f8 border-d4">
+                          <input
+                            class="input join-item input rounded-lg h-[58px] rounded-tl-none rounded-bl-none"
+                            placeholder="2"
+                          />
+                          <span
+                            class="bg-f8 font-medium text-base text-black center_flex join-item w-36 border-d4 border"
+                          >
+                            ثواني
+                          </span>
+                        </div>
+                      </div>
+
+                      <div class="mb-5">
+                        <label
+                          class="label-text font-medium text-base text-black mb-2"
+                          for="defaultInput"
+                          >تردد العرض</label
+                        >
+
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+                          <label
+                            class="custom-soft-option flex gap-3 bg-transparent rounded-8px border border-[#D4D4D4] center_flex text-center cursor-pointer has-[:checked]:text-white has-[:checked]:bg-primary has-[:checked]:border-primary has-[:checked]:outline-none"
+                          >
+                            <input
+                              type="radio"
+                              name="radio-19"
+                              class="hidden"
+                              checked
+                            />
+
+                            <span
+                              class="w-full font-normal text-base has-[:checked]:font-semibold has-[:checked]:!text-white"
+                            >
+                              كل الوقت
+                            </span>
+                          </label>
+
+                          <label
+                            class="custom-soft-option flex gap-3 bg-transparent rounded-8px border border-[#D4D4D4] center_flex text-center cursor-pointer has-[:checked]:text-white has-[:checked]:bg-primary has-[:checked]:border-primary has-[:checked]:outline-none"
+                          >
+                            <input
+                              type="radio"
+                              name="radio-19"
+                              class="hidden"
+                              checked
+                            />
+
+                            <span
+                              class="w-full font-normal text-base has-[:checked]:font-semibold has-[:checked]:!text-white"
+                            >
+                              واحد لكل جلسة
+                            </span>
+                          </label>
+
+                          <label
+                            class="custom-soft-option flex gap-3 bg-transparent rounded-8px border border-[#D4D4D4] center_flex text-center cursor-pointer has-[:checked]:text-white has-[:checked]:bg-primary has-[:checked]:border-primary has-[:checked]:outline-none"
+                          >
+                            <input
+                              type="radio"
+                              name="radio-19"
+                              class="hidden"
+                              checked
+                            />
+
+                            <span
+                              class="w-full font-normal text-base has-[:checked]:font-semibold has-[:checked]:!text-white"
+                            >
+                              واحد لكل تصفح
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+
+                      <div class="mb-5">
+                        <label
+                          class="label-text font-medium text-base text-black mb-2"
+                          for="defaultInput"
+                          >نوع التأخير في العرض بعد إغلاق الإشعار</label
+                        >
+
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+                          <label
+                            class="custom-soft-option flex gap-3 bg-transparent rounded-8px border border-[#D4D4D4] center_flex text-center cursor-pointer has-[:checked]:text-white has-[:checked]:bg-primary has-[:checked]:border-primary has-[:checked]:outline-none"
+                          >
+                            <input
+                              type="radio"
+                              name="radio-20"
+                              class="hidden"
+                              checked
+                            />
+
+                            <span
+                              class="w-full font-normal text-base has-[:checked]:font-semibold has-[:checked]:!text-white"
+                            >
+                              الوقت في الموقع
+                            </span>
+                          </label>
+
+                          <label
+                            class="custom-soft-option flex gap-3 bg-transparent rounded-8px border border-[#D4D4D4] center_flex text-center cursor-pointer has-[:checked]:text-white has-[:checked]:bg-primary has-[:checked]:border-primary has-[:checked]:outline-none"
+                          >
+                            <input
+                              type="radio"
+                              name="radio-20"
+                              class="hidden"
+                              checked
+                            />
+
+                            <span
+                              class="w-full font-normal text-base has-[:checked]:font-semibold has-[:checked]:!text-white"
+                            >
+                              مشاهدات الصفحة
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+
+                      <div class="mb-12">
+                        <label
+                          class="label-text font-medium text-base text-black mb-2"
+                          for="defaultInput"
+                          >الوقت في الموقع</label
+                        >
+                        <div class="join w-full bg-f8 border-d4">
+                          <input
+                            class="input join-item input rounded-lg h-[58px] rounded-tl-none rounded-bl-none"
+                            placeholder="21600"
+                          />
+                          <span
+                            class="bg-f8 font-medium text-base text-black center_flex join-item w-36 border-d4 border"
+                          >
+                            ثواني
+                          </span>
+                        </div>
+                      </div>
+
+                      <div class="mb-12 flex gap-4">
+                        <div>
+                          <div
+                            class="dropdown-item items-center justify-between gap-2 px-2 py-1"
+                          >
+                            <input
+                              type="checkbox"
+                              class="switch switch-primary switch-sm"
+                              id="settings1"
+                              checked
+                            />
+                          </div>
+                        </div>
+
+                        <div>
+                          <p class="font-medium text-base mb-2 text-black">
+                            جدول
+                          </p>
+
+                          <p class="font-normal text-14px text-black">
+                            قم بتفعيل الإشعار فقط خلال فترة زمنية محددة.
+                          </p>
+                        </div>
+                      </div>
+
+                      <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 mb-20">
+                        <div>
+                          <label
+                            class="label-text font-medium text-base text-black mb-2"
+                            for="defaultInput"
+                            >تاريخ البدء</label
+                          >
+
+                          <input
+                            type="text"
+                            class="flatpickr-date-time input input border-d4 rounded-lg h-[58px]"
+                            placeholder="2026-01-14 23:27:56"
+                            id="flatpickr-date-time1"
+                          />
+                        </div>
+                        <div>
+                          <label
+                            class="label-text font-medium text-base text-black mb-2"
+                            for="defaultInput"
+                            >تاريخ الانتهاء</label
+                          >
+
+                          <input
+                            type="text"
+                            class="flatpickr-date-time input input border-d4 rounded-lg h-[58px]"
+                            placeholder="2026-01-14 23:27:56"
+                            id="flatpickr-date-time2"
+                          />
+                        </div>
+                      </div>
+
+                      <div>
+                        <button
+                          class="btn bg-f8 text-black border-0 mb-8 shadow rounded-13px font-semibold text-20px btn-block py-7"
+                        >
+                          تشغيل
+                        </button>
+                        <button
+                          class="btn btn-primary rounded-13px font-semibold text-20px btn-block py-7"
+                        >
+                          حفظ التحديث
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    id="tabs-large-3"
+                    class="hidden"
+                    role="tabpanel"
+                    aria-labelledby="tabs-large-item-3"
+                  >
+                    <div>
+                      <!-- edit the tabs 3 content here to match screen shot -->
+
+                      <div class="mb-5">
+                        <label
+                          class="label-text font-medium text-base text-black mb-2"
+                          for="defaultInput"
+                          >الاتجاه</label
+                        >
+
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+                          <label
+                            class="custom-soft-option flex gap-3 bg-transparent rounded-8px border border-[#D4D4D4] center_flex text-center cursor-pointer has-[:checked]:text-white has-[:checked]:bg-primary has-[:checked]:border-primary has-[:checked]:outline-none"
+                          >
+                            <input
+                              type="radio"
+                              name="radio-18"
+                              class="hidden"
+                            />
+
+                            <span
+                              class="w-full font-normal text-base has-[:checked]:font-semibold has-[:checked]:!text-white center_flex gap-4"
+                            >
+                              <span
+                                class="icon-[solar--arrow-left-outline] size-6 text-black has-[:checked]:!text-white"
+                              ></span>
+                              من اليسار الي اليمين
+                            </span>
+                          </label>
+
+                          <label
+                            class="custom-soft-option flex gap-3 bg-transparent rounded-8px border border-[#D4D4D4] center_flex text-center cursor-pointer has-[:checked]:text-white has-[:checked]:bg-primary has-[:checked]:border-primary has-[:checked]:outline-none"
+                          >
+                            <input
+                              type="radio"
+                              name="radio-18"
+                              class="hidden"
+                            />
+
+                            <span
+                              class="w-full font-normal text-base has-[:checked]:font-semibold has-[:checked]:!text-white center_flex gap-4"
+                            >
+                              <span
+                                class="icon-[solar--arrow-right-outline] size-6 text-black has-[:checked]:!text-white"
+                              ></span>
+                              من اليمين الي اليسار
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+
+                      <div class="mb-5">
+                        <label
+                          class="label-text font-medium text-base text-black mb-2"
+                          for="defaultInput"
+                          >موقف العرض</label
+                        >
+
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+                          <label
+                            class="custom-soft-option flex gap-3 bg-transparent rounded-8px border border-[#D4D4D4] center_flex text-center cursor-pointer has-[:checked]:text-white has-[:checked]:bg-primary has-[:checked]:border-primary has-[:checked]:outline-none"
+                          >
+                            <input
+                              type="radio"
+                              name="radio-19"
+                              class="hidden"
+                              checked
+                            />
+
+                            <span
+                              class="w-full font-normal text-base has-[:checked]:font-semibold has-[:checked]:!text-white"
+                            >
+                              أعلى اليسار
+                            </span>
+                          </label>
+
+                          <label
+                            class="custom-soft-option flex gap-3 bg-transparent rounded-8px border border-[#D4D4D4] center_flex text-center cursor-pointer has-[:checked]:text-white has-[:checked]:bg-primary has-[:checked]:border-primary has-[:checked]:outline-none"
+                          >
+                            <input
+                              type="radio"
+                              name="radio-19"
+                              class="hidden"
+                              checked
+                            />
+
+                            <span
+                              class="w-full font-normal text-base has-[:checked]:font-semibold has-[:checked]:!text-white"
+                            >
+                              المركز العلوي
+                            </span>
+                          </label>
+
+                          <label
+                            class="custom-soft-option flex gap-3 bg-transparent rounded-8px border border-[#D4D4D4] center_flex text-center cursor-pointer has-[:checked]:text-white has-[:checked]:bg-primary has-[:checked]:border-primary has-[:checked]:outline-none"
+                          >
+                            <input
+                              type="radio"
+                              name="radio-19"
+                              class="hidden"
+                              checked
+                            />
+
+                            <span
+                              class="w-full font-normal text-base has-[:checked]:font-semibold has-[:checked]:!text-white"
+                            >
+                              اعلى يمين
+                            </span>
+                          </label>
+
+                          <label
+                            class="custom-soft-option flex gap-3 bg-transparent rounded-8px border border-[#D4D4D4] center_flex text-center cursor-pointer has-[:checked]:text-white has-[:checked]:bg-primary has-[:checked]:border-primary has-[:checked]:outline-none"
+                          >
+                            <input
+                              type="radio"
+                              name="radio-19"
+                              class="hidden"
+                              checked
+                            />
+
+                            <span
+                              class="w-full font-normal text-base has-[:checked]:font-semibold has-[:checked]:!text-white"
+                            >
+                              منتصف اليسار
+                            </span>
+                          </label>
+                          <label
+                            class="custom-soft-option flex gap-3 bg-transparent rounded-8px border border-[#D4D4D4] center_flex text-center cursor-pointer has-[:checked]:text-white has-[:checked]:bg-primary has-[:checked]:border-primary has-[:checked]:outline-none"
+                          >
+                            <input
+                              type="radio"
+                              name="radio-19"
+                              class="hidden"
+                              checked
+                            />
+
+                            <span
+                              class="w-full font-normal text-base has-[:checked]:font-semibold has-[:checked]:!text-white"
+                            >
+                              منتصف وسط
+                            </span>
+                          </label>
+                          <label
+                            class="custom-soft-option flex gap-3 bg-transparent rounded-8px border border-[#D4D4D4] center_flex text-center cursor-pointer has-[:checked]:text-white has-[:checked]:bg-primary has-[:checked]:border-primary has-[:checked]:outline-none"
+                          >
+                            <input
+                              type="radio"
+                              name="radio-19"
+                              class="hidden"
+                              checked
+                            />
+
+                            <span
+                              class="w-full font-normal text-base has-[:checked]:font-semibold has-[:checked]:!text-white"
+                            >
+                              منتصف يمين
+                            </span>
+                          </label>
+                          <label
+                            class="custom-soft-option flex gap-3 bg-transparent rounded-8px border border-[#D4D4D4] center_flex text-center cursor-pointer has-[:checked]:text-white has-[:checked]:bg-primary has-[:checked]:border-primary has-[:checked]:outline-none"
+                          >
+                            <input
+                              type="radio"
+                              name="radio-19"
+                              class="hidden"
+                              checked
+                            />
+
+                            <span
+                              class="w-full font-normal text-base has-[:checked]:font-semibold has-[:checked]:!text-white"
+                            >
+                              اسفل يسار
+                            </span>
+                          </label>
+                          <label
+                            class="custom-soft-option flex gap-3 bg-transparent rounded-8px border border-[#D4D4D4] center_flex text-center cursor-pointer has-[:checked]:text-white has-[:checked]:bg-primary has-[:checked]:border-primary has-[:checked]:outline-none"
+                          >
+                            <input
+                              type="radio"
+                              name="radio-19"
+                              class="hidden"
+                              checked
+                            />
+
+                            <span
+                              class="w-full font-normal text-base has-[:checked]:font-semibold has-[:checked]:!text-white"
+                            >
+                              اسفل وسط
+                            </span>
+                          </label>
+                          <label
+                            class="custom-soft-option flex gap-3 bg-transparent rounded-8px border border-[#D4D4D4] center_flex text-center cursor-pointer has-[:checked]:text-white has-[:checked]:bg-primary has-[:checked]:border-primary has-[:checked]:outline-none"
+                          >
+                            <input
+                              type="radio"
+                              name="radio-19"
+                              class="hidden"
+                              checked
+                            />
+
+                            <span
+                              class="w-full font-normal text-base has-[:checked]:font-semibold has-[:checked]:!text-white"
+                            >
+                              اسفل يمين
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+
+                      <div class="mb-12">
+                        <label
+                          class="label-text font-medium text-base text-black mb-2"
+                          for="defaultInput"
+                        >
+                          مدة العرض</label
+                        >
+                        <div class="join w-full bg-f8 border-d4">
+                          <input
+                            class="input join-item input rounded-lg h-[58px] rounded-tl-none rounded-bl-none"
+                            placeholder="2"
+                          />
+                          <span
+                            class="bg-f8 font-medium text-base text-black center_flex join-item w-36 border-d4 border"
+                          >
+                            ثواني
+                          </span>
+                        </div>
+                      </div>
+
+                      <div class="mb-9 flex gap-4">
+                        <div>
+                          <div
+                            class="dropdown-item items-center justify-between gap-2 px-2 py-1"
+                          >
+                            <input
+                              type="checkbox"
+                              class="switch switch-primary switch-sm"
+                              id="settings1"
+                              checked
+                            />
+                          </div>
+                        </div>
+
+                        <div>
+                          <p class="font-medium text-base mb-2 text-black">
+                            عرض زر الإغلاق
+                          </p>
+                        </div>
+                      </div>
+
+                      <div class="mb-16 flex gap-4">
+                        <div>
+                          <div
+                            class="dropdown-item items-center justify-between gap-2 px-2 py-1"
+                          >
+                            <input
+                              type="checkbox"
+                              class="switch switch-primary switch-sm"
+                              id="settings1"
+                              checked
+                            />
+                          </div>
+                        </div>
+
+                        <div>
+                          <p class="font-medium text-base mb-2 text-black">
+                            عرض العلامات التجارية
+                          </p>
+                        </div>
+                      </div>
+
+                      <div>
+                        <button
+                          class="btn btn-primary rounded-13px font-semibold text-20px btn-block py-7"
+                        >
+                          حفظ التحديث
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    id="tabs-large-4"
+                    class="hidden"
+                    role="tabpanel"
+                    aria-labelledby="tabs-large-item-4"
+                  >
+                    <div>
+                      <div class="mb-4">
+                        <label
+                          class="label-text font-medium text-base text-black mb-2"
+                          for="defaultInput"
+                          >لون العنوان</label
+                        >
+                        <input
+                          type="color"
+                          class="input border-d4 rounded-8px h-[58px] px-0 py-0"
+                          value="#3B3B3B"
+                        />
+                      </div>
+                      <div class="mb-4">
+                        <label
+                          class="label-text font-medium text-base text-black mb-2"
+                          for="defaultInput"
+                          >لون الوصف</label
+                        >
+                        <input
+                          type="color"
+                          class="input border-d4 rounded-8px h-[58px] px-0 py-0"
+                          value="#ACACAC"
+                        />
+                      </div>
+
+                      <div class="mb-4">
+                        <label
+                          class="label-text font-medium text-base text-black mb-2"
+                          for="defaultInput"
+                          >لون الخلفية</label
+                        >
+                        <input
+                          type="color"
+                          class="input border-d4 rounded-8px h-[58px] px-0 py-0"
+                          value="#ffffff"
+                        />
+                      </div>
+
+                      <div class="mb-4">
+                        <label
+                          class="label-text font-medium text-base text-black mb-2"
+                          for="defaultInput"
+                          >لون خلفية الزر</label
+                        >
+                        <input
+                          type="color"
+                          class="input border-d4 rounded-8px h-[58px] px-0 py-0"
+                          value="#FFE5E5"
+                        />
+                      </div>
+
+                      <div class="mb-4">
+                        <label
+                          class="label-text font-medium text-base text-black mb-2"
+                          for="defaultInput"
+                          >لون الزر</label
+                        >
+                        <input
+                          type="color"
+                          class="input border-d4 rounded-8px h-[58px] px-0 py-0"
+                          value="#F31DD6"
+                        />
+                      </div>
+
+                      <div class="mb-4">
+                        <label
+                          class="label-text font-medium text-base text-black mb-2"
+                          for="defaultInput"
+                          >لون زر الإغلاق</label
+                        >
+                        <input
+                          type="color"
+                          class="input border-d4 rounded-8px h-[58px] px-0 py-0"
+                          value="#ACACAC"
+                        />
+                      </div>
+                      <div class="mb-6">
+                        <label
+                          class="label-text font-medium text-base text-black mb-2"
+                          for="defaultInput"
+                        >
+                          حشوة داخلية</label
+                        >
+
+                        <div class="slider-styled" id="slider-round1"></div>
+                      </div>
+
+                      <div class="mb-12">
+                        <label
+                          class="label-text font-medium text-base text-black mb-2"
+                          for="defaultInput"
+                        >
+                          طمس الخلفية</label
+                        >
+
+                        <div class="slider-styled" id="slider-round2"></div>
+                      </div>
+                      <div>
+                        <button
+                          class="btn bg-f8 text-black border-0 mb-8 shadow rounded-13px font-semibold text-20px btn-block py-7"
+                        >
+                          <span
+                            class="icon-[material-symbols-light--dark-mode-rounded] size-6"
+                          ></span>
+                          الوضع المظلم
+                        </button>
+                        <button
+                          class="btn bg-f8 text-black border-0 mb-8 shadow rounded-13px font-semibold text-20px btn-block py-7"
+                        >
+                          <span class="icon-[iconoir--border-bl] size-6"></span>
+                          حدود
+                        </button>
+                        <button
+                          class="btn bg-f8 text-black border-0 mb-8 shadow rounded-13px font-semibold text-20px btn-block py-7"
+                        >
+                          <span
+                            class="icon-[tdesign--animation-1] size-6"
+                          ></span>
+                          الرسوم المتحركة
+                        </button>
+                        <button
+                          class="btn bg-f8 text-black border-0 mb-8 shadow rounded-13px font-semibold text-20px btn-block py-7"
+                        >
+                          <span class="icon-[nimbus--font] size-6"></span>
+                          الخط
+                        </button>
+                        <button
+                          class="btn bg-f8 text-black border-0 mb-8 shadow rounded-13px font-semibold text-20px btn-block py-7"
+                        >
+                          <span
+                            class="icon-[carbon--search-advanced] size-6"
+                          ></span>
+                          متقدم
+                        </button>
+
+                        <button
+                          class="btn btn-primary rounded-13px font-semibold text-20px btn-block py-7"
+                        >
+                          حفظ التحديث
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="md:col-span-3 bg-white rounded-14px max-h-96"></div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <!-- FlyonUI JS -->
+    <script src="../../assets/dist/libs/lodash/lodash.min.js"></script>
+    <script src="../../assets/dist/libs/dropzone/dist/dropzone-min.js"></script>
+    <script src="../../assets/dist/libs/flatpickr/dist/flatpickr.js"></script>
+    <script src="../../assets/dist/libs/nouislider/dist/nouislider.min.js"></script>
+
+    <script src="../../assets/dist/libs/flyonui/flyonui.js"></script>
+
+    <script>
+      window.addEventListener("load", function () {
+        // Date Time
+        flatpickr(".flatpickr-date-time", {
+          enableTime: true,
+          dateFormat: "Y-m-d H:i",
+        });
+      });
+    </script>
+
+    <script>
+      const sliders = document.querySelectorAll(".slider-styled");
+
+      sliders.forEach((slider) => {
+        noUiSlider.create(slider, {
+          start: 40, // default value
+          connect: "lower", // fill the lower part of track
+          range: {
+            min: 0,
+            max: 100,
+          },
+          tooltips: false, // optional: show tooltip with value
+        });
+      });
+    </script>
+  </body>
+</html>
